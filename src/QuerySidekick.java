@@ -26,6 +26,10 @@ public class QuerySidekick
     int guessCount = 0;
     int lines = 0;
 
+    private final boolean DISPLAY_PROGRESS_BAR = true;
+    private final int BAR_DISPLAY_INTERVAL = 800;
+    private final int BAR_LENGTH = 30;
+
     // initialization of ...
     public QuerySidekick()
     {
@@ -58,7 +62,7 @@ public class QuerySidekick
             ticker++;
             if (ticker % 100 == 0) System.gc();
 
-            attemptPrintBar(ticker, lines);
+            if (DISPLAY_PROGRESS_BAR) attemptPrintBar(ticker, lines);
 
             String line = scanner.nextLine();
             line = line.replaceAll("\\s+", " ");
@@ -75,7 +79,6 @@ public class QuerySidekick
         searchTree.writeToFile(oldQueryFile);
 
         searchTree.compress(null);
-
 
         searchTree.writeToFile(oldQueryFile);
 
@@ -114,26 +117,18 @@ public class QuerySidekick
     }
 
     private void attemptPrintBar(int ticker, int lines) {
-        int barDisplayTime = 800;
-            if (System.currentTimeMillis() - startTime > barDisplayTime) {
-                startTime += barDisplayTime;
-                int barLength = 50;
-                StringBuilder sb = new StringBuilder();
-                sb.append("PROGRESS: [");
-                int fill = (int)(barLength * ticker / (double)lines);
-                for (int i = 0; i < fill; i++) {
-                    sb.append("#");
-                }
-                for (int i = fill; i < barLength; i++) {
-                    sb.append(" ");
-                }
-                sb.append("] (");
-                sb.append(ticker);
-                sb.append("/");
-                sb.append(lines);
-                sb.append(")");
-                System.out.println(sb.toString());
-            }
+
+        if (System.currentTimeMillis() - startTime < BAR_DISPLAY_INTERVAL) return;
+
+        startTime += BAR_DISPLAY_INTERVAL;
+        StringBuilder sb = new StringBuilder();
+        float fillPercent = ticker / (float)lines;
+        int fillInt = (int)(BAR_LENGTH * fillPercent);
+        for (int i = 0; i < fillInt; i++) { sb.append("\u25A0");  }
+        for (int i = fillInt; i < BAR_LENGTH; i++) { sb.append(" "); }
+        System.out.println(String.format("Progress: %4.1f%% [%s] %d/%d",
+                fillPercent * 100, sb.toString(), ticker, lines));
+        
     }
 
     private void burnLines(Scanner scanner) {

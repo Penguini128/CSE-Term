@@ -55,7 +55,7 @@ public class Tree {
                 } else sb.append("     ");
             }
             if (i == startingNode.getChildren().length - 1) includeLines.set(includeLines.size() - 1, false);
-            sb.append(t.getData());
+            sb.append(t.toString());
             sb.append(" (");
             sb.append(t.getPassingFrequency());
             sb.append(" / ");

@@ -1,4 +1,5 @@
 public class TreeNode {
+
     private int[] data;
     private int frequency;
     private int passingFrequency;
@@ -7,8 +8,10 @@ public class TreeNode {
 
     TreeNode(String s, TreeNode parent) {
         data = new int[0];
-        int index = Dictionary.add(s);
-        addToData(index);
+        if (s != null) {
+            int index = Dictionary.add(s);
+            addToData(index);
+        }
         this.parent = parent;
         children = new TreeNode[0];
         frequency = 0;
@@ -38,20 +41,11 @@ public class TreeNode {
         passingFrequency++;
     }
 
-    public String getData() { 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < data.length; i++) {
-            sb.append(Dictionary.get(data[i]));
-            if (i < data.length - 1) sb.append(" ");
-        }
-        return sb.toString();
-    }
-
     public void addToChildren(TreeNode child) {
         TreeNode[] newArray = new TreeNode[children.length + 1];
         int insertedIndex = children.length;
         for (int i = 0; i < children.length; i++) {
-            if (child.getDataString().compareTo(children[i].getDataString()) < 0) {
+            if (child.toString().compareTo(children[i].toString()) < 0) {
                 insertedIndex = i;
                 break;
             } else {
@@ -100,7 +94,7 @@ public class TreeNode {
     public int getPassingFrequency() { return passingFrequency; }
     public TreeNode getParent() { return parent; }
     public TreeNode[] getChildren() { return children; }
-    public String getDataString() {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < data.length; i++) {
             sb.append(Dictionary.get(data[i]));

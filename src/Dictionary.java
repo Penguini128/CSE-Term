@@ -38,15 +38,10 @@ public class Dictionary {
 
 	public static String getString() {
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < lookupTable.size() - 1; i++) {
-			sb.append(i);
-			sb.append(" | ");
-			sb.append(dictionary.substring(lookupTable.get(i), lookupTable.get(i + 1)));
-			sb.append("\n");
+		for (int i = 0; i < lookupTable.size(); i++) {
+			sb.append(String.format("%-6d | %s\n",
+									i, get(i)));
 		}
-		sb.append(lookupTable.size() - 1);
-		sb.append(" | ");
-		sb.append(dictionary.substring(lookupTable.get(lookupTable.size() - 1)));
 		return sb.toString();
 	}
 
