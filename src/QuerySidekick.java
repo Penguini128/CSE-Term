@@ -69,7 +69,10 @@ public class QuerySidekick
         }
 
         // Initialize the start time (used for periodically printing progress bar)
-        if (DISPLAY_PROGRESS_BAR) startTime = System.currentTimeMillis();
+        if (DISPLAY_PROGRESS_BAR) {
+            System.out.println();
+            startTime = System.currentTimeMillis();
+        }
 
         // Tracks the current line number being read from the input file
         int currentLine = 0;
@@ -105,8 +108,10 @@ public class QuerySidekick
         }
 
         // If enabled, output tree text file before compression
-        if (OUTPUT_DEBUG_TEXT_FILES) 
-        searchTree.writeToFile(oldQueryFile);
+        if (OUTPUT_DEBUG_TEXT_FILES) {
+            System.out.println("\n/!\\: Peak memory usage may be affected by outputting debug text files");
+            searchTree.writeToFile(oldQueryFile);
+        }
 
         // Compress tree
         searchTree.compress(null);
@@ -117,6 +122,9 @@ public class QuerySidekick
             searchTree.writeToFile(oldQueryFile);
             Dictionary.writeToFile(oldQueryFile);
         }
+        
+        // Output formatting for debug purposes
+        if (DISPLAY_PROGRESS_BAR) System.out.println();
 
         scanner.close();
 
