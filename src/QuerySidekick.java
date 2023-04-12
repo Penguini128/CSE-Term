@@ -20,14 +20,19 @@ import java.util.Scanner;
 public class QuerySidekick
 {
     
-    Tree searchTree = new Tree();
+    
     String[] guesses = new String[5];  // 5 guesses from QuerySidekick
-    long startTime;
-    int guessCount = 0;
-    int lines = 0;
+    Tree searchTree = new Tree(); // Stores data tree
+    long startTime; // Used for periodic printing of progress bar
+    int guessCount = 0; // Not used for much yet, could be useful
 
+    // Whether or not to display progress bar when processing old queries
     private final boolean DISPLAY_PROGRESS_BAR = true;
+    // Whether or not to output debug text files after processing old queries
+    private final boolean OUTPUT_DEBUG_TEXT_FILES = true;
+    // How often (in milliseconds) the progress bar should be printed
     private final int BAR_DISPLAY_INTERVAL = 800;
+    // How long (in characters) the progress bar should be
     private final int BAR_LENGTH = 30;
 
     // initialization of ...
@@ -43,46 +48,75 @@ public class QuerySidekick
     public void processOldQueries(String oldQueryFile)
     {
 
+        // Attempt to create a Scanner to read the old query file
         File file = new File(oldQueryFile);
         Scanner scanner;
+        int lines;
         try {
             scanner = new Scanner(file);
-            burnLines(scanner);
-            scanner.close();
-            scanner = new Scanner(file);
+            // If the progress bar should be displayed...
+             if (DISPLAY_PROGRESS_BAR){
+                // Find how many lines are in the old query file by
+                // going through he whole file, then reset the scanner
+                lines = countAndBurnLines(scanner);
+                scanner.close();
+                scanner = new Scanner(file);
+             }
         } catch (FileNotFoundException e) {
+            // If the file is not found, print an error message
             System.out.println("ERROR:\t Old query file not found");
             return;
         }
 
-        startTime = System.currentTimeMillis();
+        // Initialize the start time (used for periodically printing progress bar)
+        if (DISPLAY_PROGRESS_BAR) startTime = System.currentTimeMillis();
 
-        int ticker = 0;
+        // Tracks the current line number being read from the input file
+        int currentLine = 0;
+
+        // While there are more lines to read...
         while (scanner.hasNextLine()) {
-            ticker++;
-            if (ticker % 100 == 0) System.gc();
+            // Increment "currentLine"
+            currentLine++;
+            // Call garbage collector manually every 100 lines
+            if (currentLine % 100 == 0) System.gc();
 
-            if (DISPLAY_PROGRESS_BAR) attemptPrintBar(ticker, lines);
+            // If enabled, check if the progress bar should be printed
+            if (DISPLAY_PROGRESS_BAR) attemptPrintBar(currentLine, lines);
 
+            // Get the input line and split it into space-separated tokens
             String line = scanner.nextLine();
             line = line.replaceAll("\\s+", " ");
             String[] tokens = line.split(" ");
+
+            // Keep track of the last added node from this search phrase
             TreeNode lastNode = null;
+            // For each word in the search phrase
             for (int i = 0; i < tokens.length; i++) {
+                // Add the word from the search phrase to the tree, using
+                // the lase added node from this phrase as the parent
                 String s = tokens[i];
                 lastNode = searchTree.addNode(s, lastNode);
+                // Always increment passing frequency. Increment frequency
+                // if the current node is the last node in the search phrase
                 lastNode.incrementPassingFrequency();
                 if (i == tokens.length - 1) lastNode.incrementFrequency();
             }
         }
 
+        // If enabled, output tree text file before compression
+        if (OUTPUT_DEBUG_TEXT_FILES) 
         searchTree.writeToFile(oldQueryFile);
 
+        // Compress tree
         searchTree.compress(null);
 
-        searchTree.writeToFile(oldQueryFile);
-
-        Dictionary.writeToFile(oldQueryFile);
+        // If enabled, output tree text file after
+        // compression, as well as dictionary text file
+        if (OUTPUT_DEBUG_TEXT_FILES) {
+            searchTree.writeToFile(oldQueryFile);
+            Dictionary.writeToFile(oldQueryFile);
+        }
 
         scanner.close();
 
@@ -93,6 +127,7 @@ public class QuerySidekick
     // currCharPosition: position of the current character in the query, starts from 0
     public String[] guess(char currChar, int currCharPosition)
     {
+        // All this does right now is call an occasional garbage collect to prevent spike in memory usage
         guessCount++;
         if (guessCount % 10000 == 0) System.gc();
         return guesses;
@@ -116,27 +151,45 @@ public class QuerySidekick
 
     }
 
-    private void attemptPrintBar(int ticker, int lines) {
+    /**
+     * If sufficient time has passed, prints a progress bar during old query file processing
+     * @param currentLine The current line number being processed
+     * @param lines The total number of lines to process
+     */
+    private void attemptPrintBar(int currentLine, int lines) {
 
+        // If not enough time has passed since last print, return
         if (System.currentTimeMillis() - startTime < BAR_DISPLAY_INTERVAL) return;
 
+        // Increase start time (effectively resets timer for progress bar printing)
         startTime += BAR_DISPLAY_INTERVAL;
+        // Create a StringBuilder to store the String as it is created
         StringBuilder sb = new StringBuilder();
-        float fillPercent = ticker / (float)lines;
-        int fillInt = (int)(BAR_LENGTH * fillPercent);
-        for (int i = 0; i < fillInt; i++) { sb.append("\u25A0");  }
-        for (int i = fillInt; i < BAR_LENGTH; i++) { sb.append(" "); }
-        System.out.println(String.format("Progress: %4.1f%% [%s] %d/%d",
-                fillPercent * 100, sb.toString(), ticker, lines));
+        // Calculate the completion percent, and from that the number
+        // of filled spaces on the progress bar
+        float completionPercent = currentLine / (float)lines;
+        int fill = (int)(BAR_LENGTH * completionPercent);
+        // Fill the first portion of the progress bar with filled squares
+        for (int i = 0; i < fill; i++) { sb.append("\u25A0");  }
+        // Fill the rest of the progress bar with spaces
+        for (int i = fill; i < BAR_LENGTH; i++) { sb.append(" "); }
+        // Print the progress bar, along with percent completion and fraction of lines completed
+        System.out.println(String.format("Progress: %5.1f%% [%s] %d/%d",
+                           completionPercent * 100, sb.toString(), currentLine, lines));
         
     }
 
-    private void burnLines(Scanner scanner) {
+    private int countAndBurnLines(Scanner scanner) {
+        // Scan through whole file, counting the number of lines
+        int lines = 0;
         while (scanner.hasNextLine()) {
             scanner.nextLine();
             lines++;
+            // Call an occasional garbage collect to prevent spike in memory usage
             if (lines % 1000 == 0) System.gc();
         }
+        // Return the number of lines in the input file
+        return lines;
     }
 
 }

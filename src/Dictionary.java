@@ -3,58 +3,125 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Dictionary {
+
+	// This String stores all unique words found in the old query file
+	// (This String is printed at the end of the dictionary output text file)
 	private static String dictionary = "";
+
+	// This ArrayList contains the indexes of the start of each word in the "dictionary" String
 	private static ArrayList<Integer> lookupTable = new ArrayList<Integer>();
 
+	// This is used to format the dictionary output text file (can be mostly ignored)
+	private static final int DICTIONARY_BLOCK_SIZE = 125;
+
+	/**
+	 * Adds a new word to the Dictionary, if the word is unique
+	 * @param s The String to be added to the dictionary
+	 * @return The index that can be passed into get() to retrieve the word
+	 */
 	public static int add(String s) {
+		// See if the word is already in the dictionary.
+		// If it is, return the index used to access it
 		int foundIndex = contains(s);
 		if (foundIndex != -1) return foundIndex;
 
+		/*
+		 * Add the index where the new word can be found to "lookupTable" (since
+		 * the word will be added to the end of "dictionary", "dictionary.length()"
+		 * will be the index where the word will start once it is added to the String
+		 */
 		lookupTable.add(dictionary.length());
+		// Add the word to the String
 		dictionary += s;
+		// Since the word's new index was added to the end of the end of "lookupTable",
+		// return "lookupTable.size() - 1" (the last index of "lookupTable")
 		return lookupTable.size() - 1;
 
 	}
 
+	/**
+	 * Returns the word stored at the specified index within the dictionary
+	 * @param index The index of the word to be retrieved
+	 * @return The word stored at the specified index
+	 */
 	public static String get(int index) {
+		// Note: This method assumes the passed in index is within the bounds 
+		// of "lookupTable". Under normal use, this should not be an issue
+
+		// If the index is not the last index in the lookup table, return the substring of "dictionary"
+		// between the starting index of the desired word and the starting index of the next word
 		if (index < lookupTable.size() - 1) 
 		return dictionary.substring(lookupTable.get(index), lookupTable.get(index + 1));
 
+		// If the method reaches this point, it is safe to assume index == lookupTable.size() - 1,
+		// return the substring from the starting index of the desired word to the end of "dictionary"
 		return dictionary.substring(lookupTable.get(index));
 	}
 
+	/**
+	 * Tests to see if a string exists within the Dicitionary
+	 * @param s The String to be tested for its existence in "dictionary"
+	 * @return The index used to access the String it is exists within
+	 * 		   "dictionary", -1 if "dictionary" does not contain the String
+	 */
 	private static int contains(String s) {
-		for (int i = 0; i < lookupTable.size() - 1; i++) {
-			if (dictionary.substring(lookupTable.get(i), lookupTable.get(i + 1)).equals(s)) {
-				return i;
-			}
+		// Iterating through the index of "lookupTable"...
+		for (int i = 0; i < lookupTable.size(); i++) {
+			// If the retrieved word using "get()" is equal to s, return i
+			if (get(i).equals(s)) return i;
 		}
-		if (lookupTable.size() > 0 && 
-			dictionary.substring(lookupTable.get(lookupTable.size() - 1)).equals(s)) 
-		return lookupTable.size() - 1;
-
+		// The word was not found within the Dictionary, return -1
 		return -1;
 	}
 
+	/**
+	 * Returns the data stored within this class as a formatted String
+	 * (Note: Since this class is static I could not call it "toString()")
+	 * @return The data stored within this class as a formatted String
+	 */
 	public static String getString() {
+		// Create a StringBuilder to store the String as it is created
 		StringBuilder sb = new StringBuilder();
+		// For each word in the dictionary...
 		for (int i = 0; i < lookupTable.size(); i++) {
-			sb.append(String.format("%-6d | %s\n",
-									i, get(i)));
+			// Add a String in the following format to
+			// the StringBuilder: "[index] | [word]""
+			sb.append(String.format("%-6d | %s\n", i, get(i)));
 		}
+
+		// Add a newline character to separate the list
+		// of unique words from the "dicitonary block"
+		sb.append("\n");
+
+		// For each letter within "dictionary"...
+		for (int i = 0; i < dictionary.length(); i++) {
+			// Add the letter to the StringBuilder
+			sb.append(dictionary.charAt(i));
+			// If the line contains as many characters
+			// as "DICTIONARY_BLOCK_SIZE", add a newline character
+			if (i % DICTIONARY_BLOCK_SIZE == DICTIONARY_BLOCK_SIZE - 1) sb.append("\n");
+		}
+
+		// Return the resulting String
 		return sb.toString();
 	}
 
+	/**
+	 * Takes the String returned by "getString()" and writes it to a text file
+	 * @param filename The name of the original old query file
+	 */
 	public static void writeToFile(String filename) {
-        String dictionaryString = getString();
 
+		// Create the file name of the output file from the original old query file name
         String treeFileName = filename.substring(0, filename.length() - 4) + "Dictionary.txt";
+		// Attempt to use a FileWriter to write the String from "getString()" to a text file
         FileWriter fw;
         try {
             fw = new FileWriter(treeFileName);
-            fw.write(dictionaryString);
+            fw.write(getString());
             fw.close();
         } catch (IOException e) {
+			// If there are any issues writing to the output file, print an error message
             System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + treeFileName + "\"");
         }
     }
