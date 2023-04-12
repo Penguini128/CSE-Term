@@ -169,4 +169,15 @@ public class TreeNode {
         // Return the resulting String
         return output;
     }
+
+    public String getSearchPhrase() {
+        if (frequency == 0) return null;
+        String phrase = toString();
+        TreeNode currentNode = parent;
+        while (currentNode.parent != null) {
+            phrase = currentNode.toString() + " " + phrase;
+            currentNode = currentNode.parent;
+        }
+        return phrase;
+    }
 }
