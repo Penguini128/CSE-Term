@@ -23,15 +23,16 @@ public class QuerySidekick
     
     String[] guesses = new String[5];  // 5 guesses from QuerySidekick
     Tree searchTree = new Tree(); // Stores data tree
-    long startTime; // Used for periodic printing of progress bar
+    long barTime; // Used for periodic printing of progress bar
+    long startTime;
     int guessCount = 0; // Not used for much yet, could be useful
 
     // Whether or not to display progress bar when processing old queries
     private final boolean DISPLAY_PROGRESS_BAR = true;
     // Whether or not to output debug text files after processing old queries
-    private final boolean OUTPUT_DEBUG_TEXT_FILES = true;
-    // How often (in milliseconds) the progress bar should be printed
-    private final int BAR_DISPLAY_INTERVAL = 800;
+    private final boolean OUTPUT_DEBUG_TEXT_FILES = false;
+    // How often (in file lines) the progress bar should be printed
+    private final int BAR_DISPLAY_INTERVAL = 6000;
     // How long (in characters) the progress bar should be
     private final int BAR_LENGTH = 30;
 
@@ -72,6 +73,7 @@ public class QuerySidekick
         if (DISPLAY_PROGRESS_BAR) {
             System.out.println();
             startTime = System.currentTimeMillis();
+            barTime = startTime;
         }
 
         // Tracks the current line number being read from the input file
@@ -167,10 +169,10 @@ public class QuerySidekick
     private void attemptPrintBar(int currentLine, int lines) {
 
         // If not enough time has passed since last print, return
-        if (System.currentTimeMillis() - startTime < BAR_DISPLAY_INTERVAL) return;
+        if (currentLine % BAR_DISPLAY_INTERVAL != 1 && currentLine != lines) return;
 
         // Increase start time (effectively resets timer for progress bar printing)
-        startTime += BAR_DISPLAY_INTERVAL;
+        barTime += BAR_DISPLAY_INTERVAL;
         // Create a StringBuilder to store the String as it is created
         StringBuilder sb = new StringBuilder();
         // Calculate the completion percent, and from that the number
@@ -182,8 +184,8 @@ public class QuerySidekick
         // Fill the rest of the progress bar with spaces
         for (int i = fill; i < BAR_LENGTH; i++) { sb.append(" "); }
         // Print the progress bar, along with percent completion and fraction of lines completed
-        System.out.println(String.format("Progress: %5.1f%% [%s] %d/%d",
-                           completionPercent * 100, sb.toString(), currentLine, lines));
+        System.out.println(String.format("Progress: %5.1f%% [%s]  Time elapsed: %.2f seconds",
+                           completionPercent * 100, sb.toString(), (System.currentTimeMillis() - startTime) / 1000.0f));
         
     }
 
