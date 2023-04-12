@@ -116,13 +116,16 @@ public class QuerySidekick
         // Compress tree
         searchTree.compress(null);
 
+        SearchPhraseList.addPhrases(searchTree.getRoot());
+
         // If enabled, output tree text file after
         // compression, as well as dictionary text file
         if (OUTPUT_DEBUG_TEXT_FILES) {
             searchTree.writeToFile(oldQueryFile);
             Dictionary.writeToFile(oldQueryFile);
+            SearchPhraseList.writeToFile(oldQueryFile);
         }
-        
+
         // Output formatting for debug purposes
         if (DISPLAY_PROGRESS_BAR) System.out.println();
 
