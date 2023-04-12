@@ -21,21 +21,21 @@ public class GuessNode {
         for (char c : Dictionary.alphabet) {
             GuessNode newChild = new GuessNode(c, this);
             String childPhrase = newChild.getPhraseSoFar();
-            System.out.println(childPhrase);
             while (SearchPhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) == 0) {
                 newChild.rank(currentSearchIndex);
                 currentSearchIndex++;
                 if (currentSearchIndex == phraseList.size()) break;
             }
-            if (newChild.guesses[0] == 0) children.remove(newChild);
+            if (newChild.guesses[0] == -1) children.remove(newChild);
         }
+
         for (int i : guesses) {
-            SearchPhraseList.setUsed(i);
+            if (i != -1) SearchPhraseList.setUsed(i);
         }
 
         for (GuessNode child : children) {
             System.out.println(child.getGuessString());
-            child.build(phraseIndex + 1, phraseList);
+            //child.build(phraseIndex + 1, phraseList);
         }
     }
 
