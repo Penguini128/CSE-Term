@@ -5,12 +5,30 @@ public class GuessTree {
     
     private GuessNode root;
 
+    private GuessNode currentNode;
+
     GuessTree() {
         root = new GuessNode('-', null);
+        currentNode = root;
     }
 
     public void build(ArrayList<TreeNode> phraseList) {
         root.build(0, phraseList);
+    }
+
+    public void reset() {
+        currentNode = root;
+    }
+
+    public String[] getGuess(char guessChar) {
+        
+        for (GuessNode gn :currentNode.getChildren()) {
+            if (gn.getGuessChar() == guessChar) {
+                currentNode = gn;
+                return gn.getGuesses();
+            }
+        }
+        return currentNode.getGuesses();
     }
 
     // "toString()"" simply calls "generateString()", since it is easier to generate

@@ -31,7 +31,7 @@ public class QuerySidekick
     // Whether or not to display progress bar when processing old queries
     private final boolean DISPLAY_PROGRESS_BAR = true;
     // Whether or not to output debug text files after processing old queries
-    private final boolean OUTPUT_DEBUG_TEXT_FILES = true;
+    private final boolean OUTPUT_DEBUG_TEXT_FILES = false;
     // How often (in file lines) the progress bar should be printed
     private final int BAR_DISPLAY_INTERVAL = 6000;
     // How long (in characters) the progress bar should be
@@ -147,7 +147,8 @@ public class QuerySidekick
         // All this does right now is call an occasional garbage collect to prevent spike in memory usage
         guessCount++;
         if (guessCount % 10000 == 0) System.gc();
-        return guesses;
+        if (currCharPosition == 0) guessTree.reset();
+        return guessTree.getGuess(currChar);
     }
 
     // feedback on the 5 guesses from the user

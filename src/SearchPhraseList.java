@@ -7,6 +7,7 @@ public class SearchPhraseList {
 	private static ArrayList<TreeNode> phraseArray = new ArrayList<TreeNode>();
 
 	public static String getPhrase(int index) {
+		if (index == -1) return null;
 		return phraseArray.get(index).getSearchPhrase();
 	}
 
@@ -36,6 +37,15 @@ public class SearchPhraseList {
 
 	public static boolean isUsed(int index) {
 		return phraseArray.get(index).isUsed();
+	}
+
+	public static int findStartIndex(String substring) {
+		if (substring == null) return 0;
+		for (int i = 0; i < phraseArray.size(); i++) {
+			if (phraseArray.get(i).getSearchPhrase().indexOf(substring) == 0)
+			return i;
+		}
+		return -1;
 	}
 
 	public static ArrayList<TreeNode> getPhraseArray() { return phraseArray; }

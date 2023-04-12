@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 public class GuessNode {
 
-    char guessCharacter;
-    GuessNode parent;
-    int[] guesses;
-    ArrayList<GuessNode> children;
+    private char guessCharacter;
+    private GuessNode parent;
+    private int[] guesses;
+    private ArrayList<GuessNode> children;
 
     GuessNode(char guessCharacter, GuessNode parent) {
         this.guessCharacter = guessCharacter;
@@ -17,35 +17,54 @@ public class GuessNode {
     }
 
     public void build(int phraseIndex, ArrayList<TreeNode> phraseList) {
-        int currentSearchIndex = 0;
+
+        
+        System.gc();
+
+        int currentSearchIndex = SearchPhraseList.findStartIndex(getPhraseSoFar());
+
         for (char c : Dictionary.alphabet) {
             GuessNode newChild = new GuessNode(c, this);
             String childPhrase = newChild.getPhraseSoFar();
-            while (SearchPhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) == 0) {
+            while (currentSearchIndex < phraseList.size()) {
+                if (SearchPhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) != 0) {
+                    break;
+                }
                 newChild.rank(currentSearchIndex);
                 currentSearchIndex++;
-                if (currentSearchIndex == phraseList.size()) break;
             }
-            if (newChild.guesses[0] == -1) children.remove(newChild);
-        }
-
-        for (int i : guesses) {
-            if (i != -1) SearchPhraseList.setUsed(i);
+            if (newChild.guesses[0] != -1) {
+                for (int i : guesses) {
+                    if (i != -1) SearchPhraseList.setUsed(i);
+                }
+                children.add(newChild);
+            }
         }
 
         for (GuessNode child : children) {
-            System.out.println(child.getGuessString());
-            //child.build(phraseIndex + 1, phraseList);
+            if (child.guesses[4] != -1)
+            child.build(phraseIndex + 1, phraseList);
         }
     }
 
     public ArrayList<GuessNode> getChildren() { return children; }
+    public char getGuessChar() { return guessCharacter; }
+
+    public String[] getGuesses() {
+        String[] stringGuesses = new String[5];
+        for (int i = 0; i < guesses.length; i++) {
+            stringGuesses[i] = SearchPhraseList.getPhrase(guesses[i]);
+        }
+        return stringGuesses;
+    }
 
     public String getPhraseSoFar() {
+        if (parent == null) return null;
         String output = String.valueOf(guessCharacter);
         GuessNode currentNode = parent;
         while (currentNode.parent != null) {
             output = String.valueOf(currentNode.guessCharacter) + output;
+            currentNode = currentNode.parent;
         }
         return output;
     }
@@ -53,10 +72,17 @@ public class GuessNode {
     public String getGuessString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[ ");
+        int amount = 5;
         for (int i = 0; i < guesses.length; i++) {
+            if (guesses[i] == -1) {
+                amount = i;
+                break;
+            }
+        }
+        for (int i = 0; i < amount; i++) {
             if (guesses[i] == -1) sb.append("null");
             else sb.append(SearchPhraseList.getPhrase(guesses[i]));
-            if (i < guesses.length - 1) sb.append(", ");
+            if (i < amount - 1) sb.append(", ");
         }
         sb.append(" ]");
         return sb.toString();
@@ -82,7 +108,6 @@ public class GuessNode {
         // If the child was never inserted, insert the child at the end of the list
         if (offset == 0) newGuesses[4] = phraseIndex;
         guesses = newGuesses;
-        System.out.println(getGuessString());
     }
     
 }
