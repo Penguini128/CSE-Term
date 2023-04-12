@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dictionary {
 
-	public static final String alphabet = " 0123456789abcdefghijklmnopqrstuvwxyz";
+	public static final char[] alphabet = " 0123456789abcdefghijklmnopqrstuvwxyz".toCharArray();
 
 	// This String stores all unique words found in the old query file
 	// (This String is printed at the end of the dictionary output text file)

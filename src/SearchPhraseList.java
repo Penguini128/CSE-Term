@@ -6,12 +6,13 @@ public class SearchPhraseList {
 
 	private static ArrayList<TreeNode> phraseArray = new ArrayList<TreeNode>();
 
-	private static void addPhrase(TreeNode node) {
-		if (node.getFrequency() != 0) phraseArray.add(node);
-	}
-
 	public static String getPhrase(int index) {
 		return phraseArray.get(index).getSearchPhrase();
+	}
+
+	public static int getPhraseFrequency(int index) {
+		if (index == -1) return 0;
+		return phraseArray.get(index).getFrequency();
 	}
 
 	public static String getString() {
@@ -23,11 +24,21 @@ public class SearchPhraseList {
 	}
 
 	public static void addPhrases(TreeNode root) {
-		addPhrase(root);
+		if (root.getFrequency() != 0) phraseArray.add(root);
 		for (TreeNode tn : root.getChildren()) {
 			addPhrases(tn);
 		}
 	}
+
+	public static void setUsed(int index) {
+		phraseArray.get(index).setUsed();
+	}
+
+	public static boolean isUsed(int index) {
+		return phraseArray.get(index).isUsed();
+	}
+
+	public static ArrayList<TreeNode> getPhraseArray() { return phraseArray; }
 
 	public static void writeToFile(String filename) {
 

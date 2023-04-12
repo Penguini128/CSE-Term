@@ -23,6 +23,7 @@ public class QuerySidekick
     
     String[] guesses = new String[5];  // 5 guesses from QuerySidekick
     Tree searchTree = new Tree(); // Stores data tree
+    GuessTree guessTree = new GuessTree();
     long barTime; // Used for periodic printing of progress bar
     long startTime;
     int guessCount = 0; // Not used for much yet, could be useful
@@ -30,7 +31,7 @@ public class QuerySidekick
     // Whether or not to display progress bar when processing old queries
     private final boolean DISPLAY_PROGRESS_BAR = true;
     // Whether or not to output debug text files after processing old queries
-    private final boolean OUTPUT_DEBUG_TEXT_FILES = false;
+    private final boolean OUTPUT_DEBUG_TEXT_FILES = true;
     // How often (in file lines) the progress bar should be printed
     private final int BAR_DISPLAY_INTERVAL = 6000;
     // How long (in characters) the progress bar should be
@@ -120,12 +121,15 @@ public class QuerySidekick
 
         SearchPhraseList.addPhrases(searchTree.getRoot());
 
+        guessTree.build(SearchPhraseList.getPhraseArray());
+
         // If enabled, output tree text file after
         // compression, as well as dictionary text file
         if (OUTPUT_DEBUG_TEXT_FILES) {
             searchTree.writeToFile(oldQueryFile);
             Dictionary.writeToFile(oldQueryFile);
             SearchPhraseList.writeToFile(oldQueryFile);
+            guessTree.writeToFile(oldQueryFile);
         }
 
         // Output formatting for debug purposes

@@ -11,6 +11,8 @@ public class TreeNode {
     // The nodes containing data that may proceed the data in this node
     private TreeNode[] children;
 
+    private boolean used = false;
+
     // General Constructor
     TreeNode(String s, TreeNode parent) {
         // Create a new array to store data
@@ -143,12 +145,15 @@ public class TreeNode {
         return true;
     }
 
+    public void setUsed() { used = true; }
+
     // Getter methods
     public int[] getDataArray() {  return data; }
     public int getFrequency() { return frequency; }
     public int getPassingFrequency() { return passingFrequency; }
     public TreeNode getParent() { return parent; }
     public TreeNode[] getChildren() { return children; }
+    public boolean isUsed() { return used; }
 
     /**
 	 * Returns the data stored within this class as a formatted String
