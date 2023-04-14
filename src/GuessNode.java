@@ -27,9 +27,8 @@ public class GuessNode {
             GuessNode newChild = new GuessNode(c, this);
             String childPhrase = newChild.getPhraseSoFar();
             while (currentSearchIndex < phraseList.size()) {
-                if (SearchPhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) != 0) {
-                    break;
-                }
+                if (SearchPhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) != 0)
+                break;
                 newChild.rank(currentSearchIndex);
                 currentSearchIndex++;
             }
@@ -91,13 +90,13 @@ public class GuessNode {
     private void rank(int phraseIndex) {
         if (SearchPhraseList.isUsed(phraseIndex)) return;
         int[] newGuesses = new int[5];
-        int phraseFrequency = SearchPhraseList.getPhraseFrequency(phraseIndex);
-        if (phraseFrequency <= SearchPhraseList.getPhraseFrequency(guesses[4])) return;
+        float phraseFrequency = SearchPhraseList.getPhraseWeight(phraseIndex);
+        if (phraseFrequency <= SearchPhraseList.getPhraseWeight(guesses[4])) return;
         int offset = 0;
         // For each child in the previous child array...
         for (int i = 0; i < guesses.length - 1; i++) {
             // If the new child has not been inserted but should be inserted at this index...
-            if (offset == 0 && phraseFrequency > SearchPhraseList.getPhraseFrequency(guesses[i])) {
+            if (offset == 0 && phraseFrequency > SearchPhraseList.getPhraseWeight(guesses[i])) {
                 // Insert the child and update offset
                 newGuesses[i] = phraseIndex;
                 offset = 1;

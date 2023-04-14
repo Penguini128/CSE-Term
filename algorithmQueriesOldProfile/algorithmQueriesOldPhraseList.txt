@@ -16,8 +16,8 @@
 1      | 2x2 rubik s cube algorithms
 6      | 2x2x2 algorithm
 3      | 2x2x2 cube algorithms
-13     | 2x2x2 rubik cube cube algorithm
-7      | 2x2x2 rubik cube cube algorithms
+13     | 2x2x2 rubik cube algorithm
+7      | 2x2x2 rubik cube algorithms
 1      | 2x3x3 algorithms
 4      | 3d algorithms
 1      | 3d face recognition algorithm
@@ -28,26 +28,26 @@
 9      | 3x3 pll algorithms
 40     | 3x3 rubik cube algorithms
 5      | 3x3 rubiks cube algorithms
-10     | 3x3 rubix cube cube algorithm
-1      | 3x3 rubix cube cube algorithms
+10     | 3x3 rubix cube algorithm
+1      | 3x3 rubix cube algorithms
 3      | 3x3x3 algorithm
 1      | 3x3x3 algorithms
 6      | 3x3x3 rubik cube algorithms
 5      | 4th grade algorithm
-1      | 4th grade algorithm grade algorithm algorithm examples
+1      | 4th grade algorithm examples
 4      | 4x4 algorithm
 8      | 4x4 algorithms
 4      | 4x4 corner parity algorithm
 1      | 4x4 cube algorithms
 7      | 4x4 cube parity algorithms
-1      | 4x4 edge parity parity algorithm
-1      | 4x4 edge parity parity algorithms
+1      | 4x4 edge parity algorithm
+1      | 4x4 edge parity algorithms
 25     | 4x4 parity algorithm
 12     | 4x4 parity algorithms
 1      | 4x4 parity error algorithms
 1      | 4x4 pll parity algorithms
-23     | 4x4 rubik cube cube algorithm
-11     | 4x4 rubik cube cube algorithms
+23     | 4x4 rubik cube algorithm
+11     | 4x4 rubik cube algorithms
 1      | 4x4 rubix cube algorithms
 1      | 4x4x4 algorithm
 1      | 4x4x4 algorithms
@@ -82,9 +82,9 @@
 5      | aap hypoglycemia algorithm
 1      | aap nrp algorithm
 6      | abdominal pain algorithm
-12     | abnormal pap pap algorithm
-3      | abnormal pap pap algorithm acog
-7      | abnormal pap pap smear algorithm
+12     | abnormal pap algorithm
+3      | abnormal pap algorithm acog
+7      | abnormal pap smear algorithm
 1      | acc aha acls algorithms
 2      | ace algorithm
 7      | ace diabetes algorithm
@@ -218,8 +218,8 @@
 14     | acs algorithm
 8      | acs treatment algorithm
 1      | action algorithm
-1      | active learning learning algorithm
-3      | active learning learning algorithms
+1      | active learning algorithm
+3      | active learning algorithms
 1      | activity algorithm
 1      | activity selection algorithm
 1      | acute asthma algorithm
@@ -1447,7 +1447,7 @@
 1      | algorithms flow chart
 1      | algorithms formula
 5      | algorithms fourth edition
-7      | algorithms fourth edition edition pdf
+7      | algorithms fourth edition pdf
 4      | algorithms gcd
 1      | algorithms genetics
 1      | algorithms graphs
@@ -1668,8 +1668,8 @@
 5      | aml treatment algorithm
 5      | amortization algorithm
 1      | amortized cost algorithm
-1      | anagram algorithm algorithm c
-3      | anagram algorithm algorithm python
+1      | anagram algorithm c
+3      | anagram algorithm python
 10     | analysis algorithm
 4      | analysis algorithm pdf
 1      | analysis algorithm tutorial
@@ -1685,7 +1685,7 @@
 4      | analyzing algorithms
 1      | anaphylactic shock algorithm
 3      | anaphylaxis algorithm
-1      | anaphylaxis algorithm algorithm acls
+1      | anaphylaxis algorithm acls
 34     | anemia algorithm
 5      | anemia algorithm aafp
 4      | anemia algorithm pdf
@@ -1708,8 +1708,8 @@
 1      | ant colony algorithm
 1      | ant colony search algorithm
 1      | ant swarm algorithm
-1      | anti aliasing aliasing algorithm
-1      | anti aliasing aliasing algorithms
+1      | anti aliasing algorithm
+1      | anti aliasing algorithms
 5      | anticoagulation algorithm
 5      | antihypertensive algorithm
 1      | ants colony algorithm
@@ -1726,11 +1726,11 @@
 4      | approximation algorithms
 1      | approximations algorithms
 65     | apriori algorithm
-1      | apriori algorithm algorithm data mining
-25     | apriori algorithm algorithm example
-8      | apriori algorithm algorithm python
-1      | apriori algorithm algorithm rules
-1      | apriori algorithm algorithm wiki
+1      | apriori algorithm data mining
+25     | apriori algorithm example
+8      | apriori algorithm python
+1      | apriori algorithm rules
+1      | apriori algorithm wiki
 3      | aprs passcode algorithm
 2      | aprv algorithm
 4      | ards algorithm
@@ -1803,8 +1803,8 @@
 1      | asthma therapy algorithm
 19     | asthma treatment algorithm
 8      | astronomical algorithms
-1      | astronomical algorithms algorithms meeus
-1      | astronomical algorithms algorithms pdf
+1      | astronomical algorithms meeus
+1      | astronomical algorithms pdf
 5      | asymmetric algorithm
 3      | asymmetric key algorithm
 3      | asymmetric key algorithms
@@ -1839,10 +1839,10 @@
 1      | automation algorithms
 1      | autonomous vehicle algorithm
 1      | autoregressive algorithm
-9      | avl tree tree algorithm
-1      | avl tree tree balancing algorithm
-1      | avl tree tree insertion algorithm
-1      | avl tree tree rotation algorithm
+9      | avl tree algorithm
+1      | avl tree balancing algorithm
+1      | avl tree insertion algorithm
+1      | avl tree rotation algorithm
 1      | b algorithm
 1      | b spline algorithm
 1      | b tree search algorithm
@@ -1856,7 +1856,7 @@
 1      | backprojection algorithm
 1      | backprop algorithm
 60     | backpropagation algorithm
-1      | backpropagation algorithm algorithm pdf
+1      | backpropagation algorithm pdf
 5      | backtrack algorithm
 1      | backtrack algorithm example
 1      | backtrack algorithms
@@ -1985,7 +1985,7 @@
 5      | best searching algorithm
 1      | best searching algorithms
 22     | best sort algorithm
-1      | best sort algorithm algorithm java
+1      | best sort algorithm java
 16     | best sorting algorithm
 9      | best sorting algorithms
 1      | best sorting algorithms java
@@ -2049,7 +2049,7 @@
 1      | binary search tree algorithm
 1      | binary searching algorithm
 4      | binary sort algorithm
-1      | binary sort algorithm algorithm java
+1      | binary sort algorithm java
 1      | binary sorting algorithm
 1      | binary square root algorithm
 1      | binary subtraction algorithm
@@ -2077,8 +2077,8 @@
 1      | black box algorithmic trading
 5      | black scholes algorithm
 7      | bladder scan algorithm
-1      | blank algorithm algorithm example
-8      | blank algorithm algorithm template
+1      | blank algorithm example
+8      | blank algorithm template
 10     | blast algorithm
 1      | blast alignment algorithm
 5      | blastn algorithm
@@ -2112,8 +2112,8 @@
 1      | booth division algorithm
 1      | bootstrap algorithm
 3      | borda algorithm
-1      | boruvka algorithm algorithm example
-1      | boruvka algorithm algorithm proof
+1      | boruvka algorithm example
+1      | boruvka algorithm proof
 7      | bounding box algorithm
 7      | bowel regimen algorithm
 1      | box cox algorithm
@@ -2133,13 +2133,13 @@
 3      | bradycardia algorithm pals
 4      | bradycardia pulse algorithm
 6      | brain algorithm
-1      | branch prediction prediction algorithm
-1      | branch prediction prediction algorithms
-10     | breadth first first algorithm
-1      | breadth first first algorithms
+1      | branch prediction algorithm
+1      | branch prediction algorithms
+10     | breadth first algorithm
+1      | breadth first algorithms
 5      | bresenham circle algorithm
 9      | bresenham line algorithm
-1      | bresenham line algorithm algorithm c
+1      | bresenham line algorithm c
 3      | brian kernighan algorithm
 1      | brightness contrast algorithm
 3      | bronchitis algorithm
@@ -2176,7 +2176,7 @@
 1      | bubbles algorithm
 1      | bucket brigade algorithm
 8      | bucket sort algorithm
-1      | bucket sort algorithm algorithm c
+1      | bucket sort algorithm c
 11     | build algorithm
 1      | build algorithms
 1      | build heap algorithm
@@ -2317,10 +2317,10 @@
 1      | chemistry algorithms
 10     | chess algorithm
 1      | chess minimax algorithm
-13     | chest pain pain algorithm
-1      | chest pain pain algorithm diagram
-7      | chest pain pain triage algorithm
-1      | chest pain pain workup algorithm
+13     | chest pain algorithm
+1      | chest pain algorithm diagram
+7      | chest pain triage algorithm
+1      | chest pain workup algorithm
 12     | chf algorithm
 10     | chf treatment algorithm
 4      | cholesky algorithm
@@ -2405,7 +2405,7 @@
 5      | coin algorithm
 1      | coin changing algorithm
 1      | collection algorithms
-1      | collection algorithms algorithms java
+1      | collection algorithms java
 1      | collision algorithm
 1      | collision avoidance algorithm
 1      | collision detection algorithm
@@ -2545,9 +2545,9 @@
 2      | cormen algorithms pdf
 3      | cormen algorithms solutions
 4      | cormen intro algorithms
-1      | cormen intro algorithms algorithms pdf
-4      | corner parity parity 4x4 algorithm
-1      | corner parity parity algorithm
+1      | cormen intro algorithms pdf
+4      | corner parity 4x4 algorithm
+1      | corner parity algorithm
 1      | correlation algorithms
 1      | cortical algorithm
 3      | cough algorithm
@@ -2557,7 +2557,7 @@
 6      | counting algorithm
 1      | counting algorithm c
 1      | counting sort algorithm
-1      | counting sort algorithm algorithm java
+1      | counting sort algorithm java
 1      | cours algorithmique
 1      | cours des algorithmes
 1      | course algorithms
@@ -2659,9 +2659,9 @@
 5      | cvv generator algorithm
 6      | cycle detection algorithm
 5      | cyk algorithm
-1      | cyk algorithm algorithm c
-1      | cyk algorithm algorithm ppt
-1      | cyk algorithm algorithm table
+1      | cyk algorithm c
+1      | cyk algorithm ppt
+1      | cyk algorithm table
 5      | cytology algorithm
 10     | d algorithm
 1      | d algorithm example
@@ -2707,7 +2707,7 @@
 1      | data parallel algorithms
 1      | data quality algorithms
 11     | data science algorithms
-1      | data science algorithms algorithms pdf
+1      | data science algorithms pdf
 6      | data smoothing algorithms
 39     | data structure algorithm
 1      | data structure algorithm book
@@ -2734,8 +2734,8 @@
 1      | de identification algorithm
 1      | de novo assembly algorithms
 1      | dea number algorithm
-6      | dead reckoning reckoning algorithm
-4      | dead reckoning reckoning algorithms
+6      | dead reckoning algorithm
+4      | dead reckoning algorithms
 1      | deadlock avoidance algorithm
 1      | deadlock detection algorithm
 1      | deadlock detection algorithms
@@ -2917,11 +2917,11 @@
 1      | different type algorithms
 1      | different types algorithm
 2      | different types algorithms
-45     | difficult airway airway algorithm
-1      | difficult airway airway algorithms
-14     | diffie hellman hellman algorithm
-1      | diffie hellman hellman algorithm c
-1      | diffie hellman hellman key algorithm
+45     | difficult airway algorithm
+1      | difficult airway algorithms
+14     | diffie hellman algorithm
+1      | diffie hellman algorithm c
+1      | diffie hellman key algorithm
 1      | diffing algorithm
 1      | diffing algorithms
 9      | digest algorithm
@@ -2958,7 +2958,7 @@
 1      | dijkstra algorithms
 1      | dijkstra prim algorithm
 10     | dijkstra s algorithm
-1      | dijkstra s algorithm algorithm java
+1      | dijkstra s algorithm java
 1      | dijkstra search algorithm
 1      | dijkstra's algorithm
 14     | dijkstra's_algorithm
@@ -3073,7 +3073,7 @@
 1      | does hashing algorithm work
 1      | does prim algorithm work
 8      | does standard algorithm
-19     | does standard algorithm algorithm mean
+19     | does standard algorithm mean
 5      | does word algorithm mean
 1      | dogleg trust region algorithm
 1      | domain algorithm
@@ -3087,7 +3087,7 @@
 6      | double hashing algorithm
 1      | downhill simplex algorithm
 1      | download algorithm
-1      | download algorithm algorithm software
+1      | download algorithm software
 1      | dp algorithms
 1      | dr algorithm
 7      | dragon curve algorithm
@@ -3129,10 +3129,10 @@
 5      | edge detection algorithms
 1      | edge finding algorithm
 1      | edge flip algorithm
-1      | edge flip algorithm algorithm 4x4
+1      | edge flip algorithm 4x4
 1      | edge parity 4x4 algorithm
 5      | edgerank algorithm
-5      | edgerank algorithm algorithm explained
+5      | edgerank algorithm explained
 15     | edit distance algorithm
 1      | effective algorithm
 1      | effective algorithms
@@ -3150,8 +3150,8 @@
 11     | eight point algorithm
 6      | eigrp algorithm
 8      | eigrp dual algorithm
-5      | el gamal gamal algorithm
-1      | el gamal gamal encryption algorithm
+5      | el gamal algorithm
+1      | el gamal encryption algorithm
 1      | elementary algorithms
 1      | elementary math algorithms
 1      | elements algorithm
@@ -3255,7 +3255,7 @@
 2      | euclid division algorithm
 10     | euclid extended algorithm
 9      | euclid gcd algorithm
-1      | euclid gcd algorithm algorithm java
+1      | euclid gcd algorithm java
 182    | euclidean algorithm
 2      | euclidean algorithm backwards
 4      | euclidean algorithm c
@@ -3287,8 +3287,8 @@
 1      | evaluation anemia algorithm
 1      | even distribution algorithm
 1      | even odd algorithm
-8      | eventide h9 h9 algorithm price
-1      | eventide h9 h9 algorithms
+8      | eventide h9 algorithm price
+1      | eventide h9 algorithms
 5      | everyday algorithms
 6      | everyday math algorithms
 1      | evolution algorithms
@@ -3378,7 +3378,7 @@
 1      | extended algorithm
 1      | extended division algorithm
 6      | extended euclid algorithm
-1      | extended euclid algorithm algorithm gcd
+1      | extended euclid algorithm gcd
 58     | extended euclidean algorithm
 7      | extended gcd algorithm
 6      | external sort algorithm
@@ -3414,8 +3414,8 @@
 12     | facebook new algorithm
 8      | facebook news feed algorithm
 5      | facemash algorithm
-5      | facial recognition recognition algorithm
-6      | facial recognition recognition algorithms
+5      | facial recognition algorithm
+6      | facial recognition algorithms
 4      | factorial algorithm
 11     | factoring algorithm
 4      | fagin algorithm
@@ -3461,7 +3461,7 @@
 1      | fbp algorithm
 6      | fcfs algorithm
 3      | fcfs scheduling algorithm
-6      | fcfs scheduling algorithm algorithm c
+6      | fcfs scheduling algorithm c
 1      | fcm clustering algorithm
 1      | fcs algorithm
 1      | fdtd algorithm
@@ -3473,8 +3473,8 @@
 1      | fertility workup algorithm
 1      | fever without focus algorithm
 6      | fft algorithm
-1      | fft algorithm algorithm example
-1      | fft algorithm algorithm java
+1      | fft algorithm example
+1      | fft algorithm java
 11     | fib acls algorithm
 5      | fib algorithm
 1      | fib algorithms
@@ -3533,8 +3533,8 @@
 1      | flock algorithm
 13     | flocking algorithm
 8      | flood algorithm
-1      | flow control control algorithm
-1      | flow control control algorithms
+1      | flow control algorithm
+1      | flow control algorithms
 7      | flowchart algorithm
 1      | flowchart algorithm example
 3      | flowchart algorithm examples
@@ -3547,8 +3547,8 @@
 10     | floyd cycle finding algorithm
 1      | floyd marshall algorithm
 16     | floyd warshall algorithm
-1      | floyd warshall algorithm algorithm c
-1      | floyd warshall algorithm algorithm code
+1      | floyd warshall algorithm c
+1      | floyd warshall algorithm code
 1      | fluid simulation algorithm
 1      | fmincon algorithm
 1      | focus algorithms
@@ -3565,7 +3565,7 @@
 5      | forex trading algorithms
 1      | form algorithm
 1      | formal algorithm
-1      | formal algorithm algorithm definition
+1      | formal algorithm definition
 3      | formula algorithm
 18     | fortune algorithm
 1      | fortunes algorithm
@@ -3574,7 +3574,7 @@
 1      | forward chaining algorithm
 1      | foundation algorithms pdf
 8      | foundations algorithms
-4      | foundations algorithms algorithms pdf
+4      | foundations algorithms pdf
 6      | four russians algorithm
 1      | fourier algorithm
 14     | fractal algorithm
@@ -3586,8 +3586,8 @@
 1      | fraud algorithms
 1      | fraud detection algorithms
 2      | frax algorithm
-1      | frax algorithm algorithm bone density
-1      | frax algorithm algorithm osteoporosis
+1      | frax algorithm bone density
+1      | frax algorithm osteoporosis
 1      | free acls algorithm
 24     | free acls algorithms
 1      | free acls algorithms practice
@@ -3648,7 +3648,7 @@
 1      | ga algorithm
 6      | galactorrhea algorithm
 27     | gale shapley algorithm
-6      | gale shapley algorithm shapley algorithm algorithm code
+6      | gale shapley algorithm code
 6      | galgorithm
 1      | game algorithm
 2      | game algorithms
@@ -3783,7 +3783,7 @@
 8      | glycemic control algorithm
 1      | gmdh algorithm
 16     | god algorithm
-9      | god algorithm algorithm rubik cube
+9      | god algorithm rubik cube
 2      | gold algorithm copd
 2      | gold copd algorithm
 5      | goldman chest pain algorithm
@@ -3796,13 +3796,13 @@
 1      | gossip algorithm
 11     | gout treatment algorithm
 6      | gpg algorithm
-1      | gpg algorithm algorithm list
+1      | gpg algorithm list
 1      | gradient algorithm
 17     | gradient descent algorithm
-1      | gradient descent algorithm algorithm c
+1      | gradient descent algorithm c
 10     | gram negative algorithm
 1      | gram schmidt algorithm
-1      | gram schmidt algorithm algorithm matlab
+1      | gram schmidt algorithm matlab
 12     | graph algorithm
 1      | graph algorithm shortest path
 17     | graph algorithms
@@ -3955,7 +3955,7 @@
 5      | heap sorting algorithm
 1      | heap sorting algorithms
 1      | heapify algorithm
-1      | heapify algorithm algorithm java
+1      | heapify algorithm java
 7      | heapsort algorithm
 7      | heart algorithms
 1      | heart block algorithms
@@ -3968,8 +3968,8 @@
 5      | hematuria algorithm
 7      | hemolytic anemia algorithm
 5      | hemoptysis algorithm
-5      | hep c c testing algorithm
-3      | hep c c treatment algorithm
+5      | hep c testing algorithm
+3      | hep c treatment algorithm
 6      | heparin algorithm
 5      | hepatitis algorithm
 8      | hepatitis c algorithm
@@ -4117,7 +4117,7 @@
 6      | induction algorithm
 4      | infant fever algorithm
 7      | infix postfix algorithm
-1      | infix postfix algorithm algorithm java
+1      | infix postfix algorithm java
 6      | infix prefix algorithm
 1      | inflate algorithm
 3      | influenza testing algorithm
@@ -4275,10 +4275,10 @@
 5      | jpeg compression algorithm
 1      | jpg compression algorithm
 5      | jumpstart triage algorithm
-68     | just culture culture algorithm
-28     | just culture culture algorithm pdf
-4      | just culture culture algorithm ppt
-5      | just culture culture algorithms
+68     | just culture algorithm
+28     | just culture algorithm pdf
+4      | just culture algorithm ppt
+5      | just culture algorithms
 1      | k algorithm clustering
 1      | k cluster algorithm
 6      | k clustering algorithm
@@ -4303,7 +4303,7 @@
 7      | k nn algorithm
 1      | k selection algorithm
 22     | kadane algorithm
-1      | kadane algorithm algorithm c
+1      | kadane algorithm c
 3      | kalman filter algorithm
 1      | kalman filtering algorithm
 1      | kanade algorithm
@@ -4319,8 +4319,8 @@
 1      | key generation algorithm
 1      | key generation algorithms
 4      | key_algorithm
-23     | keyword search search algorithm
-1      | keyword search search algorithms
+23     | keyword search algorithm
+1      | keyword search algorithms
 4      | kleene algorithm
 4      | kleinberg algorithm design
 1      | kleinberg algorithms
@@ -4370,7 +4370,7 @@
 1      | kruskal algorithm youtube
 1      | kruskal algorithms
 7      | kruskal s algorithm
-1      | kruskal s algorithm algorithm example
+1      | kruskal s algorithm example
 1      | kruskals algorithm java
 1      | l algorithme
 4      | l bfgs b algorithm
@@ -4381,11 +4381,11 @@
 1      | lalr parser algorithm
 1      | lamports bakery algorithm
 5      | lanczos algorithm
-1      | lanczos algorithm algorithm matlab
+1      | lanczos algorithm matlab
 1      | language algorithm
 1      | language detection algorithm
-1      | las vegas vegas algorithm
-6      | las vegas vegas algorithms
+1      | las vegas algorithm
+6      | las vegas algorithms
 5      | latest acls algorithms
 8      | latex algorithm
 4      | latex algorithm environment
@@ -4400,15 +4400,15 @@
 1      | latex writing algorithms
 1      | latin square algorithm
 20     | lattice algorithm
-14     | lattice algorithm algorithm addition
+14     | lattice algorithm addition
 3      | lavalle planning algorithms
 1      | layout algorithm
 20     | lcm algorithm
 4      | lcs algorithm
 16     | lda algorithm
 5      | lead scoring algorithm
-5      | leader election election algorithm
-1      | leader election election algorithms
+5      | leader election algorithm
+1      | leader election algorithms
 1      | league scheduling algorithm
 10     | leap year algorithm
 4      | leapfrog algorithm
@@ -4443,8 +4443,8 @@
 11     | least squares algorithm
 1      | left edge algorithm
 1      | left right algorithm
-6      | lempel ziv ziv algorithm
-1      | lempel ziv ziv welch algorithm
+6      | lempel ziv algorithm
+1      | lempel ziv welch algorithm
 1      | letter frequency algorithm
 11     | levenberg marquardt algorithm
 4      | levenshtein algorithm
@@ -4491,12 +4491,12 @@
 8      | linear time algorithm
 1      | linearity algorithm
 1      | linearization algorithm
-1      | link state routing state routing routing algorithm
-7      | link state routing state routing routing algorithms
-5      | linked list list algorithm
-1      | linked list list algorithms
-1      | linked list list sort algorithm
-1      | linked list list sorting algorithm
+1      | link state routing algorithm
+7      | link state routing algorithms
+5      | linked list algorithm
+1      | linked list algorithms
+1      | linked list sort algorithm
+1      | linked list sorting algorithm
 1      | linux scheduling algorithm
 2      | lipid algorithm
 5      | list algorithm
@@ -4510,8 +4510,8 @@
 1      | list prime numbers algorithm
 2      | list processing algorithm
 1      | list routing algorithms
-1      | list rubik cube cube algorithm
-3      | list rubik cube cube algorithms
+1      | list rubik cube algorithm
+3      | list rubik cube algorithms
 1      | list rubix cube algorithms
 5      | list search algorithm
 1      | list searching algorithms
@@ -4522,7 +4522,7 @@
 21     | litecoin algorithm
 2      | litecoin scrypt algorithm
 11     | lloyd algorithm
-6      | lloyd algorithm algorithm k means
+6      | lloyd algorithm k means
 6      | lloyds algorithm
 1      | lm hash algorithm
 1      | lms adaptive algorithm
@@ -4532,8 +4532,8 @@
 1      | lms algorithm derivation
 1      | lms algorithm matlab
 1      | lms algorithms
-2      | load balancing balancing algorithm
-6      | load balancing balancing algorithms
+2      | load balancing algorithm
+6      | load balancing algorithms
 1      | local algorithm
 4      | local alignment algorithm
 1      | local beam search algorithm
@@ -4677,8 +4677,8 @@
 1      | master method algorithms
 5      | master theorem algorithms
 5      | mastercard algorithm
-1      | mastering algorithms algorithms c
-5      | mastering algorithms algorithms perl
+1      | mastering algorithms c
+5      | mastering algorithms perl
 10     | mastermind algorithm
 1      | mastermind game algorithm
 3      | match algorithm
@@ -4789,9 +4789,9 @@
 1      | merge sort example algorithm
 1      | merge sort java algorithm
 1      | merge sorting algorithm
-1      | mergesort algorithm algorithm c
-1      | mergesort algorithm algorithm c++
-6      | mergesort algorithm algorithm java
+1      | mergesort algorithm c
+1      | mergesort algorithm c++
+6      | mergesort algorithm java
 1      | merging algorithm
 6      | mersenne twister algorithm
 1      | mesh routing algorithms
@@ -4825,10 +4825,10 @@
 3      | miller rabin algorithm
 2      | min heap algorithm
 17     | minimax algorithm
-1      | minimax algorithm algorithm c
-1      | minimax algorithm algorithm code
-5      | minimax algorithm algorithm example
-1      | minimax algorithm algorithm tic tac toe
+1      | minimax algorithm c
+1      | minimax algorithm code
+5      | minimax algorithm example
+1      | minimax algorithm tic tac toe
 1      | minimum algorithm
 1      | minimum flow algorithm
 13     | mining algorithms
@@ -4859,8 +4859,8 @@
 1      | molecular docking algorithms
 1      | momentum trading algorithm
 1      | mona algorithm
-7      | monte carlo carlo algorithm
-1      | monte carlo carlo method algorithm
+7      | monte carlo algorithm
+1      | monte carlo method algorithm
 4      | moore algorithm
 1      | most common algorithms
 1      | most common sorting algorithm
@@ -4916,10 +4916,10 @@
 1      | n squared algorithm
 5      | nagel algorithm
 28     | nagle algorithm
-1      | nagle algorithm algorithm cisco
-6      | nagle algorithm algorithm disable
-1      | nagle algorithm algorithm mabinogi
-1      | nagle algorithm algorithm windows
+1      | nagle algorithm cisco
+6      | nagle algorithm disable
+1      | nagle algorithm mabinogi
+1      | nagle algorithm windows
 1      | nagling algorithm
 4      | naive algorithm
 47     | naive bayes algorithm
@@ -5021,7 +5021,7 @@
 1      | npi validation algorithm
 1      | nrmp algorithm match
 5      | nrmp match algorithm
-1      | nrmp match algorithm algorithm video
+1      | nrmp match algorithm video
 1      | nrmp matching algorithm
 6      | nrp 7th edition algorithm
 61     | nrp algorithm
@@ -5087,9 +5087,9 @@
 16     | oll algorithms pdf
 1      | oll algorithms printable
 10     | oll pll algorithms
-4      | oll pll algorithms algorithms 2x2
-1      | oll pll algorithms algorithms pdf
-3      | oll pll algorithms algorithms printable
+4      | oll pll algorithms 2x2
+1      | oll pll algorithms pdf
+3      | oll pll algorithms printable
 8      | once upon algorithm
 1      | one algorithm
 6      | one look pll algorithms
@@ -5153,8 +5153,8 @@
 4      | page ranking algorithm
 1      | page ranking algorithms
 28     | pagerank algorithm
-1      | pagerank algorithm algorithm example
-6      | pagerank algorithm algorithm python
+1      | pagerank algorithm example
+6      | pagerank algorithm python
 1      | paging algorithm
 1      | paging replacement algorithm
 1      | pah treatment algorithm
@@ -5274,10 +5274,10 @@
 17     | pattern recognition algorithm
 1      | pattern search algorithms
 11     | paxos algorithm
-4      | paxos algorithm algorithm explained
+4      | paxos algorithm explained
 7      | pbkdf2 algorithm
 10     | pca algorithm
-6      | pca algorithm algorithm example
+6      | pca algorithm example
 1      | pdf algorithm
 1      | pdf algorithm design manual
 1      | pdf algorithms
@@ -5328,8 +5328,8 @@
 1      | peripheral edema algorithm
 1      | perl algorithm
 6      | perl algorithms
-11     | perlin noise noise algorithm
-1      | perlin noise noise algorithms
+11     | perlin noise algorithm
+1      | perlin noise algorithms
 11     | permutation algorithm
 1      | permutation algorithm c
 3      | permutation algorithm java
@@ -5586,8 +5586,8 @@
 5      | psychopharmacology algorithms
 6      | public key algorithm
 13     | public key algorithms
-1      | public private key key algorithm
-1      | public private key key algorithms
+1      | public private key algorithm
+1      | public private key algorithms
 3      | pulmonary embolism algorithm
 3      | pulmonary nodule algorithm
 1      | pulmonary nodules algorithm
@@ -5602,7 +5602,7 @@
 1      | purpose stroke acls algorithm
 1      | puzzle algorithm
 21     | pyraminx algorithms
-2      | pyraminx algorithms algorithms pdf
+2      | pyraminx algorithms pdf
 6      | python algorithm
 5      | python algorithm definition
 1      | python algorithm development
@@ -5640,8 +5640,8 @@
 7      | python viterbi algorithm
 1      | q algorithm
 7      | q learning algorithm
-1      | q learning algorithm algorithm example
-1      | q learning algorithm algorithm matlab
+1      | q learning algorithm example
+1      | q learning algorithm matlab
 8      | qr algorithm
 1      | qr algorithm convergence
 1      | qr algorithm eigenvectors
@@ -5708,8 +5708,8 @@
 1      | rabin miller algorithm
 5      | radar tracking algorithms
 4      | radix sort algorithm
-1      | radix sort algorithm algorithm example
-1      | radix sort algorithm algorithm java
+1      | radix sort algorithm example
+1      | radix sort algorithm java
 7      | radix sorting algorithm
 1      | radix tree algorithm
 1      | radon transform algorithm
@@ -5795,8 +5795,8 @@
 1      | recursive sorting algorithms
 1      | recursive tree algorithm
 1      | red algorithm
-1      | red black tree tree algorithm
-1      | red black tree tree algorithms
+1      | red black tree algorithm
+1      | red black tree algorithms
 1      | red eye algorithm
 1      | reed solomon algorithm
 1      | region growing algorithm
@@ -5824,8 +5824,8 @@
 1      | resume parsing algorithm
 7      | retail algorithmic trading
 15     | rete algorithm
-1      | rete algorithm algorithm explained
-1      | rete algorithm algorithm implementation
+1      | rete algorithm explained
+1      | rete algorithm implementation
 1      | retinex algorithm
 1      | retrieval algorithms
 10     | reverse algorithm
@@ -5852,8 +5852,8 @@
 1      | rle compression algorithm
 1      | rms algorithm
 5      | rng algorithm
-1      | robert sedgewick sedgewick algorithm
-14     | robert sedgewick sedgewick algorithms
+1      | robert sedgewick algorithm
+14     | robert sedgewick algorithms
 1      | robot algorithm
 1      | robot navigation algorithm
 12     | rock paper scissors algorithm
@@ -5868,8 +5868,8 @@
 1      | rotate image algorithm
 1      | rotation algorithm
 4      | roulette algorithm
-8      | round robin robin algorithm
-1      | round robin robin algorithms
+8      | round robin algorithm
+1      | round robin algorithms
 5      | route optimization algorithm
 1      | routine algorithm
 1      | routing algorithm internet
@@ -5933,15 +5933,15 @@
 6      | rubik cube solving algorithm
 6      | rubik cube solving algorithms
 1      | rubik cubes algorithm
-1      | rubik cubes algorithm algorithm solve
-1      | rubik s cube cube 3x3 algorithms
-15     | rubik s cube cube algorithms
-1      | rubik s cube cube algorithms 3x3
+1      | rubik cubes algorithm solve
+1      | rubik s cube 3x3 algorithms
+15     | rubik s cube algorithms
+1      | rubik s cube algorithms 3x3
 1      | rubik solver algorithms
 1      | rubik solving algorithm
 1      | rubiks algorithm
 1      | rubiks cube algorithms
-1      | rubiks cube algorithms algorithms 3x3
+1      | rubiks cube algorithms 3x3
 11     | rubix algorithm
 18     | rubix algorithms
 1      | rubix cube 2x2 algorithms
@@ -6054,7 +6054,7 @@
 4      | sedgewick algorithms pdf
 7      | sedgewick wayne algorithms
 1      | sedgwick algorithms
-5      | sedgwick algorithms algorithms pdf
+5      | sedgwick algorithms pdf
 1      | seed encryption algorithm
 1      | segmentation algorithm
 1      | segmentation algorithms
@@ -6077,10 +6077,10 @@
 12     | self learning algorithm
 1      | semantic search algorithm
 5      | seminumerical algorithms
-1      | sensor fusion fusion algorithm
-1      | sensor fusion fusion algorithms
-6      | sentiment analysis analysis algorithm
-1      | sentiment analysis analysis algorithms
+1      | sensor fusion algorithm
+1      | sensor fusion algorithms
+6      | sentiment analysis algorithm
+1      | sentiment analysis algorithms
 2      | seo algorithm
 9      | sepsis algorithm
 4      | sepsis algorithm ed
@@ -6114,12 +6114,12 @@
 6      | sha1 algorithm
 16     | sha1 encryption algorithm
 10     | sha256 algorithm
-5      | sha256 algorithm algorithm explained
+5      | sha256 algorithm explained
 1      | shannon entropy algorithm
 16     | shell sort algorithm
-1      | shell sort algorithm sort algorithm algorithm c
-1      | shell sort algorithm sort algorithm algorithm example
-1      | shell sort algorithm sort algorithm algorithm java
+1      | shell sort algorithm c
+1      | shell sort algorithm example
+1      | shell sort algorithm java
 1      | shift algorithm
 5      | shifting nth root algorithm
 6      | shoelace algorithm
@@ -6152,7 +6152,7 @@
 4      | shunting algorithm
 1      | shunting algorithm java
 16     | shunting yard algorithm
-11     | shunting yard algorithm algorithm java
+11     | shunting yard algorithm java
 3      | siadh algorithm
 1      | siadh treatment algorithm
 5      | sierpinski carpet algorithm
@@ -6195,7 +6195,7 @@
 1      | simple hashing algorithms
 1      | simple k means algorithm
 1      | simple math algorithm
-1      | simple math algorithm algorithm example
+1      | simple math algorithm example
 1      | simple pathfinding algorithm
 1      | simple perceptron algorithm
 7      | simple quicksort algorithm
@@ -6269,12 +6269,12 @@
 1      | solve maze algorithm
 1      | solve megaminx algorithms
 1      | solve problem algorithm
-13     | solve rubik cube cube algorithm
-41     | solve rubik cube cube algorithms
-1      | solve rubiks cube cube algorithm
-1      | solve rubiks cube cube algorithms
-16     | solve rubix cube cube algorithm
-2      | solve rubix cube cube algorithms
+13     | solve rubik cube algorithm
+41     | solve rubik cube algorithms
+1      | solve rubiks cube algorithm
+1      | solve rubiks cube algorithms
+16     | solve rubix cube algorithm
+2      | solve rubix cube algorithms
 1      | solve simplex algorithm
 1      | solve sudoku algorithm
 1      | solver algorithm
@@ -6426,13 +6426,13 @@
 1      | square multiply algorithm
 14     | square one algorithms
 22     | square root algorithm
-1      | square root algorithm algorithm binary
-1      | square root algorithm algorithm python
+1      | square root algorithm binary
+1      | square root algorithm python
 1      | square roots algorithms
 3      | src algorithm
 2      | sscc check digit algorithm
-3      | ssh encryption encryption algorithm
-1      | ssh encryption encryption algorithms
+3      | ssh encryption algorithm
+1      | ssh encryption algorithms
 1      | ssha algorithm
 4      | ssl algorithm
 1      | ssl algorithms
@@ -6493,8 +6493,8 @@
 6      | star d treatment algorithm
 1      | star pathfinding algorithm
 17     | star search algorithm
-1      | star search algorithm algorithm c
-1      | star search algorithm algorithm java
+1      | star search algorithm c
+1      | star search algorithm java
 1      | stars algorithm
 4      | start algorithm
 19     | start triage algorithm
@@ -6543,8 +6543,8 @@
 1      | straight line algorithm
 1      | straightforward algorithm
 11     | strassen algorithm
-5      | strassen algorithm algorithm java
-1      | strassen algorithm algorithm python
+5      | strassen algorithm java
+1      | strassen algorithm python
 1      | stratification algorithm
 1      | stream algorithm
 1      | stream cipher algorithms
@@ -6599,8 +6599,8 @@
 26     | sudoku solving algorithms
 1      | suffix array algorithm
 1      | suffix tree algorithm
-1      | suite b b algorithm
-11     | suite b b algorithms
+1      | suite b algorithm
+11     | suite b algorithms
 1      | sum algorithm
 1      | sum product algorithm example
 1      | sum subset algorithm
@@ -6624,7 +6624,7 @@
 5      | svt algorithm acls
 18     | svt treatment algorithm
 1      | swap algorithm
-1      | swap algorithm algorithm c
+1      | swap algorithm c
 1      | swar algorithm
 4      | swarm algorithm
 1      | swarm algorithms
@@ -6672,7 +6672,7 @@
 1      | tachycardia algorithms
 11     | tachycardia pulse algorithm
 3      | tardos algorithm
-5      | tardos algorithm algorithm design pdf
+5      | tardos algorithm design pdf
 29     | tarjan algorithm
 1      | task scheduler algorithm
 1      | taylor series algorithm
@@ -6698,7 +6698,7 @@
 1      | testing syphilis algorithm
 1      | tetanus algorithm
 3      | texas algorithm
-3      | texas algorithm algorithm depression
+3      | texas algorithm depression
 1      | text clustering algorithm
 7      | text clustering algorithms
 1      | text compression algorithm
@@ -6731,9 +6731,9 @@
 5      | thompson algorithm
 4      | thrombocytopenia algorithm
 1      | tia treatment algorithm
-12     | tic tac toe tac toe toe algorithm
-1      | tic tac toe tac toe toe algorithm java
-6      | tic tac toe tac toe toe minimax algorithm
+12     | tic tac toe algorithm
+1      | tic tac toe algorithm java
+6      | tic tac toe minimax algorithm
 5      | time calculation algorithms
 1      | time complexities algorithms
 4      | time complexity algorithm
@@ -6742,7 +6742,7 @@
 1      | timetabling algorithms
 1      | timing algorithm
 15     | tiny encryption algorithm
-1      | tiny encryption algorithm encryption algorithm algorithm tea
+1      | tiny encryption algorithm tea
 1      | titration algorithm
 1      | tkip algorithm
 1      | tkip algorithms
@@ -6795,8 +6795,8 @@
 7      | trauma algorithm
 1      | travel algorithm
 6      | travel salesman algorithm
-20     | traveling salesman salesman algorithm
-1      | traveling salesman salesman algorithms
+20     | traveling salesman algorithm
+1      | traveling salesman algorithms
 7      | travelling salesman algorithm
 7      | traversal algorithms
 1      | treating asthma algorithm
@@ -6891,11 +6891,11 @@
 1      | understanding algorithm
 2      | understanding algorithms
 1      | unification algorithm ai
-1      | uniform cost cost algorithm
-9      | uniform cost cost search algorithm
-20     | union find find algorithm
-1      | union find find algorithm java
-1      | union find find algorithms
+1      | uniform cost algorithm
+9      | uniform cost search algorithm
+20     | union find algorithm
+1      | union find algorithm java
+1      | union find algorithms
 1      | unique algorithm
 1      | unit algorithm
 5      | universal algorithm
@@ -6952,12 +6952,12 @@
 1      | value algorithm
 1      | value iteration algorithm
 1      | variable algorithm
-6      | various sorting sorting algorithm
-1      | various sorting sorting algorithms
+6      | various sorting algorithm
+1      | various sorting algorithms
 2      | vazirani algorithms
-1      | vazirani algorithms algorithms book
-1      | vazirani algorithms algorithms pdf
-4      | vazirani algorithms algorithms solutions
+1      | vazirani algorithms book
+1      | vazirani algorithms pdf
+4      | vazirani algorithms solutions
 1      | vb net encryption algorithm
 5      | vba bubble sort algorithm
 1      | vba sorting algorithm
@@ -7008,8 +7008,8 @@
 1      | voice biometric algorithm
 1      | voice biometrics algorithm
 3      | voice recognition algorithms
-1      | void cube cube algorithms
-11     | void cube cube parity algorithm
+1      | void cube algorithms
+11     | void cube parity algorithm
 3      | voronoi algorithm
 5      | voronoi diagram algorithm
 8      | vt acls algorithm
@@ -7029,8 +7029,8 @@
 1      | watch algorithm movie
 1      | watch algorithms
 1      | water jug problem algorithm
-1      | weak encryption encryption algorithm
-5      | weak encryption encryption algorithms
+1      | weak encryption algorithm
+5      | weak encryption algorithms
 5      | weather forecasting algorithm
 1      | weather prediction algorithm
 1      | weather prediction algorithms
@@ -7055,8 +7055,8 @@
 4      | wells score algorithm
 6      | wep algorithm
 8      | wep encryption algorithm
-1      | what is is algorithm
-1      | what is is an algorithm
+1      | what is algorithm
+1      | what is an algorithm
 1      | whats algorithm
 1      | who created algorithm
 5      | who created algorithms
@@ -7138,7 +7138,7 @@
 3      | ws algorithm
 1      | wu line algorithm
 1      | www acls algorithms
-3      | www acls algorithms algorithms com
+3      | www acls algorithms com
 1      | www aclsalgorithms com
 1      | www algorithm
 1      | www sorting algorithms com
@@ -7149,8 +7149,8 @@
 6      | xor algorithm
 4      | xor encryption algorithm
 1      | xor swap algorithm
-5      | yahoo search search algorithm
-1      | yahoo search search engine algorithm
+5      | yahoo search algorithm
+1      | yahoo search engine algorithm
 1      | yamaha dx7 algorithms
 1      | yen algorithm
 4      | youtube acls algorithms

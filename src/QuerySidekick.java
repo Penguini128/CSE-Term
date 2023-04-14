@@ -28,14 +28,7 @@ public class QuerySidekick
     long startTime;
     int guessCount = 0; // Not used for much yet, could be useful
 
-    // Whether or not to display progress bar when processing old queries
-    private final boolean DISPLAY_PROGRESS_BAR = true;
-    // Whether or not to output debug text files after processing old queries
-    private final boolean OUTPUT_DEBUG_TEXT_FILES = false;
-    // How often (in file lines) the progress bar should be printed
-    private final int BAR_DISPLAY_INTERVAL = 6000;
-    // How long (in characters) the progress bar should be
-    private final int BAR_LENGTH = 30;
+    int misses = 0;
 
     // initialization of ...
     public QuerySidekick()
@@ -53,28 +46,12 @@ public class QuerySidekick
         // Attempt to create a Scanner to read the old query file
         File file = new File(oldQueryFile);
         Scanner scanner;
-        int lines;
         try {
             scanner = new Scanner(file);
-            // If the progress bar should be displayed...
-             if (DISPLAY_PROGRESS_BAR){
-                // Find how many lines are in the old query file by
-                // going through he whole file, then reset the scanner
-                lines = countAndBurnLines(scanner);
-                scanner.close();
-                scanner = new Scanner(file);
-             }
         } catch (FileNotFoundException e) {
             // If the file is not found, print an error message
             System.out.println("ERROR:\t Old query file not found");
             return;
-        }
-
-        // Initialize the start time (used for periodically printing progress bar)
-        if (DISPLAY_PROGRESS_BAR) {
-            System.out.println();
-            startTime = System.currentTimeMillis();
-            barTime = startTime;
         }
 
         // Tracks the current line number being read from the input file
@@ -86,9 +63,6 @@ public class QuerySidekick
             currentLine++;
             // Call garbage collector manually every 100 lines
             if (currentLine % 100 == 0) System.gc();
-
-            // If enabled, check if the progress bar should be printed
-            if (DISPLAY_PROGRESS_BAR) attemptPrintBar(currentLine, lines);
 
             // Get the input line and split it into space-separated tokens
             String line = scanner.nextLine();
@@ -110,30 +84,13 @@ public class QuerySidekick
             }
         }
 
-        // If enabled, output tree text file before compression
-        if (OUTPUT_DEBUG_TEXT_FILES) {
-            System.out.println("\n/!\\: Peak memory usage may be affected by outputting debug text files");
-            searchTree.writeToFile(oldQueryFile);
-        }
-
         // Compress tree
         searchTree.compress(null);
 
         SearchPhraseList.addPhrases(searchTree.getRoot());
+        SearchPhraseList.calculateWeights();
 
         guessTree.build(SearchPhraseList.getPhraseArray());
-
-        // If enabled, output tree text file after
-        // compression, as well as dictionary text file
-        if (OUTPUT_DEBUG_TEXT_FILES) {
-            searchTree.writeToFile(oldQueryFile);
-            Dictionary.writeToFile(oldQueryFile);
-            SearchPhraseList.writeToFile(oldQueryFile);
-            guessTree.writeToFile(oldQueryFile);
-        }
-
-        // Output formatting for debug purposes
-        if (DISPLAY_PROGRESS_BAR) System.out.println();
 
         scanner.close();
 
@@ -146,7 +103,7 @@ public class QuerySidekick
     {
         // All this does right now is call an occasional garbage collect to prevent spike in memory usage
         guessCount++;
-        if (guessCount % 10000 == 0) System.gc();
+        if (guessCount % 1000 == 0) System.gc();
         if (currCharPosition == 0) guessTree.reset();
         return guessTree.getGuess(currChar);
     }
@@ -166,48 +123,9 @@ public class QuerySidekick
     // c.         false               correct query
     public void feedback(boolean isCorrectGuess, String correctQuery)        
     {
-
-    }
-
-    /**
-     * If sufficient time has passed, prints a progress bar during old query file processing
-     * @param currentLine The current line number being processed
-     * @param lines The total number of lines to process
-     */
-    private void attemptPrintBar(int currentLine, int lines) {
-
-        // If not enough time has passed since last print, return
-        if (currentLine % BAR_DISPLAY_INTERVAL != 1 && currentLine != lines) return;
-
-        // Increase start time (effectively resets timer for progress bar printing)
-        barTime += BAR_DISPLAY_INTERVAL;
-        // Create a StringBuilder to store the String as it is created
-        StringBuilder sb = new StringBuilder();
-        // Calculate the completion percent, and from that the number
-        // of filled spaces on the progress bar
-        float completionPercent = currentLine / (float)lines;
-        int fill = (int)(BAR_LENGTH * completionPercent);
-        // Fill the first portion of the progress bar with filled squares
-        for (int i = 0; i < fill; i++) { sb.append("\u25A0");  }
-        // Fill the rest of the progress bar with spaces
-        for (int i = fill; i < BAR_LENGTH; i++) { sb.append(" "); }
-        // Print the progress bar, along with percent completion and fraction of lines completed
-        System.out.println(String.format("Progress: %5.1f%% [%s]  Time elapsed: %.2f seconds",
-                           completionPercent * 100, sb.toString(), (System.currentTimeMillis() - startTime) / 1000.0f));
-        
-    }
-
-    private int countAndBurnLines(Scanner scanner) {
-        // Scan through whole file, counting the number of lines
-        int lines = 0;
-        while (scanner.hasNextLine()) {
-            scanner.nextLine();
-            lines++;
-            // Call an occasional garbage collect to prevent spike in memory usage
-            if (lines % 1000 == 0) System.gc();
+        if (!isCorrectGuess && correctQuery != null) {
+            misses++;
+            //System.out.println("SEARCH PHRASE MISSED: " + correctQuery + ", " + misses);
         }
-        // Return the number of lines in the input file
-        return lines;
     }
-
 }

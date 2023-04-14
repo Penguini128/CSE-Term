@@ -16,6 +16,11 @@ public class SearchPhraseList {
 		return phraseArray.get(index).getFrequency();
 	}
 
+	public static float getPhraseWeight(int index) {
+		if (index == -1) return 0;
+		return phraseArray.get(index).getWeight();
+	}
+
 	public static String getString() {
 		StringBuilder sb = new StringBuilder();
 		for (TreeNode tn : phraseArray) {
@@ -47,6 +52,13 @@ public class SearchPhraseList {
 		}
 		return -1;
 	}
+
+	public static void calculateWeights() {
+		for (TreeNode tn : phraseArray) {
+			tn.updateWeight();
+		}
+	}
+
 
 	public static ArrayList<TreeNode> getPhraseArray() { return phraseArray; }
 

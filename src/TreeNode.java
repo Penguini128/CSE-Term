@@ -11,6 +11,8 @@ public class TreeNode {
     // The nodes containing data that may proceed the data in this node
     private TreeNode[] children;
 
+    private float weight = 0f;
+
     private boolean used = false;
 
     // General Constructor
@@ -57,12 +59,19 @@ public class TreeNode {
         addToData(children[0].data);
         // The frequency of this node should now be the frequency of the child
         frequency = children[0].frequency;
+        for (TreeNode tn : children[0].children) {
+            tn.parent = this;
+        }
         // The children of this node should now be the children of the child
         children = children[0].children;
     }
 
     // Increments "frequency"
     public void incrementFrequency() {  frequency++;  }
+
+    public void updateWeight() {
+        weight = frequency;
+    }
 
     // Increments "passingFrequency"
     public void incrementPassingFrequency() { passingFrequency++; }
@@ -154,6 +163,7 @@ public class TreeNode {
     public TreeNode getParent() { return parent; }
     public TreeNode[] getChildren() { return children; }
     public boolean isUsed() { return used; }
+    public float getWeight() { return weight; }
 
     /**
 	 * Returns the data stored within this class as a formatted String
