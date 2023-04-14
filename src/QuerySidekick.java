@@ -25,10 +25,8 @@ public class QuerySidekick
     Tree searchTree = new Tree(); // Stores data tree
     GuessTree guessTree = new GuessTree();
     long barTime; // Used for periodic printing of progress bar
-    long startTime;
     int guessCount = 0; // Not used for much yet, could be useful
-
-    int misses = 0;
+    int misses = 0; // Tracks the number of unsuccessfully guessed phrases
 
     // initialization of ...
     public QuerySidekick()
@@ -87,10 +85,16 @@ public class QuerySidekick
         // Compress tree
         searchTree.compress(null);
 
-        SearchPhraseList.addPhrases(searchTree.getRoot());
-        SearchPhraseList.calculateWeights();
+        // Add all phrases from the tree into "PhraseList"
+        // (This is then used to grab phrases for the guess tree)
+        PhraseList.addPhrases(searchTree.getRoot());
 
-        guessTree.build(SearchPhraseList.getPhraseArray());
+        // Calculate weights, which are used to determine guessing order of phrases
+        // (At the moment, this is just frequency. This may be useful later, or may become obselete)
+        PhraseList.calculateWeights();
+
+        // Generate the guess tree
+        guessTree.build(PhraseList.getPhraseArray());
 
         scanner.close();
 

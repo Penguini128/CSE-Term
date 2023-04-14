@@ -3,31 +3,43 @@ import java.io.IOException;
 import java.util.ArrayList;
 public class GuessTree {
     
+    // Root of the tree
     private GuessNode root;
 
+    // The current node being checked in the tree
+    // For each guess, this node gets updated
     private GuessNode currentNode;
 
+    // General Constructor
     GuessTree() {
         root = new GuessNode('-', null);
         currentNode = root;
     }
 
+    // Building a GuessTree from the list of all phrases and their frequencies
     public void build(ArrayList<TreeNode> phraseList) {
+        // Build the tree by calling the recursive build method, starting in the root node
         root.build(0, phraseList);
     }
 
+    // Resets guesses back to the top of the tree
     public void reset() {
         currentNode = root;
     }
 
+    // Retrieve and return the next list of guesses from the tree
     public String[] getGuess(char guessChar) {
-        
+        // Iterate through the children of the current guess node...
         for (GuessNode gn :currentNode.getChildren()) {
+            // If the letter within the current child node corresponds with the current input letter...
             if (gn.getGuessChar() == guessChar) {
+                // Update the current node to this child, and return the guesses stored within the child
                 currentNode = gn;
                 return gn.getGuesses();
             }
         }
+        // THIS NEEDS TO BE WORKED OUT. IF THERE ARE NO MORE VALID CHILDREN LEFT, SOMETHING SHOULD BE DONE
+        // RIGHT NOW, NO NEW GUESSES ARE GENERATED IN THIS CASE
         return currentNode.getGuesses();
     }
 

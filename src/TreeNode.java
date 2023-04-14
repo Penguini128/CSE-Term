@@ -69,6 +69,7 @@ public class TreeNode {
     // Increments "frequency"
     public void incrementFrequency() {  frequency++;  }
 
+    // Calculates and updates weight values (weight equation may be changed in the future)
     public void updateWeight() {
         weight = frequency;
     }
@@ -154,6 +155,7 @@ public class TreeNode {
         return true;
     }
 
+    // 
     public void setUsed() { used = true; }
 
     // Getter methods
@@ -185,7 +187,7 @@ public class TreeNode {
         return output;
     }
 
-    public String getSearchPhrase() {
+    public String getPhrase() {
         if (frequency == 0) return null;
         String phrase = toString();
         TreeNode currentNode = parent;

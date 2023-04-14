@@ -14,22 +14,21 @@ public class FileProfiler {
     // How long (in characters) the progress bar should be
     private static final int BAR_LENGTH = 30;
 
-	private static long barTime = 0;
 	private static long startTime;
 	private static final Tree searchTree = new Tree(); // Stores data tree
     private static final GuessTree guessTree = new GuessTree();
 	public static void main(String args[]) {
+
+        if (args.length != 2) {
+		    System.err.println("Usage: FileProfiler oldQueryFile newQueryFile");
+		    return;
+	    }
+
 		final String oldQueryFile = args[0];
 		final String newQueryFile = args[1];
 
-		
-
 		// Attempt to create a Scanner to read the old query file
         File file = new File(oldQueryFile);
-
-		String directoryName = oldQueryFile.substring(0, oldQueryFile.length()-4) + "Profile";
-		File directory = new File(directoryName);
-		directory.mkdir();
 
         Scanner scanner;
         int lines;
@@ -46,10 +45,13 @@ public class FileProfiler {
             return;
         }
 
+        String directoryName = oldQueryFile.substring(0, oldQueryFile.length()-4) + "Profile";
+		File directory = new File(directoryName);
+		directory.mkdir();
+
         // Initialize the start time (used for periodically printing progress bar)
         System.out.println();
         startTime = System.currentTimeMillis();
-        barTime = startTime;
 
         // Tracks the current line number being read from the input file
         int currentLine = 0;
@@ -123,21 +125,21 @@ public class FileProfiler {
         // Compress tree
         searchTree.compress(null);
 
-        SearchPhraseList.addPhrases(searchTree.getRoot());
-        SearchPhraseList.calculateWeights();
+        PhraseList.addPhrases(searchTree.getRoot());
+        PhraseList.calculateWeights();
 
         // If enabled, output tree text file after
         // compression, as well as dictionary text file
         if (OUTPUT_DEBUG_TEXT_FILES) {
             searchTree.writeToFile(directoryName + "\\" + oldQueryFile);
             Dictionary.writeToFile(directoryName + "\\" + oldQueryFile);
-            SearchPhraseList.writeToFile(directoryName + "\\" + oldQueryFile);
+            PhraseList.writeToFile(directoryName + "\\" + oldQueryFile);
         }
 
 		System.out.println();
 
 		System.out.println("Generating guess tree... This may take a while...\n");
-        guessTree.build(SearchPhraseList.getPhraseArray());
+        guessTree.build(PhraseList.getPhraseArray());
 
         if (OUTPUT_DEBUG_TEXT_FILES)
         guessTree.writeToFile(directoryName + "\\" + oldQueryFile);
@@ -150,9 +152,6 @@ public class FileProfiler {
 
         // If not enough time has passed since last print, return
         if (currentLine % BAR_DISPLAY_INTERVAL != 1 && currentLine != lines) return;
-
-        // Increase start time (effectively resets timer for progress bar printing)
-        barTime += BAR_DISPLAY_INTERVAL;
         // Create a StringBuilder to store the String as it is created
         StringBuilder sb = new StringBuilder();
         // Calculate the completion percent, and from that the number
