@@ -130,7 +130,7 @@ public class FileProfiler {
         guessTree.writeToFile(directoryName + "\\");
 
         System.out.println("Analyzing new queries... This may take a while...\n");
-        file = new File(args[1]);
+        file = new File(newQueryFile);
         Scanner input;
         try {
             input = new Scanner(file);
@@ -250,7 +250,7 @@ public class FileProfiler {
         // Scan through whole file, counting the number of lines
         int words = 0;
         while (scanner.hasNextLine()) {
-            for (String s : scanner.nextLine().split(" ")) { words++; }
+            words += scanner.nextLine().split(" ").length;
         }
         // Return the number of lines in the input file
         return words;
