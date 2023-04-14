@@ -66,7 +66,7 @@ public class Dictionary {
 	 * @return The index used to access the String it is exists within
 	 * 		   "dictionary", -1 if "dictionary" does not contain the String
 	 */
-	private static int contains(String s) {
+	public static int contains(String s) {
 		// Iterating through the index of "lookupTable"...
 		for (int i = 0; i < lookupTable.size(); i++) {
 			// If the retrieved word using "get()" is equal to s, return i
@@ -75,6 +75,8 @@ public class Dictionary {
 		// The word was not found within the Dictionary, return -1
 		return -1;
 	}
+
+	public static int size() { return lookupTable.size(); }
 
 	/**
 	 * Returns the data stored within this class as a formatted String

@@ -1,0 +1,803 @@
+Number of search phrases in old query file: 49618
+Number of unique phrases in old query file: 7173
+Number of unique words in old query file: 2833
+
+Number of search phrases in new query file: 49604
+Number of unique phrases in new query file: 7119
+Number of unique words in new query file: 2839
+
+Number of unrecognized search phrases in new query file: 3709
+Number of unrecognized words in new query file: 872
+
+Number of unique unrecognized search phrases in new query file: 3691
+Number of unique unrecognized words in new query file: 744
+
+Percentage of recognized search phrases in new query file: 92.52%
+Percentage of unrecognized search phrases in new query file: 7.48%
+
+Percentage of recognized words in new query file: 99.34%
+Percentage of unrecognized words in new query file: 0.77%
+
+Number of missed guesses: 9374
+Number of missed guesses that existed in old queries: 5665
+Percentage of new queries missed: 18.90%
+Percentage of new queries that were missed despite being old queries: 11.42%
+
+Missed old queries (along with # of times missed):
+9    | algorithm engineering
+26   | copd treatment algorithm
+8    | algorithm pythagorean theorem
+10   | conjugate gradient algorithm
+5    | algorithms computer programs
+31   | algorithm computer science
+30   | algorithm movie
+22   | algorithms cormen pdf
+9    | algorithms javascript
+7    | algorithm treatment asthma
+10   | algorithms sanjoy dasgupta
+6    | algorithm amazon
+11   | algorithmica
+10   | algorithms math
+11   | algorithm hypertension
+23   | algorithm java
+6    | algorithm solve sudoku
+7    | algorithm dizziness
+12   | algorithm step step
+6    | algorithms rubix cubes
+10   | common hashing algorithms
+6    | algorithm using
+21   | algorithmic thinking
+5    | comparison algorithms
+16   | algorithm app
+7    | algorithm course
+11   | algorithm generator
+9    | algorithm numbers
+19   | algorithm python
+4    | algorithm pronunciation
+5    | convex hull algorithms
+5    | algorithm microcytic anemia
+7    | algorithm learning
+9    | algorithm decision tree
+3    | algorithme pharma usa inc
+6    | create algorithm trading
+6    | algorithm design help
+17   | algorithm tutorial
+21   | cfop algorithms
+12   | algorithm latex
+6    | algorithmic trading platforms
+5    | cdc algorithm
+14   | algorithm music
+7    | algorithm quizlet
+12   | algorithm synonym
+18   | create algorithms
+6    | algorithm lotto
+20   | algorithms examples
+10   | card sorting algorithm
+5    | algorithm template free
+7    | algorithm array
+5    | algorithm heuristic
+6    | algorithm implementation
+16   | congenital syphilis algorithm
+18   | algorithms 4th edition
+5    | cyk algorithm
+11   | algorithm rubik
+4    | crc32 algorithm c
+5    | algorithmic trading books
+7    | algorithm triangle
+8    | algorithms dasgupta solutions
+25   | computer science algorithms
+19   | cardiac arrest acls algorithm
+4    | clock algorithm
+8    | computer algorithm examples
+12   | algorithm definition math
+6    | algorithms books
+6    | algorithm hyperlipidemia
+16   | algorithm wiki
+4    | algorithm pals
+9    | algorithm cardiac arrest
+3    | computational algorithm
+6    | algorithmic programming
+5    | algorithm trading stocks
+4    | algorithms dasgupta errata
+4    | algorithm diabetes treatment
+11   | combinatorial algorithms
+11   | complex algorithm
+5    | algorithm computer terms
+16   | algorithmically
+18   | algorithm javascript
+5    | create algorithm chart
+18   | algorithm cheat sheet
+22   | algorithm example math
+7    | algorithmic synonym
+29   | computer algorithms
+11   | algorithm solve rubix cube
+18   | algorithms python
+11   | algorithm math example
+6    | algorithm djay
+7    | algorithm hyponatremia
+4    | algorithm b
+10   | algorithmic music
+12   | classification algorithms
+24   | algorithme pharma
+16   | algorithms book
+6    | algorithmic trading example
+40   | algorithm programming
+9    | algorithm wikipedia
+9    | curve fitting algorithm
+5    | algorithm cough
+9    | algorithm practice
+2    | algorithm segment
+27   | algorithm solve rubik cube
+12   | algorithms day trading
+11   | algorithms sedgewick pdf
+23   | algorithmic problem solving
+4    | algorithmic mean
+5    | algorithmic investing
+8    | algorithm rubix cube
+4    | algorithm flow chart
+5    | algorithms com
+13   | algorithmic game theory
+9    | algorithm addition
+4    | complicated algorithm
+6    | algorithm search
+7    | algorithmic method
+14   | creating algorithms
+22   | algorithms meaning
+5    | algorithm computers
+8    | algorithm mathematics
+6    | card shuffling algorithms
+7    | acls algorithms practice test
+12   | algorithmic complexity
+16   | algorithm textbook
+8    | algorithm division
+9    | computer algorithm definition
+11   | algorithm anemia
+5    | class scheduling algorithm
+14   | algorithmic definition
+17   | computer algorithm beginners
+16   | algorithm design pdf
+4    | cll 2x2 algorithms
+14   | algorithm complexity
+4    | create trading algorithm
+6    | checksum algorithm
+9    | algorithms cormen
+19   | algorithms 4th edition pdf
+7    | algorithme pharma inc
+4    | algorithmic questions
+7    | color matching algorithm
+13   | algorithm templates
+4    | algorithm mean
+15   | algorithms rubik cube 3x3
+5    | checksum algorithm c
+6    | algorithmic solution problem
+5    | algorithm analysis big oh
+5    | algorithm mapping
+18   | algorithm calculator
+6    | algorithm visualizations
+11   | algorithm square root
+14   | algorithm bradycardia
+15   | algorithm math problems
+4    | coding algorithm
+5    | cardiac algorithm
+5    | copd management algorithm
+4    | algorithm investing
+11   | algorithm rubix
+6    | algorithm fibonacci series
+5    | algorithms fourth edition
+4    | caching algorithm
+5    | algorithm spelling
+10   | algorithm software
+26   | algorithmic trading python
+7    | algorithm sample
+9    | algorithm life
+9    | algorithm excel
+7    | cough algorithm
+6    | algorithm systems
+6    | algorithms clrs
+5    | algorithms psychology
+5    | check digit algorithm
+5    | algorithm games
+12   | cube cube cube algorithm
+4    | algorithms data mining
+5    | cervical cancer algorithm
+11   | algorithm vs program
+7    | crypto algorithms
+5    | cholesterol algorithm
+4    | algorithms assignment
+9    | algorithms c
+18   | algorithm live
+7    | algorithms computer
+9    | cmll algorithms
+24   | algorithm def
+5    | algorithms data structure
+4    | algorithmic approach
+21   | cryptographic algorithm
+6    | algorithm chart template
+10   | chess algorithm
+11   | algorithms 3x3 rubik cube
+7    | acls algorithm fib
+6    | algorithm standard
+13   | algorithm solutions
+7    | common java algorithms
+4    | algorithm running time
+10   | algorithmic trading dma
+8    | algorithm math worksheets
+8    | algorithm definition computer
+7    | algorithm definition kids
+6    | algorithm clrs
+7    | algorithm pi
+15   | cpr algorithm
+8    | algorithmic efficiency
+6    | crash airway algorithm
+4    | algorithmix
+3    | algorithm problems
+3    | algorithmically definition
+4    | algorithm uti
+5    | copd therapy algorithm
+5    | algorithm website
+4    | algorithms sedgwick
+10   | algorithm define
+6    | cdc syphilis algorithm
+5    | cushing syndrome algorithm
+5    | comparison sorting algorithms
+5    | convolution algorithm
+5    | caching algorithms
+3    | cca algorithm
+10   | algorithms computer science
+3    | convatec solutions algorithms
+7    | cormen algorithms solutions
+5    | algorithms master method
+3    | classification algorithm
+4    | algorithmic problem
+6    | algorithmics toronto
+9    | algorithms beginners
+10   | algorithms youtube
+9    | algorithm patent
+5    | algorithm stack
+9    | algorithms machine learning
+5    | algorithms multiplication
+3    | algorithms fourth edition pdf
+6    | algorithm finding pi
+10   | algorithm design applications
+7    | algorithm complexities
+10   | algorithm c
+13   | algorithm programmer
+13   | algorithm hyperthyroidism
+8    | computer science algorithm
+5    | algorithm sepsis treatment
+29   | algorithm pseudocode
+4    | common algorithms
+5    | algorithm download
+24   | compression algorithm
+19   | cryptography algorithms
+15   | algorithm flowchart
+17   | convex hull algorithm
+4    | cryptographic hash algorithms
+12   | algorithms live summary
+5    | algorithms algorithms
+7    | algorithms rubik cubes
+25   | algorithmic trading software
+6    | continued fraction algorithm
+13   | algorithms rubix cube
+13   | common algorithm
+17   | chest pain algorithm
+9    | algorithm asystole
+3    | algorithm gcd
+6    | code blue algorithm
+13   | algorithm math definition
+8    | algorithms cheat sheet
+4    | algorithm simple example
+6    | algorithm nutshell
+25   | algorithm analysis
+6    | caesar algorithm
+4    | crc ccitt algorithm
+7    | algorithm questions answers
+7    | cipher algorithms
+7    | algorithm news
+4    | common encryption algorithms
+5    | codon optimization algorithm
+5    | cytology algorithm
+10   | algorithm subtraction
+9    | algorithmic trading net
+8    | algorithm reverse linked list
+6    | algorithm p
+7    | algorithm vs heuristic
+13   | algorithms solve rubix cube
+8    | algorithmic design
+4    | algorithm are
+6    | algorithm solving sudoku
+8    | algorithmic forex trading
+6    | algorithm program
+6    | algorithm process
+5    | algorithm merge sort
+11   | algorithm diabetes management
+6    | algorithm design eva tardos
+5    | algorithms journal
+6    | algorithms pals
+7    | algorithm learning machine
+12   | coding algorithms
+6    | ct algorithm
+5    | cardiac arrest algorithm aha
+5    | algorithmique
+15   | algorithm efficiency
+5    | algorithm recursive function
+10   | algorithmic trading system
+3    | algorithms 3x3
+3    | algorithms math examples
+3    | cdc algorithm gbs
+8    | algorithmic trader
+10   | algorithms unlocked
+9    | algorithm youtube
+4    | algorithmics inc
+7    | algorithm find shortest path
+13   | algorithm examples math
+7    | algorithm fargo
+4    | algorithm time complexity
+12   | algorithm trading
+14   | algorithm solving rubik cube
+5    | algorithm development process
+13   | algorithm development
+7    | algorithms mathematics
+7    | cdc hcv algorithm
+6    | algorithm fractions
+5    | algorithm abnormal pap
+5    | algorithm writing format
+16   | algorithms live pdf
+6    | algorithms gcd
+6    | concept algorithm
+8    | algorithm software free
+12   | algorithm simple definition
+4    | computer graphics algorithms
+11   | algorithm method
+8    | cll algorithms
+2    | algorithm rubik cube 2x2
+7    | algorithm coding
+7    | control algorithm
+3    | algorithm defined as
+5    | algorithm bubble sort
+4    | algorithm efficiency big o
+5    | algorithms ai
+4    | cpr algorithms
+20   | algorithm book
+8    | algorithms templates
+6    | algorithm2e example
+12   | algorithm acls
+5    | algorithm based trading
+5    | algorithm diagram
+10   | create algorithm word
+21   | algorithme pharma fargo
+7    | algorithm form
+5    | algorithm vs formula
+3    | algorithm o n
+7    | algorithms papadimitriou
+3    | algorithm cost
+10   | code sepsis algorithm
+3    | cvv algorithm
+7    | algorithm success
+12   | copd guidelines algorithm
+6    | algorithms matlab
+33   | algorithms courses
+8    | algorithm abdominal pain
+8    | algorithm sepsis
+6    | algorithm animations
+6    | algorithm code examples
+5    | algorithm charts
+20   | algorithm multiplication
+9    | algorithmic trading systems
+5    | circle packing algorithm
+8    | acls algorithm pdf
+4    | algorithm animation
+7    | create own algorithm
+10   | algorithm complexity analysis
+9    | algorithm sorting array
+6    | algorithm formula
+10   | algorithm psychology
+5    | algorithm define standard
+7    | acls algorithm review
+4    | cart decision tree algorithm
+4    | cauti algorithm
+5    | contraception algorithm
+4    | algorithm calculate pi
+5    | algorithm sinus bradycardia
+4    | algorithmia colorize
+5    | algorithm problem solving
+4    | cluster algorithm
+13   | algorithm computer program
+10   | clustering algorithm
+9    | algorithmic puzzles
+3    | cdc cchd screening algorithm
+5    | algorithm templates word
+10   | algorithm sort
+5    | algorithm solve
+7    | algorithm tutorials beginners
+6    | algorithm simulation
+3    | algorithm r
+11   | algorithm based
+10   | algorithm runtime
+4    | algorithms net
+14   | algorithmic trading courses
+5    | algorithms wiki
+8    | algorithm defined
+7    | algorithm pseudocode examples
+10   | algorithms healthcare
+5    | algorithms course
+12   | cordic algorithm
+6    | concave hull algorithm
+5    | clustering algorithm example
+6    | algorithm cervical dysplasia
+5    | algorithm algorithm
+3    | algorithms investing
+11   | clinical algorithms
+6    | corman algorithm pdf
+10   | algorithms nutshell
+6    | algorithm format
+6    | crc algorithm
+5    | algorithmic beauty plants
+7    | algorithm linked list
+5    | algorithm synonyms
+12   | algorithm stock market
+7    | computer algorithms beginners
+3    | algorithm creator
+19   | algorithms training
+11   | cube cube algorithm
+4    | algorithmic trading firms
+7    | complicated algorithms
+7    | algorithms 4x4 rubik cube
+3    | algorithms examples math
+5    | algorithm computer definition
+5    | algorithm finance
+11   | algorithms textbook
+6    | algorithms means
+5    | cbc algorithm
+13   | algorithm pdf
+5    | cvv generator algorithm
+4    | algorithms exam questions
+6    | corner parity 4x4 algorithm
+6    | calculator algorithm
+6    | cube cube pattern algorithm
+4    | algorithm templates free
+6    | algorithm business
+4    | algorithms example
+6    | algorithm jobs
+4    | crypto algorithm
+11   | cormen algorithms
+5    | coin algorithm
+8    | cart algorithm
+4    | algorithm binary search
+12   | algorithmictrading net
+7    | cll algorithms 2x2
+6    | algorithm inc
+5    | algorithm practice problems
+4    | algorithm problems solutions
+7    | clustering algorithm python
+6    | algorithm pulseless v tach
+17   | algorithm design manual pdf
+4    | algorithms animation
+7    | algorithms number
+10   | algorithm prime numbers
+23   | compression algorithms
+11   | ckd treatment algorithm
+4    | cpu scheduling algorithm
+10   | chf treatment algorithm
+8    | algorithms depression
+6    | cholesky algorithm
+5    | complex computer algorithm
+4    | algorithm error
+4    | cardioversion algorithm
+4    | counting algorithm
+5    | cpu algorithms
+8    | algorithm decision making
+5    | create algorithm excel
+15   | algorithm engineer
+3    | algorithmic process
+4    | algorithm videos
+7    | algorithm win lottery
+3    | algorithm writing
+7    | algorithm rubix cube list
+12   | algorithms solving rubik cube
+5    | algorithms facebook
+2    | create algorithm online
+4    | cross correlation algorithm
+11   | complexity algorithm
+11   | algorithms list
+12   | algorithm2e
+5    | algorithm solve rubik
+9    | algorithms solve rubik cube
+6    | algorithmic data
+7    | cvv algorithm calculator
+8    | algorithm times
+4    | algorithm square roots
+7    | algorithm cpr
+4    | algorithms tutorial
+6    | algorithms explained
+6    | algorithms book site
+5    | algorithm pronounce
+5    | algorithms everyday life
+4    | algorithms c robert sedgewick
+4    | card shuffling algorithm
+6    | algorithm books
+7    | algorithms computers
+10   | algorithmic music generator
+6    | algorithmic trading reviews
+3    | color gradient algorithm
+4    | convatec wound care algorithm
+9    | creating algorithm excel
+6    | algorithms data structures c
+6    | crohn treatment algorithm
+6    | algorithm c programming
+18   | create algorithm beginners
+3    | algorithmic trading pdf
+4    | combination algorithm
+3    | algorithms java
+5    | algorithms proof
+4    | algorithm design answers
+5    | algorithm images
+6    | algorithmic trading platform
+6    | algorithmia com
+3    | algorithm 3rd grade math
+14   | algorithms pdf
+6    | algorithm numbers sequence
+4    | algorithm graph
+6    | cormen algorithm
+6    | algorithms are used
+2    | classifier algorithm
+8    | algorithms introduction
+6    | algorithm design foundations
+9    | algorithm dividing fractions
+5    | algorithm programs
+5    | clrs algorithms pdf
+5    | algorithm v tach
+7    | algorithm computer
+6    | algorithm v fib
+7    | algorithm cpp
+6    | algorithms data science
+4    | algorithm template word
+11   | characteristics algorithm
+3    | create lottery algorithm
+6    | algorithms are
+4    | care algorithms
+4    | algorithm sieve eratosthenes
+4    | algorithm kids
+7    | algorithms dasgupta pdf
+4    | algorithms r
+5    | algorithmic problems
+5    | cpp algorithms
+4    | algorithm number
+10   | algorithm code
+7    | algorithm chart
+9    | cvv algorithm code
+4    | algorithm diff
+2    | algorithms kids
+4    | algorithm video
+6    | algorithm dfs
+5    | algorithms dummies pdf
+8    | chf algorithm
+5    | algorithm analysis pdf
+6    | code algorithms
+7    | algorithmic composition
+5    | algorithm dummies
+7    | algorithm theory
+4    | chart algorithm
+4    | algorithm art
+20   | algorithmus
+6    | algorithm encryption
+6    | algorithm interviews
+3    | cardiac arrest algorithm acls
+7    | cervical cytology algorithm
+5    | convergence algorithm
+3    | algorithme pharma etude
+5    | algorithmic software
+2    | algorithms stock trading
+4    | cache algorithm
+6    | algorithms 2x2
+6    | algorithms 3x3x3 rubik cube
+6    | algorithm design slides
+13   | cube algorithms
+6    | algorithm data
+6    | algorithm developer
+4    | algorithm stemi
+2    | algorithm company
+4    | clinical algorithm
+6    | compression algorithm java
+11   | algorithmic solution
+8    | complete graph algorithm
+10   | algorithm facebook
+5    | algorithmatic
+12   | algorithmist
+5    | algorithm quiz
+5    | code algorithm
+18   | algorithm math examples
+7    | algorithms amazon
+9    | algorithm symbol
+2    | algorithm big o
+6    | algorithm problems examples
+4    | algorithm worksheets
+10   | credit card algorithm
+6    | algorithms life
+2    | cap treatment algorithm
+8    | algorithmic bias
+3    | circle drawing algorithm
+7    | cppreference algorithm
+6    | algorithm examples pseudocode
+8    | cormen algorithms pdf
+5    | algorithm power set
+14   | computational algorithms
+4    | algorithm svt
+12   | algorithm stock trading
+5    | check digit algorithms
+3    | creating algorithms excel
+7    | cardiac arrest algorithms
+6    | algorithm steps
+4    | clustering algorithms r
+6    | algorithm dictionary
+4    | algorithms definitions
+7    | cryptocurrency algorithms
+4    | cryptography algorithm
+5    | cchd screening algorithm
+8    | algorithms c sedgewick
+5    | algorithms real estate
+9    | clrs algorithms
+7    | algorithmic trading course
+6    | algorithm long division
+3    | chest pain triage algorithm
+8    | cardiogenic shock algorithm
+4    | algorithm studies
+5    | algorithm means
+4    | algorithmic music composition
+5    | c++ sorting algorithms
+1    | algorithms course princeton
+5    | cryptography algorithms list
+3    | credit card number algorithm
+3    | algorithms sorting
+4    | algorithms answers
+6    | algorithm dijkstra
+3    | algorithm data structure java
+6    | algorithm sty
+5    | creating algorithm
+3    | cervical screening algorithm
+6    | algorithmicx
+4    | algorithm shuffle deck cards
+7    | algorithm prime factorization
+6    | chord algorithm
+5    | algorithm twitter
+8    | code stroke algorithm
+4    | algorithm system
+7    | algorithms 2x2 rubik cube
+5    | algorithm manual design
+3    | algorithm example computer
+4    | algorithms coding
+6    | algorithms music
+6    | cardiac risk algorithm
+6    | algorithm companies
+4    | clipping algorithms
+5    | causes hyponatremia algorithm
+5    | common algorithm problems
+6    | algorithms cs
+3    | algorithm create
+6    | algorithm hyponatremia workup
+6    | algorithm bias
+7    | chronic cough algorithm
+4    | construct algorithm
+3    | algorithm thesaurus
+2    | cluster algorithms
+3    | computer algorithms baase
+6    | algorithm vs pseudocode
+5    | current acls algorithms
+3    | c++ ai algorithms
+5    | algorithms online course
+4    | algorithm medical
+4    | clrs introduction algorithms
+5    | algorithm data structures
+3    | algorithm bronchitis
+7    | clrs algorithm book
+3    | algorithm study
+5    | algorithm test
+4    | algorithms robert sedgewick
+5    | algorithms third edition
+5    | algorithmen
+5    | algorithm flowchart maker
+2    | cdc gbs algorithm
+5    | algorithm symbols
+2    | algorithm generator online
+4    | algorithm lesson
+8    | algorithm solving rubix cube
+3    | contrast reaction algorithm
+3    | algorithm htn treatment
+6    | algorithms define
+4    | canny algorithm
+5    | algorithmic traders
+3    | algorithm library
+3    | algorithms solutions
+6    | algorithms stock market
+3    | algorithms health care
+4    | coffee meets bagel algorithm
+6    | algorithm database
+2    | colposcopy algorithm
+5    | chebyshev algorithm
+4    | algorithm flowchart template
+2    | algorithm used
+2    | algorithm oxygen therapy
+6    | algorithm flowchart symbols
+4    | algorithm solver
+7    | algorithmic day trading
+4    | algorithms nutshell pdf
+4    | algorithm thrombocytopenia
+5    | algorithm tree
+3    | algorithm book pdf
+4    | algorithms vazirani dasgupta
+4    | algorithm works
+4    | algorithme pharma studies
+1    | algorithm best defined as
+6    | algorithms mean
+6    | algorithms complexity
+4    | algorithmic trading meaning
+4    | calculator algorithms
+3    | algorithm number generator
+6    | algorithmic thinking examples
+13   | algorithm com
+3    | algorithm backtracking
+4    | algorithm strength
+6    | algorithm characteristics
+5    | algorithm services
+6    | algorithm types
+3    | algorithms acls
+4    | cycle detection algorithm
+7    | algorithms programming
+2    | create password algorithm
+4    | cache replacement algorithms
+5    | algorithm questions
+2    | algorithm data structure
+3    | cipher algorithm
+4    | complexity algorithms
+5    | algorithms dasgupta answers
+4    | algorithmic trading book
+4    | algorithmics ibm
+5    | algorithm binary
+6    | algorithm maker
+5    | computer program algorithms
+6    | algorithm marketplace
+3    | credit scoring algorithm
+6    | algorithm image
+5    | cube algorithm
+2    | algorithm copd
+2    | algorithm attributes
+4    | algorithm diabetes
+8    | algorithm definition example
+7    | algorithm winning lottery
+10   | algorithms intelligent web
+2    | algorithm calculating pi
+4    | algorithme pharma usa
+2    | cky algorithm
+2    | captcha algorithm
+4    | algorithm activities
+3    | algorithmic languages
+6    | algorithm codes
+4    | algorithm webster
+3    | algorithm design solutions
+5    | algorithm chest pain
+3    | algorithm lessons
+6    | cormen intro algorithms
+5    | checksum algorithm example
+6    | cnn algorithm
+3    | algorithmic analysis
+4    | algorithm write
+3    | algorithm pictures
+4    | cast algorithm
+3    | algorithm division examples
+3    | algorithm create combinations
+7    | algorithm hypercalcemia
+2    | algorithm lesson plan
+6    | algorithm strassen
+3    | algorithm brute force
+3    | copd algorithm
+2    | algorithm find prime numbers
+2    | algorithm samples
+3    | algorithm design analysis
+2    | algorithm rubik cube solve
+1    | algorithm card
+2    | algorithm solving problems
+4    | algorithm word
+2    | algorithm depression
+2    | algorithm divide conquer
+2    | algorithm syphilis testing
+1    | chronic pain algorithm

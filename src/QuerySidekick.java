@@ -26,7 +26,6 @@ public class QuerySidekick
     GuessTree guessTree = new GuessTree();
     long barTime; // Used for periodic printing of progress bar
     int guessCount = 0; // Not used for much yet, could be useful
-    int misses = 0; // Tracks the number of unsuccessfully guessed phrases
 
     // initialization of ...
     public QuerySidekick()
@@ -127,9 +126,6 @@ public class QuerySidekick
     // c.         false               correct query
     public void feedback(boolean isCorrectGuess, String correctQuery)        
     {
-        if (!isCorrectGuess && correctQuery != null) {
-            misses++;
-            //System.out.println("SEARCH PHRASE MISSED: " + correctQuery + ", " + misses);
-        }
+
     }
 }

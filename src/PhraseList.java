@@ -73,6 +73,14 @@ public class PhraseList {
 
 	// Returns the whole phrase array
 	public static ArrayList<TreeNode> getPhraseArray() { return phraseArray; }
+	public static int size() { return phraseArray.size(); }
+
+	public static boolean contains(String s) {
+		for (int i = 0; i < phraseArray.size(); i++) {
+			if (getPhrase(i).equals(s)) return true;
+		}
+		return false;
+	}
 
 	/**
 	* Takes the String returned by "toString()" and writes it to a text file
