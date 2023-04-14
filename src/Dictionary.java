@@ -115,16 +115,22 @@ public class Dictionary {
 	public static void writeToFile(String filename) {
 
 		// Create the file name of the output file from the original old query file name
-        String treeFileName = filename.substring(0, filename.length() - 4) + "Dictionary.txt";
+        filename += "Dictionary.txt";
 		// Attempt to use a FileWriter to write the String from "getString()" to a text file
         FileWriter fw;
         try {
-            fw = new FileWriter(treeFileName);
+            fw = new FileWriter(filename);
+			fw.write("*** This text file contains every unique word found within the old query\n"
+					+"*** file. Each word is preceeded by a number, which represents the index\n"
+					+"*** that when passed into the Dictionary.get() method, returns the\n"
+					+"*** corresponding String. For fun, at the bottom of this file, there is a\n"
+					+"*** giant block of text which shows how all of the words are stored as a\n"
+					+"*** singular string within the Dictionary class. Happy reading!\n\n");
             fw.write(getString());
             fw.close();
         } catch (IOException e) {
 			// If there are any issues writing to the output file, print an error message
-            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + treeFileName + "\"");
+            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + filename + "\"");
         }
     }
 }

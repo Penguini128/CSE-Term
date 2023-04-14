@@ -1,3 +1,13 @@
+*** This text file contains a tree representation stored in the GuessTree
+*** class. Text at the same level of indentation represents
+*** nodes on the same layer of the tree. Vertical lines branch off onto horizontal
+*** lines which connect parent nodes to child nodes. Each node contains a sequence
+*** of letters (shownn in quotation marks) that represents the sequence of letters
+*** that must be received from the new query file in order to navigate the the given
+*** node. Following this is a series of up to 5 Strings (enclosd in sqaure brackets)
+*** which are the five guesses that will be made if that given sequence of letters is
+*** received. Happy reading!
+
 |----"a" [ all florida beaches list, anna maria florida beach, all inclusive florida beach, airbnb florida beachfront, apalachicola florida beach ]
 |    |----"af" [ affordable florida beaches ]
 |    |----"ai" [ airbnb florida beach, airbnb destin florida beach ]

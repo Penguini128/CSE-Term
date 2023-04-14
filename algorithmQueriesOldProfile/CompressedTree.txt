@@ -1,3 +1,12 @@
+*** This text file contains a compressed version of the tree data stored in
+*** "Tree.txt" text file. Text at the same level of indentation represents
+*** nodes on the same layer of the tree. Vertical lines branch off onto horizontal
+*** lines which connect parent nodes to child nodes. Each node contains a phrase or a
+*** part of a phrase, as well as a passing frequency and a ending frequency. The passing
+*** frequency (first number) is the number of times the string stored in the node appears
+*** in any search phrase. The ending frequency (second number) is the number of times the
+*** string stored in the node ends a search phrase. Happy reading!
+
 |----2d line drawing algorithm (1 / 1)
 |----2sat algorithm (1 / 1)
 |----2x2 (70 / 0)

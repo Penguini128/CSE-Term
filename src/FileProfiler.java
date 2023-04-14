@@ -90,7 +90,7 @@ public class FileProfiler {
 
         // If enabled, output tree text file before compression
         if (OUTPUT_DEBUG_TEXT_FILES)
-        searchTree.writeToFile(directoryName + "\\" + oldQueryFile);
+        searchTree.writeToFile(directoryName + "\\");
 
         if (COMPARE_FILE_CONTENTS) {
             try {
@@ -131,9 +131,9 @@ public class FileProfiler {
         // If enabled, output tree text file after
         // compression, as well as dictionary text file
         if (OUTPUT_DEBUG_TEXT_FILES) {
-            searchTree.writeToFile(directoryName + "\\" + oldQueryFile);
-            Dictionary.writeToFile(directoryName + "\\" + oldQueryFile);
-            PhraseList.writeToFile(directoryName + "\\" + oldQueryFile);
+            searchTree.writeToFile(directoryName + "\\");
+            Dictionary.writeToFile(directoryName + "\\");
+            PhraseList.writeToFile(directoryName + "\\");
         }
 
 		System.out.println();
@@ -142,7 +142,7 @@ public class FileProfiler {
         guessTree.build(PhraseList.getPhraseArray());
 
         if (OUTPUT_DEBUG_TEXT_FILES)
-        guessTree.writeToFile(directoryName + "\\" + oldQueryFile);
+        guessTree.writeToFile(directoryName + "\\");
 
 		System.out.println("Profiling done!\n");
         scanner.close();

@@ -81,16 +81,20 @@ public class PhraseList {
 	public static void writeToFile(String filename) {
 
 		// Create the file name of the output file from the original old query file name
-        String treeFileName = filename.substring(0, filename.length() - 4) + "PhraseList.txt";
+        filename += "PhraseList.txt";
 		// Attempt to use a FileWriter to write the String from "getString()" to a text file
         FileWriter fw;
         try {
-            fw = new FileWriter(treeFileName);
+            fw = new FileWriter(filename);
+			fw.write("*** This text file contains all of the search phrases found in\n"
+					+"*** the old query file, sorted alphabetically. Each phrase is\n"
+					+"*** preceeded by a number, which represents the number of times\n"
+					+"*** that phrase appears in the old query file. Happy reading!\n\n");
             fw.write(getString());
             fw.close();
         } catch (IOException e) {
 			// If there are any issues writing to the output file, print an error message
-            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + treeFileName + "\"");
+            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + filename + "\"");
         }
     }
 }

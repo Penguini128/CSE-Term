@@ -1,3 +1,8 @@
+*** This text file contains all of the search phrases found in
+*** the old query file, sorted alphabetically. Each phrase is
+*** preceeded by a number, which represents the number of times
+*** that phrase appears in the old query file. Happy reading!
+
 1      | 2d line drawing algorithm
 1      | 2sat algorithm
 7      | 2x2 algorithm

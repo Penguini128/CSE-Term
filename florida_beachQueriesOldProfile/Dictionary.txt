@@ -1,3 +1,10 @@
+*** This text file contains every unique word found within the old query
+*** file. Each word is preceeded by a number, which represents the index
+*** that when passed into the Dictionary.get() method, returns the
+*** corresponding String. For fun, at the bottom of this file, there is a
+*** giant block of text which shows how all of the words are stored as a
+*** singular string within the Dictionary class. Happy reading!
+
 0      | florida
 1      | beaches
 2      | beach

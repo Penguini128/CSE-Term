@@ -1,3 +1,8 @@
+*** This text file contains all of the search phrases found in
+*** the old query file, sorted alphabetically. Each phrase is
+*** preceeded by a number, which represents the number of times
+*** that phrase appears in the old query file. Happy reading!
+
 1      | affordable florida beaches
 4      | airbnb destin florida beach
 7      | airbnb florida beach

@@ -93,17 +93,26 @@ public class GuessTree {
     public void writeToFile(String filename) {
 
         // Create the file name of the output file from the original old query file name
-        String treeFileName = filename.substring(0, filename.length() - 4) + "GuessTree.txt";
+        filename += "GuessTree.txt";
 
         // Attempt to use a FileWriter to write the String from "toString()" to a text file
         FileWriter fw;
         try {
-            fw = new FileWriter(treeFileName);
+            fw = new FileWriter(filename);
+            fw.write("*** This text file contains a tree representation stored in the GuessTree\n"
+                    +"*** class. Text at the same level of indentation represents\n"
+                    +"*** nodes on the same layer of the tree. Vertical lines branch off onto horizontal\n"
+                    +"*** lines which connect parent nodes to child nodes. Each node contains a sequence\n"
+                    +"*** of letters (shownn in quotation marks) that represents the sequence of letters\n"
+                    +"*** that must be received from the new query file in order to navigate the the given\n"
+                    +"*** node. Following this is a series of up to 5 Strings (enclosd in sqaure brackets)\n"
+                    +"*** which are the five guesses that will be made if that given sequence of letters is\n"
+                    +"*** received. Happy reading!\n\n");
             fw.write(toString());
             fw.close();
         } catch (IOException e) {
             // If there are any issues writing to the output file, print an error message
-            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + treeFileName + "\"");
+            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + filename + "\"");
         }
     }
 

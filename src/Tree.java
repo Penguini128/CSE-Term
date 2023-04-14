@@ -107,19 +107,37 @@ public class Tree {
     public void writeToFile(String filename) {
 
         // Create the file name of the output file from the original old query file name
-        String treeFileName = filename.substring(0, filename.length() - 4);
-        if (hasBeenCompressed) treeFileName += "CompressedTree.txt";
-        else treeFileName += "Tree.txt";
+        if (hasBeenCompressed) filename += "CompressedTree.txt";
+        else filename += "Tree.txt";
 
         // Attempt to use a FileWriter to write the String from "toString()" to a text file
         FileWriter fw;
         try {
-            fw = new FileWriter(treeFileName);
+            fw = new FileWriter(filename);
+            if (hasBeenCompressed) {
+                fw.write("*** This text file contains a compressed version of the tree data stored in\n"
+                        +"*** \"Tree.txt\" text file. Text at the same level of indentation represents\n"
+                        +"*** nodes on the same layer of the tree. Vertical lines branch off onto horizontal\n"
+                        +"*** lines which connect parent nodes to child nodes. Each node contains a phrase or a\n"
+                        +"*** part of a phrase, as well as a passing frequency and a ending frequency. The passing\n"
+                        +"*** frequency (first number) is the number of times the string stored in the node appears\n"
+                        +"*** in any search phrase. The ending frequency (second number) is the number of times the\n"
+                        +"*** string stored in the node ends a search phrase. Happy reading!\n\n");
+            } else {
+                fw.write("*** This text file contains a tree representation of the data stored in\n"
+                        +"*** the old query text file. Text at the same level of indentation represents\n"
+                        +"*** nodes on the same layer of the tree. Vertical lines branch off onto horizontal\n"
+                        +"*** lines which connect parent nodes to child nodes. Each node contains a phrase or a\n"
+                        +"*** part of a phrase, as well as a passing frequency and a ending frequency. The passing\n"
+                        +"*** frequency (first number) is the number of times the string stored in the node appears\n"
+                        +"*** in any search phrase. The ending frequency (second number) is the number of times the\n"
+                        +"*** string stored in the node ends a search phrase. Happy reading!\n\n");
+            }
             fw.write(toString());
             fw.close();
         } catch (IOException e) {
             // If there are any issues writing to the output file, print an error message
-            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + treeFileName + "\"");
+            System.out.println("ERROR:\t Unable to save tree representation of old queries to \"" + filename + "\"");
         }
     }
 
