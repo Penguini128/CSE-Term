@@ -17,7 +17,7 @@ public class GuessTree {
     }
 
     // Building a GuessTree from the list of all phrases and their frequencies
-    public void build(ArrayList<TreeNode> phraseList) {
+    public void build(ArrayList<PhraseNode> phraseList) {
         // Build the tree by calling the recursive build method, starting in the root node
         root.build(0, phraseList);
     }

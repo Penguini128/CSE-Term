@@ -20,7 +20,7 @@ public class GuessNode {
         }
     }
 
-    public void build(int phraseIndex, ArrayList<TreeNode> phraseList) {
+    public void build(int phraseIndex, ArrayList<PhraseNode> phraseList) {
         // Garbage collect to prevent memory build (this makes tree construction 
         // significantly slow, but is worth it since it's only a few seconds)
         System.gc();
@@ -112,8 +112,8 @@ public class GuessNode {
         if (PhraseList.isUsed(phraseIndex)) return;
         // Get the weight of the lowest ranked phrase in the top 5. If the new phrase is not ranked
         // higher than it, the new phrase should not be ranked. Return
-        float phraseFrequency = PhraseList.getPhraseWeight(phraseIndex);
-        if (phraseFrequency <= PhraseList.getPhraseWeight(guesses[4])) return;
+        float phraseFrequency = PhraseList.getPhraseFrequency(phraseIndex);
+        if (phraseFrequency <= PhraseList.getPhraseFrequency(guesses[4])) return;
         // Initialize an array to store the new rankings
         int[] newGuesses = new int[5];
 
@@ -126,7 +126,7 @@ public class GuessNode {
         // For each child in the previous child array...
         for (int i = 0; i < guesses.length - 1; i++) {
             // If the new child has not been inserted but should be inserted at this index...
-            if (offset == 0 && phraseFrequency > PhraseList.getPhraseWeight(guesses[i])) {
+            if (offset == 0 && phraseFrequency > PhraseList.getPhraseFrequency(guesses[i])) {
                 // Insert the child and update offset
                 newGuesses[i] = phraseIndex;
                 offset = 1;

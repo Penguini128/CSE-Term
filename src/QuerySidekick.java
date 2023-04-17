@@ -22,7 +22,6 @@ public class QuerySidekick
     
     
     String[] guesses = new String[5];  // 5 guesses from QuerySidekick
-    Tree searchTree = new Tree(); // Stores data tree
     GuessTree guessTree = new GuessTree();
     long barTime; // Used for periodic printing of progress bar
     int guessCount = 0; // Not used for much yet, could be useful
@@ -58,39 +57,23 @@ public class QuerySidekick
         while (scanner.hasNextLine()) {
             // Increment "currentLine"
             currentLine++;
-            // Call garbage collector manually every 100 lines
-            if (currentLine % 100 == 0) System.gc();
+            // Call garbage collector manually every 10 lines
+            if (currentLine % 50 == 0) {
+                System.gc();
+            }
 
             // Get the input line and split it into space-separated tokens
             String line = scanner.nextLine();
             line = line.replaceAll("\\s+", " ");
             String[] tokens = line.split(" ");
 
-            // Keep track of the last added node from this search phrase
-            TreeNode lastNode = null;
-            // For each word in the search phrase
+            int[] lookupIndices = new int[tokens.length];
             for (int i = 0; i < tokens.length; i++) {
-                // Add the word from the search phrase to the tree, using
-                // the lase added node from this phrase as the parent
-                String s = tokens[i];
-                lastNode = searchTree.addNode(s, lastNode);
-                // Always increment passing frequency. Increment frequency
-                // if the current node is the last node in the search phrase
-                lastNode.incrementPassingFrequency();
-                if (i == tokens.length - 1) lastNode.incrementFrequency();
+                lookupIndices[i] = Dictionary.add(tokens[i]);
             }
+
+            PhraseList.addPhrase(new PhraseNode(lookupIndices));
         }
-
-        // Compress tree
-        searchTree.compress(null);
-
-        // Add all phrases from the tree into "PhraseList"
-        // (This is then used to grab phrases for the guess tree)
-        PhraseList.addPhrases(searchTree.getRoot());
-
-        // Calculate weights, which are used to determine guessing order of phrases
-        // (At the moment, this is just frequency. This may be useful later, or may become obselete)
-        PhraseList.calculateWeights();
 
         // Generate the guess tree
         guessTree.build(PhraseList.getPhraseArray());

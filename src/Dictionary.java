@@ -67,9 +67,7 @@ public class Dictionary {
 	 * 		   "dictionary", -1 if "dictionary" does not contain the String
 	 */
 	public static int contains(String s) {
-		// Iterating through the index of "lookupTable"...
 		for (int i = 0; i < lookupTable.size(); i++) {
-			// If the retrieved word using "get()" is equal to s, return i
 			if (get(i).equals(s)) return i;
 		}
 		// The word was not found within the Dictionary, return -1

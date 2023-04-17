@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class PhraseList {
 
 	// An array list used to store all old query phrases
-	private static ArrayList<TreeNode> phraseArray = new ArrayList<TreeNode>();
+	private static ArrayList<PhraseNode> phraseArray = new ArrayList<PhraseNode>();
 
 	// Gets and returns the phrase stored at a certain index of the phrase array
 	public static String getPhrase(int index) {
 		if (index == -1) return null;
-		return phraseArray.get(index).getPhrase();
+		return phraseArray.get(index).toString();
 	}
 
 	// Gets and returns the frequency of the phrase stored at a cetain index of the phrase array
@@ -19,29 +19,34 @@ public class PhraseList {
 		return phraseArray.get(index).getFrequency();
 	}
 
-	// Gets and returns the weight of the phrase stored at a cetain index of the phrase array
-	public static float getPhraseWeight(int index) {
-		if (index == -1) return 0;
-		return phraseArray.get(index).getWeight();
-	}
-
 	// Returns the contents of the phrase array as a formatted String
 	public static String getString() {
 		StringBuilder sb = new StringBuilder();
-		for (TreeNode tn : phraseArray) {
-			sb.append(String.format("%-6d | %s\n", tn.getFrequency(), tn.getPhrase()));
+		for (PhraseNode pn : phraseArray) {
+			sb.append(String.format("%-6d | %s\n", pn.getFrequency(), pn.toString()));
 		}
 		return sb.toString();
 	}
 
-	// Adds all of the valid phrases from the old search tree to the phrase list
-	public static void addPhrases(TreeNode root) {
-		// If the current node holds a complete phrase, add the node
-		if (root.getFrequency() != 0) phraseArray.add(root);
-		// Recursively add all children of this node
-		for (TreeNode tn : root.getChildren()) {
-			addPhrases(tn);
+	public static void addPhrase(PhraseNode node) {
+		if (phraseArray.size() == 0) {
+			phraseArray.add(node);
+			return;
 		}
+		int low = 0;
+		int high = phraseArray.size() - 1;
+		while (low <= high) {
+			int mid = (low + high) / 2;
+			if (getPhrase(mid).equals(node.toString())) {
+				phraseArray.get(mid).incrementFrequency();
+				return;
+			} else if (getPhrase(mid).compareTo(node.toString()) < 0) low = mid + 1;
+			else high = mid - 1;
+		}
+		
+		if (low == phraseArray.size()) phraseArray.add(node);
+		else phraseArray.add(low, node);
+
 	}
 
 	// Mark the node at the specified index as used (for the sake of generating the guess tree)
@@ -57,22 +62,15 @@ public class PhraseList {
 	public static int findStartIndex(String substring) {
 		if (substring == null) return 0;
 		for (int i = 0; i < phraseArray.size(); i++) {
-			if (phraseArray.get(i).getPhrase().indexOf(substring) == 0)
+			if (phraseArray.get(i).toString().indexOf(substring) == 0)
 			return i;
 		}
 		return -1;
 	}
 
-	// Updates the weights of all nodes in the phrase array
-	public static void calculateWeights() {
-		for (TreeNode tn : phraseArray) {
-			tn.updateWeight();
-		}
-	}
-
 
 	// Returns the whole phrase array
-	public static ArrayList<TreeNode> getPhraseArray() { return phraseArray; }
+	public static ArrayList<PhraseNode> getPhraseArray() { return phraseArray; }
 	public static int size() { return phraseArray.size(); }
 
 	public static boolean contains(String s) {
