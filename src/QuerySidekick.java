@@ -76,7 +76,7 @@ public class QuerySidekick
         }
 
         // Generate the guess tree
-        guessTree.build(PhraseList.getPhraseArray());
+        guessTree.build();
 
         scanner.close();
 

@@ -1,80 +1,132 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
 public class PhraseList {
 
 	// An array list used to store all old query phrases
-	private static ArrayList<PhraseNode> phraseArray = new ArrayList<PhraseNode>();
+	private static int size = 0;
+	private static PhraseNode head;
 
 	// Gets and returns the phrase stored at a certain index of the phrase array
 	public static String getPhrase(int index) {
 		if (index == -1) return null;
-		return phraseArray.get(index).toString();
+		return get(index).toString();
+	}
+	public static PhraseNode get(int index) {
+		PhraseNode current = head;
+		int currentindex = 0;
+		// Starting at the head we will iterate through the list.
+ 		// If index is invalid don't iterate.
+		while (current.next != null) {
+			if (currentindex == index) {
+				System.out.println("test");
+				return current;
+			}
+			else {
+				current = current.next;
+				currentindex++;
+				// If the current node is not the right index keep moving
+			}
+		}
+		return null;
+		// Return null cause java (this should never happen)
 	}
 
 	// Gets and returns the frequency of the phrase stored at a cetain index of the phrase array
 	public static int getPhraseFrequency(int index) {
 		if (index == -1) return 0;
-		return phraseArray.get(index).getFrequency();
+		return get(index).getFrequency();
 	}
 
 	// Returns the contents of the phrase array as a formatted String
 	public static String getString() {
 		StringBuilder sb = new StringBuilder();
-		for (PhraseNode pn : phraseArray) {
-			sb.append(String.format("%-6d | %s\n", pn.getFrequency(), pn.toString()));
+		PhraseNode current = head;
+		while (current.next != null) {
+			sb.append(String.format("%-6d | %s\n", current.getFrequency(), current.toString()));
+			current = current.next;
 		}
 		return sb.toString();
 	}
-
 	public static void addPhrase(PhraseNode node) {
-		if (phraseArray.size() == 0) {
-			phraseArray.add(node);
-			return;
+		if (size == 0) {
+			head = node;
+			size++;
+			/*
+			 * If the linkedList is empty we will instantiate the head to the new node we are adding.
+			 */
 		}
-		int low = 0;
-		int high = phraseArray.size() - 1;
-		while (low <= high) {
-			int mid = (low + high) / 2;
-			if (getPhrase(mid).equals(node.toString())) {
-				phraseArray.get(mid).incrementFrequency();
+		PhraseNode current = head; // Initialize two pointers both to head.
+		PhraseNode beforeCurrent = head;
+		while (current.next != null) {
+			if (current.toString().equals(node.toString())) {
+				current.incrementFrequency();
 				return;
-			} else if (getPhrase(mid).compareTo(node.toString()) < 0) low = mid + 1;
-			else high = mid - 1;
+				// If the Nodes are identical we will just increment frequency
+			}
+			else {
+				if (current.toString().compareTo(node.toString()) < 0) {
+					// We are looking to insert the node between the two.
+					if (beforeCurrent.toString().equals(head.toString())) {
+						// Edge case for first iteration
+						head = node;
+						node.next = current;
+						size++;
+						return;
+					}
+					else {
+						// Add node in between two pointers
+						beforeCurrent.next = node;
+						node.next = current;
+						size++;
+						return;
+					}
+				}
+			}
+			if (beforeCurrent.toString().equals(current.toString())) {
+				// If its the first iteration don't increment beforeCurrent
+				current = current.next;
+			}
+			else {
+				// Else increment both.
+				current = current.next;
+				beforeCurrent = beforeCurrent.next;
+			}
 		}
-		
-		if (low == phraseArray.size()) phraseArray.add(node);
-		else phraseArray.add(low, node);
-
+		current.next = node;
+		size++;
 	}
 
 	// Mark the node at the specified index as used (for the sake of generating the guess tree)
 	public static void setUsed(int index) {
-		phraseArray.get(index).setUsed();
+		get(index).setUsed();
 	}
 
 	// Returns whether or not a particular node has been used in the guess tree
 	public static boolean isUsed(int index) {
-		return phraseArray.get(index).isUsed();
+		return get(index).isUsed();
 	}
 
 	public static int findStartIndex(String substring) {
 		if (substring == null) return 0;
-		for (int i = 0; i < phraseArray.size(); i++) {
-			if (phraseArray.get(i).toString().indexOf(substring) == 0)
-			return i;
+		PhraseNode current = head;
+		int index = 0;
+		while (current.next != null) {
+			if (current.toString().indexOf(substring) == 0) {
+				return index;
+			}
+			index++;
+			current = current.next;
 		}
 		return -1;
 	}
 
 
 	// Returns the whole phrase array
-	public static ArrayList<PhraseNode> getPhraseArray() { return phraseArray; }
-	public static int size() { return phraseArray.size(); }
+	public static int size() { return size; }
 
 	public static boolean contains(String s) {
-		for (int i = 0; i < phraseArray.size(); i++) {
+		for (int i = 0; i < size(); i++) {
 			if (getPhrase(i).equals(s)) return true;
 		}
 		return false;

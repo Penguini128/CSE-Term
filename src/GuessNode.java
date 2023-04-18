@@ -20,7 +20,7 @@ public class GuessNode {
         }
     }
 
-    public void build(int phraseIndex, ArrayList<PhraseNode> phraseList) {
+    public void build(int phraseIndex) {
         // Garbage collect to prevent memory build (this makes tree construction 
         // significantly slow, but is worth it since it's only a few seconds)
         System.gc();
@@ -35,7 +35,7 @@ public class GuessNode {
             // Find the sequence of letters this node will be attempting to find matching phrases for
             String childPhrase = newChild.getPhraseSoFar();
             // While there are still phrases to check...
-            while (currentSearchIndex < phraseList.size()) {
+            while (currentSearchIndex < PhraseList.size()) {
                 // If the current phrase does not contain the current guess phrase, break from the
                 // while loop. It's time to check the next letter
                 if (PhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) != 0) break;
@@ -60,7 +60,7 @@ public class GuessNode {
         // For each newly created child of the current node...
         for (GuessNode child : children) {
             // If it has five guesses, try to get potential follow up guesses for all next possible input letters
-            if (child.guesses[4] != -1) child.build(phraseIndex + 1, phraseList);
+            if (child.guesses[4] != -1) child.build(phraseIndex + 1);
         }
     }
 

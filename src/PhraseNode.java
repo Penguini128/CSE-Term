@@ -2,6 +2,7 @@ public class PhraseNode {
     private int[] data;
     private int frequency;
     private boolean used;
+    public PhraseNode next;
 
     PhraseNode(int[] data) {
         this.data = data;
