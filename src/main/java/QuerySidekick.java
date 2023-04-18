@@ -16,14 +16,14 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-public class QuerySidekick
-{
+public class QuerySidekick {
 
     private final Trie trie = new Trie();
 
-    private TrieNode prevNode = trie.root;
+    private TrieNode prevNode = trie.getRoot();
 
     private String query = "";
 
@@ -32,9 +32,7 @@ public class QuerySidekick
     private final String[] guesses = new String[5];  // 5 guesses from QuerySidekick
 
     // initialization of ...
-    public QuerySidekick()
-    {
-
+    public QuerySidekick() {
     }
 
     // process old queries from oldQueryFile
@@ -47,52 +45,52 @@ public class QuerySidekick
         String line = br.readLine();
 
         while (line != null) {
-            line = line.replaceAll("[\\s+]", " ");
-
+            line = line.replaceAll("\\s+", " ");
             trie.add(line);
-
             line = br.readLine();
         }
+
+        trie.print();
     }
 
     // based on a character typed in by the user, return 5 query guesses in an array
     // currChar: current character typed in by the user
     // currCharPosition: position of the current character in the query, starts from 0
-    public String[] guess(char currChar, int currCharPosition)
-    {
-        if (!prevNode.children.containsKey(currChar)) {
-            return guesses;
-        }
-
-        prevNode = prevNode.children.get(currChar);
-	    query += currChar;
-
-        List<Entry> candidates = trie.getStringsWithPrefix(prevNode, query);
-
-        // TODO: preprocessing and dp when adding
-        PriorityQueue<Entry> pq = new PriorityQueue<>(
-                (o1, o2) -> Integer.compare(o2.weight.endFrequency, o1.weight.endFrequency));
-
-        pq.addAll(candidates);
-
-        for (int i = 0; i < 5; i++) {
-            if (pq.isEmpty()) {
-                break;
-            }
-
-            Entry candidate = pq.poll();
-
-            if (guessed.contains(candidate.s)) {
-                i--;
-                continue;
-            }
-
-            guesses[i] = candidate.s;
-            guessed.add(guesses[i]);
-        }
-
-        // TODO: find anything close words when more guesses left
-        // first shown query, catching typo
+    public String[] guess(char currChar, int currCharPosition) {
+        // TODO
+//        if (!prevNode.children.containsKey(currChar)) {
+//            return guesses;
+//        }
+//
+//        prevNode = prevNode.children.get(currChar);
+//	    query += currChar;
+//
+//        List<Entry> candidates = trie.getStringsWithPrefix(prevNode, query);
+//
+//        // TODO: preprocessing and dp when adding
+//        PriorityQueue<Entry> pq = new PriorityQueue<>(
+//                (o1, o2) -> Integer.compare(o2.weight.endFrequency, o1.weight.endFrequency));
+//
+//        pq.addAll(candidates);
+//
+//        for (int i = 0; i < 5; i++) {
+//            if (pq.isEmpty()) {
+//                break;
+//            }
+//
+//            Entry candidate = pq.poll();
+//
+//            if (guessed.contains(candidate.s)) {
+//                i--;
+//                continue;
+//            }
+//
+//            guesses[i] = candidate.s;
+//            guessed.add(guesses[i]);
+//        }
+//
+//        // TODO: find anything close words using LCS when more guesses left
+//        // first shown query, catching typo
 
         return guesses;
     }
@@ -110,8 +108,7 @@ public class QuerySidekick
     // a.         true                correct query
     // b.         false               null
     // c.         false               correct query
-    public void feedback(boolean isCorrectGuess, String correctQuery)        
-    {
+    public void feedback(boolean isCorrectGuess, String correctQuery) {
         // DEBUG
 //        if (isCorrectGuess) {
 //            System.out.println("Correct! " + query);
@@ -122,7 +119,7 @@ public class QuerySidekick
 //        }
 
         if (correctQuery != null) {
-            prevNode = trie.root;
+            prevNode = trie.getRoot();
             query = "";
             guessed.clear();
 

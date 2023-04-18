@@ -1,53 +1,85 @@
-import java.util.LinkedList;
-import java.util.List;
-
+/**
+ * Adapted from https://www.geeksforgeeks.org/compressed-tries/
+ */
 public class Trie {
 
-    public TrieNode root = new TrieNode('\0');
+    private final TrieTable trieTable = new TrieTable();
+
+    private final TrieNode root = new TrieNode(-1, -1, -1, false);
+
+    public Trie() {
+    }
 
     // TODO
-    private final List<Entry> candidates = new LinkedList<>();
-
-    public Trie() {}
-
-    public void add(String s) {
+    public void add(String query) {
         TrieNode cur = root;
+        int i = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            boolean contain = cur.children.containsKey(c);
+        // checks if the query is in the trie
+        while (i < query.length() && cur.getChild(query.charAt(i)) != null) {
+            TrieNode child = cur.getChild(query.charAt(i));
+            String substring = trieTable.get(child.getTable(), child.getStart(), child.getEnd());
+            int j = 0;
 
-            if (!contain) {
-                cur.children.put(c, new TrieNode(c));
+            // checks if the substring is in the query
+            while (j < substring.length() && i < query.length() && substring.charAt(j) == query.charAt(i)) {
+                i++;
+                j++;
             }
-            cur = cur.children.get(c);
 
-            if (i != s.length() - 1) {
-                cur.weight.midFrequency++;
-            } else {
-                cur.weight.endFrequency++;
+            // if the substring is in the query, then we keep checking the next child node
+            if (j == substring.length()) {
+                cur = child;
+                continue;
             }
-        }
-    }
 
-    public List<Entry> getStringsWithPrefix(TrieNode root, String prefix) {
-        candidates.clear();
-        getStrings(root, prefix);
-        return candidates;
-    }
+            // if a prefix of the substring is in the query, and the query is shorter, then we add a new node
+            if (i == query.length()) {
+                TrieNode newNode = new TrieNode(trieTable.add(query), i, query.length(), true);
+                child.setStart(j);
+                cur.setChild(substring.charAt(0), newNode);
+                newNode.setChild(substring.charAt(j), child);
+                return;
+            }
 
-    private void getStrings(TrieNode curNode, String curString) {
-        if (curNode == null) {
+            // if a prefix of the substring is in the query, and the prefix is shorter, then we add two new nodes
+            TrieNode newNode = new TrieNode(child.getTable(), child.getStart(), j, false);
+            child.setStart(j);
+            cur.setChild(substring.charAt(0), newNode);
+            newNode.setChild(substring.charAt(j), child);
+            newNode.setChild(query.charAt(i), new TrieNode(trieTable.add(query), i, query.length(), true));
             return;
         }
 
-        if (curNode.weight.endFrequency > 0) {
-            candidates.add(new Entry(curString, curNode.weight));
+        // if the query is in the trie, then we increment its frequency
+        if (i == query.length()) {
+            trieTable.getWeight(cur.getTable()).incrementFrequency();
+            return;
         }
 
-        for (TrieNode child : curNode.children.values()) {
-            getStrings(child, curString + child.c);
-        }
+        // if the query is not in the trie, then we add the query
+        cur.setChild(query.charAt(i), new TrieNode(trieTable.add(query), i, query.length(), true));
+    }
+
+
+    // getters and setters
+
+    public TrieNode getRoot() {
+        return root;
+    }
+
+    // DEBUG REMOVE BEFORE SUBMISSION
+    public void print() {
+        trieTable.printTable();
+
+        System.out.println('=' * 80);
+        System.out.println("TRIE:");
+        printTrie();
+        System.out.println('=' * 80);
+    }
+
+    private void printTrie() {
+
     }
 
 }
