@@ -54,7 +54,7 @@ public class GuessNode {
                         if (n != -1) PhraseList.setUsed(n);
                     }
                     // Add the child to this node's list of children
-                    children.add(newestChild);
+                    if (newestChild.guesses[0] != -1) children.add(newestChild);
                 }
                 // Update "currentChar"
                 currentChar = phraseChar;
@@ -72,7 +72,7 @@ public class GuessNode {
             for (int n : newestChild.guesses) {
                 if (n != -1) PhraseList.setUsed(n);
             }
-            children.add(newestChild);
+            if (newestChild.guesses[0] != -1) children.add(newestChild);
         }
 
         // For each child of this node (for each potential next letter following "phraseSoFar")...
