@@ -57,26 +57,27 @@ public class QuerySidekick
         while (scanner.hasNextLine()) {
             // Increment "currentLine"
             currentLine++;
-            // Call garbage collector manually every 10 lines
-            if (currentLine % 50 == 0) {
-                System.gc();
-            }
+            // Call garbage collector manually every 50 lines
+            if (currentLine % 50 == 0) System.gc();
 
             // Get the input line and split it into space-separated tokens
             String line = scanner.nextLine();
             line = line.replaceAll("\\s+", " ");
             String[] tokens = line.split(" ");
 
+            // Create an array that will be used to store the indexes required to
+            // fetch the phrase from the Dictionary
             int[] lookupIndices = new int[tokens.length];
             for (int i = 0; i < tokens.length; i++) {
                 lookupIndices[i] = Dictionary.add(tokens[i]);
             }
-
+            // Add the new phrase to the PhraseList (or increment the
+            // frequency of a preexisting phrase)
             PhraseList.addPhrase(new PhraseNode(lookupIndices));
         }
 
         // Generate the guess tree
-        guessTree.build(PhraseList.getPhraseArray());
+        guessTree.build();
 
         scanner.close();
 
@@ -87,10 +88,13 @@ public class QuerySidekick
     // currCharPosition: position of the current character in the query, starts from 0
     public String[] guess(char currChar, int currCharPosition)
     {
-        // All this does right now is call an occasional garbage collect to prevent spike in memory usage
+        // Garbage collect occasionally to prevent memory spike
         guessCount++;
         if (guessCount % 1000 == 0) System.gc();
+
+        // If a new phrase is being guessed, reset the guess tree
         if (currCharPosition == 0) guessTree.reset();
+        // Fetch guesses from the guess tree and return them
         return guessTree.getGuess(currChar);
     }
 

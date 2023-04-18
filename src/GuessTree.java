@@ -12,14 +12,14 @@ public class GuessTree {
 
     // General Constructor
     GuessTree() {
-        root = new GuessNode('-', null);
+        root = new GuessNode('\n', null);
         currentNode = root;
     }
 
     // Building a GuessTree from the list of all phrases and their frequencies
-    public void build(ArrayList<PhraseNode> phraseList) {
+    public void build() {
         // Build the tree by calling the recursive build method, starting in the root node
-        root.build(0, phraseList);
+        root.build(0);
     }
 
     // Resets guesses back to the top of the tree

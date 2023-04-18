@@ -20,47 +20,65 @@ public class GuessNode {
         }
     }
 
-    public void build(int phraseIndex, ArrayList<PhraseNode> phraseList) {
+    public void build(int phraseIndex) {
         // Garbage collect to prevent memory build (this makes tree construction 
         // significantly slow, but is worth it since it's only a few seconds)
         System.gc();
+        String phraseSoFar = getPhraseSoFar();
 
-        // Get the lookup index for the first phrase that matches this nodes guess phrase
-        int currentSearchIndex = PhraseList.findStartIndex(getPhraseSoFar());
+        // Grab the start end end indexes to search through for the current node being built
+        // This is the range of indices in the phrase array that contain phrases that start with "phraseSoFar"
+        int startIndex = PhraseList.findStartIndex(phraseSoFar);
+        int endIndex = PhraseList.findEndIndex(phraseSoFar, startIndex);
+        // currentChar keeps track of the current character that proceeds "phraseSoFar" in the fetched phrases,
+        // set to newline by default as a flag character
+        char currentChar = '\n';
+        GuessNode newestChild = null;
 
-        // For each letter in the alphabet (this includes numbers and spaces)
-        for (char c : Dictionary.alphabet) {
-            // Create a new guess node
-            GuessNode newChild = new GuessNode(c, this);
-            // Find the sequence of letters this node will be attempting to find matching phrases for
-            String childPhrase = newChild.getPhraseSoFar();
-            // While there are still phrases to check...
-            while (currentSearchIndex < phraseList.size()) {
-                // If the current phrase does not contain the current guess phrase, break from the
-                // while loop. It's time to check the next letter
-                if (PhraseList.getPhrase(currentSearchIndex).indexOf(childPhrase) != 0) break;
-                // If the method reaches this point, the current phrase could potentially
-                // be guessed. Check to see if it should be ranked
-                newChild.rank(currentSearchIndex);
-                // Increment "currentSearchIndex" to check the next phrase in the next loop
-                currentSearchIndex++;
+        // Iterate through all of the valid indices
+        for (int i = startIndex; i < endIndex; i++) {
+            char phraseChar;
+            // Try to fetch the character in the current phrase proceeding "phraseSoFar". If
+            // said character does not exist, the phrase is not needed, so move to the next phrase
+            try {
+                phraseChar = PhraseList.getPhrase(i).charAt(phraseIndex);
+            } catch (IndexOutOfBoundsException e) {
+                continue;
             }
-            // Once the code reaches this point, all valid guesses for the current guess phrase have been checked
-            // If there is at least one guess...
-            if (newChild.guesses[0] != -1) {
-                // Set those guesses as used
-                for (int i : guesses) {
-                    if (i != -1) PhraseList.setUsed(i);
+            // If a new character has been found...
+            if (phraseChar != currentChar) {
+                // If a new child has been previously created
+                if (newestChild != null) {
+                    // Finalize its guesses by marking them as used
+                    for (int n : newestChild.guesses) {
+                        if (n != -1) PhraseList.setUsed(n);
+                    }
+                    // Add the child to this node's list of children
+                    children.add(newestChild);
                 }
-                // Add the newly created chld node to the tree as a child of the current node
-                children.add(newChild);
+                // Update "currentChar"
+                currentChar = phraseChar;
+                // Create a new GuessNode that will rank guesses that
+                // contain "phraseSoFar" followed by "currentChar"
+                newestChild = new GuessNode(currentChar, this);
             }
+            // Rank the current phrase in the newest child's guesses
+            newestChild.rank(i);
         }
-        // Once the code reached this point, all potential guesses for the next letter of the phrase have been checked
-        // For each newly created child of the current node...
+
+        // Once the method reaches this point, all valid phrases have
+        // been considered. Finalize the final newest child's guesses
+        if (newestChild != null) {
+            for (int n : newestChild.guesses) {
+                if (n != -1) PhraseList.setUsed(n);
+            }
+            children.add(newestChild);
+        }
+
+        // For each child of this node (for each potential next letter following "phraseSoFar")...
         for (GuessNode child : children) {
             // If it has five guesses, try to get potential follow up guesses for all next possible input letters
-            if (child.guesses[4] != -1) child.build(phraseIndex + 1, phraseList);
+            if (child.guesses[4] != -1) child.build(phraseIndex + 1);
         }
     }
 
@@ -70,36 +88,54 @@ public class GuessNode {
 
     // Returns the guesses stored in this node as a String array
     public String[] getGuesses() {
+        // Create an array to hold the guesses
         String[] stringGuesses = new String[5];
+        // For each index in "guesses"
         for (int i = 0; i < guesses.length; i++) {
+            // Use the value in "guesses" to fetch the corresponding phrase from the PhraseList
             stringGuesses[i] = PhraseList.getPhrase(guesses[i]);
         }
+        // Return the guesses
         return stringGuesses;
     }
 
     // Returns the sequence of letter that would have to be received in the
     // input in order to reach this node
     public String getPhraseSoFar() {
+        // If this node is the root node, it contains no phrase. Return null.
         if (parent == null) return null;
+        // Otherwise, the output string starts as this nodes guess character
         String output = String.valueOf(guessCharacter);
+        // Get the parent of this node
         GuessNode currentNode = parent;
+        // While the current node is not the root node...
         while (currentNode.parent != null) {
+            // Add the character stored in each parent to the front of "output"
             output = String.valueOf(currentNode.guessCharacter) + output;
             currentNode = currentNode.parent;
         }
+        // Return the found string
         return output;
     }
 
     // Returns the list of guesses stored in this node as a formatted string
     public String getGuessString() {
         StringBuilder sb = new StringBuilder();
+        // Start with an open brace
         sb.append("[ ");
+        // For each potential guess in "guesses"...
         for (int i = 0; i < guesses.length; i++) {
+            // -1 signifies no guess, therefore break from the loop
             if (guesses[i] == -1) break;
+            // If this code is reached, there is a valid guess at
+            // "guesses[i]". Add the correspdoning guess to the string
             else sb.append(PhraseList.getPhrase(guesses[i]));
+            // If the current guess is followed by another guess, add a comma to seperate them
             if (i < guesses.length - 1 && guesses[i + 1] != -1) sb.append(", ");
         }
+        // End with a closed brace
         sb.append(" ]");
+        // Return the formed string
         return sb.toString();
     }
 

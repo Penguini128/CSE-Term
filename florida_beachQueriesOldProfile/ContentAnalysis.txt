@@ -1,0 +1,26 @@
+Number of search phrases in old query file: 14561
+Number of unique phrases in old query file: 1439
+Number of unique words in old query file: 615
+
+Number of search phrases in new query file: 14617
+Number of unique phrases in new query file: 1487
+Number of unique words in new query file: 633
+
+Number of unrecognized search phrases in new query file: 748
+Number of unrecognized words in new query file: 207
+
+Number of unique unrecognized search phrases in new query file: 748
+Number of unique unrecognized words in new query file: 176
+
+Percentage of recognized search phrases in new query file: 94.88%
+Percentage of unrecognized search phrases in new query file: 5.12%
+
+Percentage of recognized words in new query file: 99.64%
+Percentage of unrecognized words in new query file: 0.42%
+
+Number of missed guesses: 748
+Number of missed guesses that existed in old queries: 0
+Percentage of new queries missed: 5.12%
+Percentage of new queries that were missed despite being old queries: 0.00%
+
+Missed old queries (along with # of times missed):
