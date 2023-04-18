@@ -1,6 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
-\public class PhraseList {
+public class PhraseList {
 
 	// An array list used to store all old query phrases
 	private static int size = 0;
