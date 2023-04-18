@@ -57,8 +57,8 @@ public class QuerySidekick
         while (scanner.hasNextLine()) {
             // Increment "currentLine"
             currentLine++;
-            // Call garbage collector manually every 50 lines
-            if (currentLine % 50 == 0) System.gc();
+            // Call garbage collector manually every 10 lines
+            if (currentLine % 10 == 0) System.gc();
 
             // Get the input line and split it into space-separated tokens
             String line = scanner.nextLine();
@@ -90,7 +90,7 @@ public class QuerySidekick
     {
         // Garbage collect occasionally to prevent memory spike
         guessCount++;
-        if (guessCount % 1000 == 0) System.gc();
+        if (guessCount % 500 == 0) System.gc();
 
         // If a new phrase is being guessed, reset the guess tree
         if (currCharPosition == 0) guessTree.reset();

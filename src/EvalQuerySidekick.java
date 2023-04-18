@@ -104,7 +104,7 @@ public class EvalQuerySidekick
         
 	System.out.println("QuerySidekick is guessing...");
         //Perform operations for each line in the file
-        while(input.hasNextLine()) {
+        while(input.hasNextLine()){
  	    String query = input.nextLine(); 
 	    totalQueries++;
 	    //remove extra spaces with one space
