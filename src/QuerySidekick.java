@@ -98,8 +98,6 @@ public class QuerySidekick
 
         Dictionary.findHighFrequencies();
 
-        Dictionary.writeToFile(oldQueryFile.substring(0, oldQueryFile.length() - 4) + "Profile\\");
-
         // Generate the guess tree
         guessTree.build();
 
