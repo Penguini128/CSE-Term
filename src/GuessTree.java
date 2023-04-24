@@ -38,9 +38,8 @@ public class GuessTree {
                 return gn.getGuesses();
             }
         }
-        // THIS NEEDS TO BE WORKED OUT. IF THERE ARE NO MORE VALID CHILDREN LEFT, SOMETHING SHOULD BE DONE
-        // RIGHT NOW, NO NEW GUESSES ARE GENERATED IN THIS CASE
-        return currentNode.getGuesses();
+
+        return new String[5];
     }
 
     // "toString()"" simply calls "generateString()", since it is easier to generate

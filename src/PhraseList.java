@@ -75,9 +75,9 @@ public class PhraseList {
 	 * @param substring The substring to be searched for
 	 * @return The first index containing a phrase that starts with the specified substring
 	 */
-	public static int findStartIndex(String substring) {
+	public static short findStartIndex(String substring) {
 		if (substring == null) return 0;
-		for (int i = 0; i < phraseArray.size(); i++) {
+		for (short i = 0; i < phraseArray.size(); i++) {
 			if (phraseArray.get(i).toString().indexOf(substring) == 0)
 			return i;
 		}
@@ -89,9 +89,9 @@ public class PhraseList {
 	 * @param substring The substring to be searched for
 	 * @return The index after the last index containing a phrase that starts with the specified substring
 	 */
-	public static int findEndIndex(String substring, int startIndex) {
+	public static short findEndIndex(String substring, short startIndex) {
 		if (substring == null) return size();
-		for (int i = startIndex; i < phraseArray.size(); i++) {
+		for (short i = startIndex; i < phraseArray.size(); i++) {
 			if (phraseArray.get(i).toString().indexOf(substring) != 0)
 			return i;
 		}
@@ -102,7 +102,7 @@ public class PhraseList {
 	// Returns the whole phrase array
 	public static ArrayList<PhraseNode> getPhraseArray() { return phraseArray; }
 	// Returns the size of the phrase array
-	public static int size() { return phraseArray.size(); }
+	public static short size() { return (short)phraseArray.size(); }
 
 	/**
 	 * Returns true if one of the phrases in the list is equal to the specified String

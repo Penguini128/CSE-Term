@@ -25,6 +25,10 @@ public class QuerySidekick
     GuessTree guessTree = new GuessTree();
     long barTime; // Used for periodic printing of progress bar
     int guessCount = 0; // Not used for much yet, could be useful
+    int phraseCount = 0;
+    StringBuilder currentKnownWords = new StringBuilder();
+    StringBuilder currentIncomingWord = new StringBuilder();
+
 
     // initialization of ...
     public QuerySidekick()
@@ -67,7 +71,7 @@ public class QuerySidekick
 
             // Create an array that will be used to store the indexes required to
             // fetch the phrase from the Dictionary
-            int[] lookupIndices = new int[tokens.length];
+            short[] lookupIndices = new short[tokens.length];
             for (int i = 0; i < tokens.length; i++) {
                 lookupIndices[i] = Dictionary.add(tokens[i]);
             }
@@ -75,6 +79,8 @@ public class QuerySidekick
             // frequency of a preexisting phrase)
             PhraseList.addPhrase(new PhraseNode(lookupIndices));
         }
+
+        Dictionary.findHighFrequencies();
 
         // Generate the guess tree
         guessTree.build();
@@ -90,12 +96,35 @@ public class QuerySidekick
     {
         // Garbage collect occasionally to prevent memory spike
         guessCount++;
-        if (guessCount % 500 == 0) System.gc();
+        if (guessCount % 300 == 0) System.gc();
 
         // If a new phrase is being guessed, reset the guess tree
-        if (currCharPosition == 0) guessTree.reset();
+        if (currCharPosition == 0) {
+            currentKnownWords.setLength(0);
+            currentIncomingWord.setLength(0);
+            guessTree.reset();
+            phraseCount++;
+        }
+
+        if (currChar == ' ') {
+            currentKnownWords.append(currentIncomingWord.toString());
+            currentKnownWords.append(' ');
+            currentIncomingWord.setLength(0);
+        } else currentIncomingWord.append(currChar);
+
+        String guesses[] = guessTree.getGuess(currChar);
         // Fetch guesses from the guess tree and return them
-        return guessTree.getGuess(currChar);
+        for (int i = 4; i >= 0; i--) {
+            if (guesses[i] != null) break;
+            if (currChar == ' ') {
+                guesses[i] = currentKnownWords.toString() + Dictionary.getTopFive()[4 - i];
+            } else {
+                String[] likelyFive = Dictionary.getLikelyFive(currentIncomingWord.toString());
+                guesses[i] = currentKnownWords.toString() + likelyFive[4 - i];
+            }
+
+        }
+        return guesses;
     }
 
     // feedback on the 5 guesses from the user
@@ -113,6 +142,8 @@ public class QuerySidekick
     // c.         false               correct query
     public void feedback(boolean isCorrectGuess, String correctQuery)        
     {
-
+        if (isCorrectGuess) {
+            
+        }
     }
 }

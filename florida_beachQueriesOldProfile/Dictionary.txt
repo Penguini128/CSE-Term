@@ -5,621 +5,621 @@
 *** giant block of text which shows how all of the words are stored as a
 *** singular string within the Dictionary class. Happy reading!
 
-0      | florida
-1      | beaches
-2      | beach
-3      | hotels
-4      | best
-5      | vacation
-6      | beachfront
-7      | suites
-8      | destin
-9      | rentals
-10     | pensacola
-11     | private
-12     | map
-13     | west
-14     | crabs
-15     | news
-16     | north
-17     | gulf
-18     | side
-19     | mexico
-20     | condo
-21     | live
-22     | cams
-23     | keys
-24     | webcams
-25     | hollywood
-26     | pictures
-27     | fort
-28     | myers
-29     | cam
-30     | far
-31     | weston
-32     | clubs
-33     | towel
-34     | seaside
-35     | condos
-36     | top
-37     | list
-38     | resorts
-39     | jupiter
-40     | south
-41     | people
-42     | melbourne
-43     | weddings
-44     | resort
-45     | anna
-46     | maria
-47     | wedding
-48     | clothes
-49     | panama
-50     | city
-51     | towns
-52     | party
-53     | coast
-54     | visit
-55     | tampa
-56     | bay
-57     | cottages
-58     | sale
-59     | st
-60     | petersburg
-61     | access
-62     | all
-63     | key
-64     | webcam
-65     | hilton
-66     | state
-67     | park
-68     | cities
-69     | houses
-70     | palm
-71     | pete
-72     | campgrounds
-73     | dresses
-74     | girl
-75     | amelia
-76     | island
-77     | tallahassee
-78     | destinations
-79     | naples
-80     | cameras
-81     | house
-82     | rental
-83     | flags
-84     | meanings
-85     | sunset
-86     | inclusive
-87     | treasure
-88     | atlantic
-89     | halfathon
-90     | siesta
-91     | sanibel
-92     | trips
-93     | northern
-94     | jacksonville
-95     | cape
-96     | coral
-97     | company
-98     | panacea
-99     | near
-100    | georgia
-101    | homes
-102    | rent
-103    | venice
-104    | timeshares
-105    | red
-106    | tide
-107    | information
-108    | photos
-109    | sharks
-110    | boca
-111    | raton
-112    | families
-113    | saint
-114    | southwestern
-115    | marco
-116    | clearwater
-117    | east
-118    | clear
-119    | water
-120    | camera
-121    | specials
-122    | beautiful
-123    | couples
-124    | san
-125    | blas
-126    | alabama
-127    | ten
-128    | arcadia
-129    | pepsi
-130    | cola
-131    | maps
-132    | miami
-133    | westin
-134    | turtle
-135    | emerald
-136    | club
-137    | airport
-138    | hudson
-139    | panhandle
-140    | southern
-141    | beverly
-142    | hills
-143    | feed
-144    | koa
-145    | sarasota
-146    | cocoa
-147    | eastern
-148    | nicest
-149    | videos
-150    | property
-151    | properties
-152    | businesses
-153    | lauderdale
-154    | hiltons
-155    | shells
-156    | northwest
-157    | titusville
-158    | cheapest
-159    | vacations
-160    | november
-161    | bradenton
-162    | detailed
-163    | video
-164    | locations
-165    | hyatt
-166    | volleyball
-167    | southwest
-168    | orlando
-169    | tours
-170    | cottage
-171    | airbnb
-172    | bar
-173    | central
-174    | islands
-175    | babes
-176    | pierce
-177    | camping
-178    | breeze
-179    | augustine
-180    | string
-181    | bikini
-182    | vrbo
-183    | university
-184    | most
-185    | relaxing
-186    | southeast
-187    | retire
-188    | western
-189    | daytona
-190    | cheap
-191    | getaways
-192    | cabin
-193    | navarre
-194    | owner
-195    | images
-196    | northeast
-197    | nw
-198    | girls
-199    | lucie
-200    | scene
-201    | wyndham
-202    | casey
-203    | largo
-204    | fl
-205    | hernando
-206    | honeymoon
-207    | venus
-208    | march
-209    | venues
-210    | shacks
-211    | sandestin
-212    | beachside
-213    | mims
-214    | bars
-215    | deals
-216    | home
-217    | land
-218    | pics
-219    | rv
-220    | parks
-221    | close
-222    | towels
-223    | islamorada
-224    | com
-225    | beachrentals
-226    | old
-227    | scenes
-228    | description
-229    | web
-230    | shark
-231    | teeth
-232    | shelling
-233    | port
-234    | plans
-235    | marriott
-236    | hotel
-237    | bungalows
-238    | adults
-239    | front
-240    | july
-241    | shore
-242    | birds
-243    | fun
-244    | places
-245    | restaurants
-246    | manatee
-247    | realty
-248    | county
-249    | destination
-250    | nn10
-251    | watersound
-252    | joe
-253    | luxury
-254    | kids
-255    | sea
-256    | glass
-257    | pompano
-258    | pasco
-259    | view
-260    | santa
-261    | rosa
-262    | month
-263    | go
-264    | lakeland
-265    | little
-266    | alcohol
-267    | laws
-268    | edgewater
-269    | fishing
-270    | inns
-271    | stuart
-272    | radio
-273    | stations
-274    | delray
-275    | northeastern
-276    | areas
-277    | me
-278    | historic
-279    | wikipedia
-280    | family
-281    | swimming
-282    | package
-283    | paintings
-284    | ocala
-285    | weather
-286    | gables
-287    | quartz
-288    | sand
-289    | december
-290    | cool
-291    | martin
-292    | name
-293    | canaveral
-294    | attack
-295    | gainesville
-296    | atlanta
-297    | disney
-298    | insect
-299    | bites
-300    | famous
-301    | snakes
-302    | erosion
-303    | perdido
-304    | crab
-305    | ritz
-306    | hostels
-307    | apalachicola
-308    | packages
-309    | discount
-310    | ponce
-311    | inlet
-312    | youtube
-313    | ft
-314    | sandblast
-315    | watercolor
-316    | jensen
-317    | motels
-318    | playalinda
-319    | venue
-320    | madeira
-321    | closest
-322    | designs
-323    | september
-324    | real
-325    | estate
-326    | concerts
-327    | dunedin
-328    | conditions
-329    | guide
-330    | names
-331    | entertainment
-332    | sunrise
-333    | quaint
-334    | starfish
-335    | punta
-336    | gorda
-337    | october
-338    | facts
-339    | small
-340    | attacks
-341    | agustin
-342    | reviews
-343    | grande
-344    | springs
-345    | tavernier
-346    | singer
-347    | jellyfish
-348    | regulations
-349    | castle
-350    | walton
-351    | englewood
-352    | warnings
-353    | gold
-354    | adult
-355    | quality
-356    | town
-357    | closed
-358    | nearest
-359    | texas
-360    | sunny
-361    | isles
-362    | howard
-363    | lice
-364    | bug
-365    | report
-366    | yankeetown
-367    | pickens
-368    | orange
-369    | shopping
-370    | pollution
-371    | image
-372    | teresa
-373    | jetty
-374    | warning
-375    | lifeguards
-376    | cost
-377    | nightlife
-378    | golf
-379    | police
-380    | thongs
-381    | airports
-382    | safe
-383    | ihg
-384    | music
-385    | lantana
-386    | carlton
-387    | sites
-388    | great
-389    | found
-390    | women
-391    | bags
-392    | northwestern
-393    | affordable
-394    | style
-395    | popular
-396    | nudist
-397    | starwood
-398    | beachs
-399    | quiet
-400    | pine
-401    | timeshare
-402    | surf
-403    | wakulla
-404    | spring
-405    | break
-406    | decor
-407    | road
-408    | trip
-409    | dollars
-410    | things
-411    | do
-412    | tee
-413    | shirts
-414    | sw
-415    | surfing
-416    | miramar
-417    | watercolors
-418    | bungalow
-419    | rosemary
-420    | boardwalks
-421    | new
-422    | smyrna
-423    | weekend
-424    | magazines
-425    | ratings
-426    | photographers
-427    | piers
-428    | pass
-429    | flag
-430    | system
-431    | northport
-432    | status
-433    | ideas
-434    | ocean
-435    | www
-436    | shell
-437    | point
-438    | beachline
-439    | tolls
-440    | monthly
-441    | life
-442    | magazine
-443    | reports
-444    | colors
-445    | seagrove
-446    | indiana
-447    | rated
-448    | songs
-449    | laguna
-450    | placida
-451    | pristine
-452    | rotonda
-453    | april
-454    | wear
-455    | shops
-456    | bonita
-457    | free
-458    | getaway
-459    | hottest
-460    | sales
-461    | tanning
-462    | lebanon
-463    | remote
-464    | sticker
-465    | divers
-466    | hallandale
-467    | treasures
-468    | wheelchairs
-469    | viera
-470    | quotes
-471    | clean
-472    | up
-473    | passes
-474    | trolley
-475    | skirts
-476    | complete
-477    | charming
-478    | bal
-479    | harbour
-480    | indian
-481    | rock
-482    | waterpark
-483    | beachcombers
-484    | communities
-485    | desoto
-486    | hobe
-487    | sound
-488    | online
-489    | travel
-490    | area
-491    | tripadvisor
-492    | ecosystem
-493    | wall
-494    | murals
-495    | january
-496    | spots
-497    | renourishment
-498    | villas
-499    | villa
-500    | events
-501    | camp
-502    | tiny
-503    | wildflowers
-504    | metal
-505    | detecting
-506    | accommodations
-507    | kissimmee
-508    | marriotts
-509    | fernandina
-510    | bayonet
-511    | inn
-512    | cabins
-513    | plants
-514    | furniture
-515    | pretty
-516    | patrol
-517    | jobs
-518    | snorkeling
-519    | biscayne
-520    | flagler
-521    | ga
-522    | drinking
-523    | dogs
-524    | bird
-525    | atv
-526    | butts
-527    | suwannee
-528    | bargains
-529    | captiva
-530    | restoration
-531    | desktop
-532    | buy
-533    | thong
-534    | vero
-535    | horse
-536    | riding
-537    | estero
-538    | tourism
-539    | nokomis
-540    | courtyard
-541    | tattoos
-542    | bikinis
-543    | trees
-544    | population
-545    | lego
-546    | optional
-547    | stays
-548    | blue
-549    | public
-550    | festivals
-551    | seashells
-552    | lodging
-553    | landscaping
-554    | surfside
-555    | crystal
-556    | two
-557    | christmas
-558    | safety
-559    | shores
-560    | fleas
-561    | packing
-562    | hammock
-563    | parking
-564    | natural
-565    | tips
-566    | clouds
-567    | diving
-568    | condition
-569    | rooms
-570    | gear
-571    | steinhatchee
-572    | choice
-573    | beachcombing
-574    | last
-575    | minute
-576    | ormond
-577    | t
-578    | listing
-579    | retirement
-580    | spas
-581    | soccer
-582    | zip
-583    | code
-584    | cleanup
-585    | beachcomber
-586    | b
-587    | plan
-588    | lots
-589    | attractions
-590    | elopement
-591    | pet
-592    | friendly
-593    | budget
-594    | gulfport
-595    | grille
-596    | wallpaper
-597    | campsites
-598    | riviera
-599    | views
-600    | davenport
-601    | condominiums
-602    | honeymoons
-603    | forecast
-604    | lighthouses
-605    | store
-606    | ponte
-607    | vedra
-608    | art
-609    | alligator
-610    | children
-611    | allowed
-612    | marathon
-613    | food
-614    | spot
+0      | 14585  | florida
+1      | 5405   | beaches
+2      | 8677   | beach
+3      | 457    | hotels
+4      | 649    | best
+5      | 229    | vacation
+6      | 563    | beachfront
+7      | 3      | suites
+8      | 824    | destin
+9      | 472    | rentals
+10     | 68     | pensacola
+11     | 9      | private
+12     | 1232   | map
+13     | 317    | west
+14     | 7      | crabs
+15     | 18     | news
+16     | 82     | north
+17     | 339    | gulf
+18     | 49     | side
+19     | 20     | mexico
+20     | 73     | condo
+21     | 1274   | live
+22     | 1410   | cams
+23     | 31     | keys
+24     | 366    | webcams
+25     | 142    | hollywood
+26     | 70     | pictures
+27     | 114    | fort
+28     | 108    | myers
+29     | 780    | cam
+30     | 16     | far
+31     | 7      | weston
+32     | 7      | clubs
+33     | 10     | towel
+34     | 64     | seaside
+35     | 107    | condos
+36     | 77     | top
+37     | 80     | list
+38     | 334    | resorts
+39     | 35     | jupiter
+40     | 239    | south
+41     | 2      | people
+42     | 27     | melbourne
+43     | 128    | weddings
+44     | 83     | resort
+45     | 20     | anna
+46     | 20     | maria
+47     | 120    | wedding
+48     | 5      | clothes
+49     | 71     | panama
+50     | 47     | city
+51     | 163    | towns
+52     | 10     | party
+53     | 377    | coast
+54     | 29     | visit
+55     | 169    | tampa
+56     | 28     | bay
+57     | 55     | cottages
+58     | 279    | sale
+59     | 171    | st
+60     | 67     | petersburg
+61     | 3      | access
+62     | 40     | all
+63     | 234    | key
+64     | 265    | webcam
+65     | 16     | hilton
+66     | 26     | state
+67     | 15     | park
+68     | 27     | cities
+69     | 106    | houses
+70     | 71     | palm
+71     | 35     | pete
+72     | 46     | campgrounds
+73     | 5      | dresses
+74     | 162    | girl
+75     | 6      | amelia
+76     | 86     | island
+77     | 21     | tallahassee
+78     | 12     | destinations
+79     | 248    | naples
+80     | 155    | cameras
+81     | 175    | house
+82     | 103    | rental
+83     | 15     | flags
+84     | 6      | meanings
+85     | 21     | sunset
+86     | 10     | inclusive
+87     | 44     | treasure
+88     | 111    | atlantic
+89     | 1      | halfathon
+90     | 40     | siesta
+91     | 39     | sanibel
+92     | 16     | trips
+93     | 14     | northern
+94     | 87     | jacksonville
+95     | 38     | cape
+96     | 29     | coral
+97     | 4      | company
+98     | 12     | panacea
+99     | 46     | near
+100    | 17     | georgia
+101    | 247    | homes
+102    | 74     | rent
+103    | 225    | venice
+104    | 18     | timeshares
+105    | 26     | red
+106    | 26     | tide
+107    | 8      | information
+108    | 73     | photos
+109    | 13     | sharks
+110    | 15     | boca
+111    | 14     | raton
+112    | 52     | families
+113    | 20     | saint
+114    | 6      | southwestern
+115    | 19     | marco
+116    | 96     | clearwater
+117    | 127    | east
+118    | 7      | clear
+119    | 27     | water
+120    | 13     | camera
+121    | 4      | specials
+122    | 13     | beautiful
+123    | 15     | couples
+124    | 14     | san
+125    | 11     | blas
+126    | 20     | alabama
+127    | 18     | ten
+128    | 6      | arcadia
+129    | 6      | pepsi
+130    | 6      | cola
+131    | 85     | maps
+132    | 152    | miami
+133    | 15     | westin
+134    | 2      | turtle
+135    | 5      | emerald
+136    | 20     | club
+137    | 20     | airport
+138    | 32     | hudson
+139    | 75     | panhandle
+140    | 19     | southern
+141    | 9      | beverly
+142    | 9      | hills
+143    | 12     | feed
+144    | 12     | koa
+145    | 73     | sarasota
+146    | 25     | cocoa
+147    | 11     | eastern
+148    | 10     | nicest
+149    | 7      | videos
+150    | 21     | property
+151    | 24     | properties
+152    | 10     | businesses
+153    | 12     | lauderdale
+154    | 10     | hiltons
+155    | 32     | shells
+156    | 49     | northwest
+157    | 11     | titusville
+158    | 6      | cheapest
+159    | 114    | vacations
+160    | 17     | november
+161    | 17     | bradenton
+162    | 5      | detailed
+163    | 31     | video
+164    | 23     | locations
+165    | 22     | hyatt
+166    | 13     | volleyball
+167    | 21     | southwest
+168    | 56     | orlando
+169    | 1      | tours
+170    | 28     | cottage
+171    | 20     | airbnb
+172    | 14     | bar
+173    | 46     | central
+174    | 1      | islands
+175    | 29     | babes
+176    | 9      | pierce
+177    | 75     | camping
+178    | 6      | breeze
+179    | 50     | augustine
+180    | 1      | string
+181    | 7      | bikini
+182    | 73     | vrbo
+183    | 6      | university
+184    | 2      | most
+185    | 1      | relaxing
+186    | 16     | southeast
+187    | 5      | retire
+188    | 29     | western
+189    | 39     | daytona
+190    | 62     | cheap
+191    | 9      | getaways
+192    | 10     | cabin
+193    | 21     | navarre
+194    | 18     | owner
+195    | 7      | images
+196    | 18     | northeast
+197    | 8      | nw
+198    | 40     | girls
+199    | 13     | lucie
+200    | 10     | scene
+201    | 12     | wyndham
+202    | 14     | casey
+203    | 9      | largo
+204    | 30     | fl
+205    | 12     | hernando
+206    | 2      | honeymoon
+207    | 17     | venus
+208    | 4      | march
+209    | 13     | venues
+210    | 6      | shacks
+211    | 4      | sandestin
+212    | 3      | beachside
+213    | 4      | mims
+214    | 33     | bars
+215    | 63     | deals
+216    | 42     | home
+217    | 6      | land
+218    | 41     | pics
+219    | 56     | rv
+220    | 45     | parks
+221    | 12     | close
+222    | 12     | towels
+223    | 12     | islamorada
+224    | 33     | com
+225    | 10     | beachrentals
+226    | 45     | old
+227    | 21     | scenes
+228    | 1      | description
+229    | 21     | web
+230    | 15     | shark
+231    | 11     | teeth
+232    | 8      | shelling
+233    | 34     | port
+234    | 17     | plans
+235    | 48     | marriott
+236    | 71     | hotel
+237    | 12     | bungalows
+238    | 14     | adults
+239    | 21     | front
+240    | 1      | july
+241    | 7      | shore
+242    | 22     | birds
+243    | 14     | fun
+244    | 10     | places
+245    | 11     | restaurants
+246    | 1      | manatee
+247    | 18     | realty
+248    | 16     | county
+249    | 9      | destination
+250    | 6      | nn10
+251    | 1      | watersound
+252    | 7      | joe
+253    | 23     | luxury
+254    | 8      | kids
+255    | 16     | sea
+256    | 6      | glass
+257    | 21     | pompano
+258    | 10     | pasco
+259    | 2      | view
+260    | 12     | santa
+261    | 12     | rosa
+262    | 1      | month
+263    | 1      | go
+264    | 4      | lakeland
+265    | 8      | little
+266    | 3      | alcohol
+267    | 4      | laws
+268    | 4      | edgewater
+269    | 18     | fishing
+270    | 1      | inns
+271    | 21     | stuart
+272    | 6      | radio
+273    | 6      | stations
+274    | 14     | delray
+275    | 1      | northeastern
+276    | 5      | areas
+277    | 6      | me
+278    | 5      | historic
+279    | 1      | wikipedia
+280    | 11     | family
+281    | 4      | swimming
+282    | 7      | package
+283    | 12     | paintings
+284    | 4      | ocala
+285    | 13     | weather
+286    | 9      | gables
+287    | 1      | quartz
+288    | 6      | sand
+289    | 15     | december
+290    | 5      | cool
+291    | 4      | martin
+292    | 11     | name
+293    | 1      | canaveral
+294    | 1      | attack
+295    | 1      | gainesville
+296    | 9      | atlanta
+297    | 3      | disney
+298    | 4      | insect
+299    | 6      | bites
+300    | 16     | famous
+301    | 7      | snakes
+302    | 8      | erosion
+303    | 10     | perdido
+304    | 1      | crab
+305    | 12     | ritz
+306    | 1      | hostels
+307    | 13     | apalachicola
+308    | 3      | packages
+309    | 1      | discount
+310    | 1      | ponce
+311    | 1      | inlet
+312    | 6      | youtube
+313    | 17     | ft
+314    | 3      | sandblast
+315    | 7      | watercolor
+316    | 16     | jensen
+317    | 7      | motels
+318    | 1      | playalinda
+319    | 4      | venue
+320    | 12     | madeira
+321    | 22     | closest
+322    | 8      | designs
+323    | 6      | september
+324    | 22     | real
+325    | 23     | estate
+326    | 3      | concerts
+327    | 12     | dunedin
+328    | 11     | conditions
+329    | 6      | guide
+330    | 7      | names
+331    | 1      | entertainment
+332    | 9      | sunrise
+333    | 13     | quaint
+334    | 1      | starfish
+335    | 21     | punta
+336    | 21     | gorda
+337    | 12     | october
+338    | 5      | facts
+339    | 17     | small
+340    | 3      | attacks
+341    | 3      | agustin
+342    | 16     | reviews
+343    | 2      | grande
+344    | 5      | springs
+345    | 1      | tavernier
+346    | 6      | singer
+347    | 1      | jellyfish
+348    | 4      | regulations
+349    | 1      | castle
+350    | 13     | walton
+351    | 14     | englewood
+352    | 1      | warnings
+353    | 10     | gold
+354    | 1      | adult
+355    | 9      | quality
+356    | 4      | town
+357    | 1      | closed
+358    | 1      | nearest
+359    | 2      | texas
+360    | 1      | sunny
+361    | 1      | isles
+362    | 5      | howard
+363    | 8      | lice
+364    | 2      | bug
+365    | 15     | report
+366    | 1      | yankeetown
+367    | 1      | pickens
+368    | 1      | orange
+369    | 2      | shopping
+370    | 3      | pollution
+371    | 1      | image
+372    | 19     | teresa
+373    | 4      | jetty
+374    | 9      | warning
+375    | 4      | lifeguards
+376    | 1      | cost
+377    | 6      | nightlife
+378    | 2      | golf
+379    | 1      | police
+380    | 1      | thongs
+381    | 1      | airports
+382    | 2      | safe
+383    | 7      | ihg
+384    | 1      | music
+385    | 1      | lantana
+386    | 4      | carlton
+387    | 1      | sites
+388    | 7      | great
+389    | 1      | found
+390    | 6      | women
+391    | 1      | bags
+392    | 3      | northwestern
+393    | 1      | affordable
+394    | 2      | style
+395    | 4      | popular
+396    | 1      | nudist
+397    | 1      | starwood
+398    | 2      | beachs
+399    | 3      | quiet
+400    | 4      | pine
+401    | 5      | timeshare
+402    | 1      | surf
+403    | 1      | wakulla
+404    | 5      | spring
+405    | 5      | break
+406    | 14     | decor
+407    | 1      | road
+408    | 10     | trip
+409    | 1      | dollars
+410    | 1      | things
+411    | 2      | do
+412    | 1      | tee
+413    | 2      | shirts
+414    | 12     | sw
+415    | 3      | surfing
+416    | 4      | miramar
+417    | 1      | watercolors
+418    | 2      | bungalow
+419    | 1      | rosemary
+420    | 11     | boardwalks
+421    | 1      | new
+422    | 1      | smyrna
+423    | 3      | weekend
+424    | 1      | magazines
+425    | 5      | ratings
+426    | 6      | photographers
+427    | 1      | piers
+428    | 2      | pass
+429    | 1      | flag
+430    | 1      | system
+431    | 1      | northport
+432    | 1      | status
+433    | 4      | ideas
+434    | 1      | ocean
+435    | 6      | www
+436    | 1      | shell
+437    | 7      | point
+438    | 4      | beachline
+439    | 4      | tolls
+440    | 1      | monthly
+441    | 1      | life
+442    | 2      | magazine
+443    | 1      | reports
+444    | 1      | colors
+445    | 7      | seagrove
+446    | 5      | indiana
+447    | 1      | rated
+448    | 4      | songs
+449    | 1      | laguna
+450    | 1      | placida
+451    | 1      | pristine
+452    | 7      | rotonda
+453    | 2      | april
+454    | 7      | wear
+455    | 2      | shops
+456    | 4      | bonita
+457    | 3      | free
+458    | 2      | getaway
+459    | 1      | hottest
+460    | 2      | sales
+461    | 5      | tanning
+462    | 2      | lebanon
+463    | 1      | remote
+464    | 1      | sticker
+465    | 1      | divers
+466    | 1      | hallandale
+467    | 1      | treasures
+468    | 1      | wheelchairs
+469    | 1      | viera
+470    | 1      | quotes
+471    | 4      | clean
+472    | 2      | up
+473    | 1      | passes
+474    | 1      | trolley
+475    | 1      | skirts
+476    | 3      | complete
+477    | 6      | charming
+478    | 1      | bal
+479    | 1      | harbour
+480    | 4      | indian
+481    | 3      | rock
+482    | 1      | waterpark
+483    | 1      | beachcombers
+484    | 2      | communities
+485    | 1      | desoto
+486    | 1      | hobe
+487    | 1      | sound
+488    | 1      | online
+489    | 4      | travel
+490    | 1      | area
+491    | 6      | tripadvisor
+492    | 1      | ecosystem
+493    | 2      | wall
+494    | 1      | murals
+495    | 2      | january
+496    | 5      | spots
+497    | 1      | renourishment
+498    | 2      | villas
+499    | 1      | villa
+500    | 1      | events
+501    | 1      | camp
+502    | 5      | tiny
+503    | 1      | wildflowers
+504    | 1      | metal
+505    | 1      | detecting
+506    | 1      | accommodations
+507    | 1      | kissimmee
+508    | 2      | marriotts
+509    | 1      | fernandina
+510    | 5      | bayonet
+511    | 1      | inn
+512    | 3      | cabins
+513    | 2      | plants
+514    | 2      | furniture
+515    | 1      | pretty
+516    | 2      | patrol
+517    | 1      | jobs
+518    | 1      | snorkeling
+519    | 1      | biscayne
+520    | 1      | flagler
+521    | 1      | ga
+522    | 1      | drinking
+523    | 2      | dogs
+524    | 1      | bird
+525    | 1      | atv
+526    | 1      | butts
+527    | 1      | suwannee
+528    | 2      | bargains
+529    | 1      | captiva
+530    | 1      | restoration
+531    | 1      | desktop
+532    | 1      | buy
+533    | 2      | thong
+534    | 1      | vero
+535    | 1      | horse
+536    | 1      | riding
+537    | 1      | estero
+538    | 2      | tourism
+539    | 1      | nokomis
+540    | 1      | courtyard
+541    | 1      | tattoos
+542    | 1      | bikinis
+543    | 1      | trees
+544    | 1      | population
+545    | 1      | lego
+546    | 1      | optional
+547    | 1      | stays
+548    | 1      | blue
+549    | 2      | public
+550    | 1      | festivals
+551    | 1      | seashells
+552    | 1      | lodging
+553    | 1      | landscaping
+554    | 2      | surfside
+555    | 1      | crystal
+556    | 1      | two
+557    | 1      | christmas
+558    | 1      | safety
+559    | 1      | shores
+560    | 1      | fleas
+561    | 1      | packing
+562    | 1      | hammock
+563    | 1      | parking
+564    | 1      | natural
+565    | 1      | tips
+566    | 1      | clouds
+567    | 1      | diving
+568    | 1      | condition
+569    | 1      | rooms
+570    | 1      | gear
+571    | 1      | steinhatchee
+572    | 2      | choice
+573    | 1      | beachcombing
+574    | 1      | last
+575    | 1      | minute
+576    | 1      | ormond
+577    | 1      | t
+578    | 1      | listing
+579    | 1      | retirement
+580    | 1      | spas
+581    | 1      | soccer
+582    | 1      | zip
+583    | 1      | code
+584    | 1      | cleanup
+585    | 1      | beachcomber
+586    | 2      | b
+587    | 1      | plan
+588    | 1      | lots
+589    | 1      | attractions
+590    | 1      | elopement
+591    | 1      | pet
+592    | 1      | friendly
+593    | 1      | budget
+594    | 1      | gulfport
+595    | 1      | grille
+596    | 1      | wallpaper
+597    | 1      | campsites
+598    | 1      | riviera
+599    | 1      | views
+600    | 1      | davenport
+601    | 1      | condominiums
+602    | 1      | honeymoons
+603    | 1      | forecast
+604    | 1      | lighthouses
+605    | 1      | store
+606    | 1      | ponte
+607    | 1      | vedra
+608    | 1      | art
+609    | 1      | alligator
+610    | 1      | children
+611    | 1      | allowed
+612    | 1      | marathon
+613    | 1      | food
+614    | 1      | spot
 
 floridabeachesbeachhotelsbestvacationbeachfrontsuitesdestinrentalspensacolaprivatemapwestcrabsnewsnorthgulfsidemexicocondoliv
 ecamskeyswebcamshollywoodpicturesfortmyerscamfarwestonclubstowelseasidecondostoplistresortsjupitersouthpeoplemelbournewedding
