@@ -58,8 +58,10 @@ public class Dictionary {
 
 	public static void findLikelyFive(String s) {
 		if (s.equals(likeyAgainst.toString())) return;
-		if (s.length() == 1) likeyAgainst.setLength(0);
-		likeyAgainst.append(s.charAt(s.length() - 1));
+		if (s.indexOf(likeyAgainst.toString()) != 0) {
+			likeyAgainst.setLength(0);
+			likeyAgainst.append(s);
+		} else likeyAgainst.append(s.charAt(s.length() - 1));
 
 		short low = 0;
 		short high = (short)(lookupTable.size() - 1);
