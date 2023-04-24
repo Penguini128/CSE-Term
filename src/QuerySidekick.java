@@ -45,9 +45,11 @@ public class QuerySidekick
 
         // Attempt to create a Scanner to read the old query file
         File file = new File(oldQueryFile);
-        Scanner scanner;
+        Scanner wordScanner;
+        Scanner phraseScanner;
         try {
-            scanner = new Scanner(file);
+            wordScanner = new Scanner(file);
+            phraseScanner = new Scanner(file);
         } catch (FileNotFoundException e) {
             // If the file is not found, print an error message
             System.out.println("ERROR:\t Old query file not found");
@@ -58,22 +60,36 @@ public class QuerySidekick
         int currentLine = 0;
 
         // While there are more lines to read...
-        while (scanner.hasNextLine()) {
+        while (wordScanner.hasNextLine()) {
             // Increment "currentLine"
             currentLine++;
             // Call garbage collector manually every 10 lines
             if (currentLine % 10 == 0) System.gc();
 
             // Get the input line and split it into space-separated tokens
-            String line = scanner.nextLine();
+            String line = wordScanner.nextLine();
             line = line.replaceAll("\\s+", " ");
             String[] tokens = line.split(" ");
 
+            for (int i = 0; i < tokens.length; i++) {
+                Dictionary.add(tokens[i]);
+            }
+        }
+
+        while (phraseScanner.hasNextLine()) {
+            // Increment "currentLine"
+            currentLine++;
+            // Call garbage collector manually every 10 lines
+            if (currentLine % 10 == 0) System.gc();
+            // Get the input line and split it into space-separated tokens
+            String line = phraseScanner.nextLine();
+            line = line.replaceAll("\\s+", " ");
+            String[] tokens = line.split(" ");
             // Create an array that will be used to store the indexes required to
             // fetch the phrase from the Dictionary
             short[] lookupIndices = new short[tokens.length];
             for (int i = 0; i < tokens.length; i++) {
-                lookupIndices[i] = Dictionary.add(tokens[i]);
+                lookupIndices[i] = Dictionary.find(tokens[i]);
             }
             // Add the new phrase to the PhraseList (or increment the
             // frequency of a preexisting phrase)
@@ -82,10 +98,13 @@ public class QuerySidekick
 
         Dictionary.findHighFrequencies();
 
+        Dictionary.writeToFile(oldQueryFile.substring(0, oldQueryFile.length() - 4) + "Profile\\");
+
         // Generate the guess tree
         guessTree.build();
 
-        scanner.close();
+        wordScanner.close();
+        phraseScanner.close();
 
     }
 
@@ -113,11 +132,15 @@ public class QuerySidekick
         } else currentIncomingWord.append(currChar);
 
         String guesses[] = guessTree.getGuess(currChar);
+        if (guesses[4] != null) return guesses;
         // Fetch guesses from the guess tree and return them
         for (int i = 4; i >= 0; i--) {
             if (guesses[i] != null) break;
             if (currChar == ' ') {
                 guesses[i] = currentKnownWords.toString() + Dictionary.getTopFive()[4 - i];
+            } else {
+                Dictionary.findLikelyFive(currentIncomingWord.toString());
+                guesses[i] = currentKnownWords.toString() + Dictionary.getLikely(4 - i);
             }
 
         }
@@ -137,10 +160,5 @@ public class QuerySidekick
     // a.         true                correct query
     // b.         false               null
     // c.         false               correct query
-    public void feedback(boolean isCorrectGuess, String correctQuery)        
-    {
-        if (isCorrectGuess) {
-            
-        }
-    }
+    public void feedback(boolean isCorrectGuess, String correctQuery) { }
 }
