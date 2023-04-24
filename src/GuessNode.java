@@ -5,7 +5,7 @@ public class GuessNode {
     // Stores a character that corresponds to letters received from a new query, as well as pre-determined guesses
     private char guessCharacter;
     private GuessNode parent;
-    private int[] guesses;
+    private short[] guesses;
     private ArrayList<GuessNode> children;
 
     // General Constructor
@@ -13,7 +13,7 @@ public class GuessNode {
         this.guessCharacter = guessCharacter;
         this.parent = parent;
         children = new ArrayList<GuessNode>();
-        guesses = new int[5];
+        guesses = new short[5];
         // Guess index array initialized with all values as -1
         for (int i = 0; i < guesses.length; i++) {
             guesses[i] = -1;
@@ -28,15 +28,15 @@ public class GuessNode {
 
         // Grab the start end end indexes to search through for the current node being built
         // This is the range of indices in the phrase array that contain phrases that start with "phraseSoFar"
-        int startIndex = PhraseList.findStartIndex(phraseSoFar);
-        int endIndex = PhraseList.findEndIndex(phraseSoFar, startIndex);
+        short startIndex = PhraseList.findStartIndex(phraseSoFar);
+        short endIndex = PhraseList.findEndIndex(phraseSoFar, startIndex);
         // currentChar keeps track of the current character that proceeds "phraseSoFar" in the fetched phrases,
         // set to newline by default as a flag character
         char currentChar = '\n';
         GuessNode newestChild = null;
 
         // Iterate through all of the valid indices
-        for (int i = startIndex; i < endIndex; i++) {
+        for (short i = startIndex; i < endIndex; i++) {
             char phraseChar;
             // Try to fetch the character in the current phrase proceeding "phraseSoFar". If
             // said character does not exist, the phrase is not needed, so move to the next phrase
@@ -143,7 +143,7 @@ public class GuessNode {
      * Determines if a new incoming phrase should be placed within the top 5 guesses for this node
      * @param phraseIndex The index of the phrase to be ranked
      */
-    private void rank(int phraseIndex) {
+    private void rank(short phraseIndex) {
         // If the phrase has already been guessed by a parent node, it should not be ranked. Return
         if (PhraseList.isUsed(phraseIndex)) return;
         // Get the weight of the lowest ranked phrase in the top 5. If the new phrase is not ranked
@@ -151,7 +151,7 @@ public class GuessNode {
         float phraseFrequency = PhraseList.getPhraseFrequency(phraseIndex);
         if (phraseFrequency <= PhraseList.getPhraseFrequency(guesses[4])) return;
         // Initialize an array to store the new rankings
-        int[] newGuesses = new int[5];
+        short[] newGuesses = new short[5];
 
         /*
          * The following is nearly identical to the TreeNode array insert code. It

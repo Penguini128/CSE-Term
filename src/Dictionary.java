@@ -10,20 +10,27 @@ public class Dictionary {
 
 	// This ArrayList contains the indexes of the start of each word in the "dictionary" String
 	private static ArrayList<Integer> lookupTable = new ArrayList<Integer>();
+	private static ArrayList<Integer> lookupFrequencies = new ArrayList<Integer>();
+	private static ArrayList<Short> highFrequencyWords = new ArrayList<Short>();
+	private static String[] topFiveWords = new String[5];
 
 	// This is used to format the dictionary output text file (can be mostly ignored)
-	private static final int DICTIONARY_BLOCK_SIZE = 125;
+	private static final short DICTIONARY_BLOCK_SIZE = 125;
+	private static final int HIGH_FREQUENCY_THRESHOLD = 20;
 
 	/**
 	 * Adds a new word to the Dictionary, if the word is unique
 	 * @param s The String to be added to the dictionary
 	 * @return The index that can be passed into get() to retrieve the word
 	 */
-	public static int add(String s) {
+	public static short add(String s) {
 		// See if the word is already in the dictionary.
 		// If it is, return the index used to access it
-		int foundIndex = contains(s);
-		if (foundIndex != -1) return foundIndex;
+		short foundIndex = contains(s);
+		if (foundIndex != -1) {
+			lookupFrequencies.set(foundIndex, lookupFrequencies.get(foundIndex) + 1);
+			return foundIndex;
+		}
 
 		/*
 		 * Add the index where the new word can be found to "lookupTable" (since
@@ -31,12 +38,17 @@ public class Dictionary {
 		 * will be the index where the word will start once it is added to the String
 		 */
 		lookupTable.add(dictionary.length());
+		lookupFrequencies.add(1);
 		// Add the word to the String
 		dictionary += s;
 		// Since the word's new index was added to the end of the end of "lookupTable",
 		// return "lookupTable.size() - 1" (the last index of "lookupTable")
-		return lookupTable.size() - 1;
+		return (short)(lookupTable.size() - 1);
 
+	}
+
+	public static String[] getTopFive() {
+		return topFiveWords;
 	}
 
 	/**
@@ -44,7 +56,7 @@ public class Dictionary {
 	 * @param index The index of the word to be retrieved
 	 * @return The word stored at the specified index
 	 */
-	public static String get(int index) {
+	public static String get(short index) {
 		// Note: This method assumes the passed in index is within the bounds 
 		// of "lookupTable". Under normal use, this should not be an issue
 
@@ -64,12 +76,69 @@ public class Dictionary {
 	 * @return The index used to access the String it is exists within
 	 * 		   "dictionary", -1 if "dictionary" does not contain the String
 	 */
-	public static int contains(String s) {
-		for (int i = 0; i < lookupTable.size(); i++) {
+	public static short contains(String s) {
+		for (short i = 0; i < lookupTable.size(); i++) {
 			if (get(i).equals(s)) return i;
 		}
 		// The word was not found within the Dictionary, return -1
 		return -1;
+	}
+
+	public static void findHighFrequencies() {
+		for (short i = 0; i < lookupFrequencies.size(); i++) {
+			if (lookupFrequencies.get(i) < HIGH_FREQUENCY_THRESHOLD) continue;
+			boolean inserted = false;
+			for (short j = 0; j < highFrequencyWords.size(); j++) {
+				if (get(i).compareTo(get((short)highFrequencyWords.get(j))) < 0) {
+					highFrequencyWords.add(j, i);
+					inserted = true;
+					break;
+				}
+			}
+			if (!inserted) highFrequencyWords.add(i);
+		}
+
+		int[] tempTop = new int[5];
+		for (int i = 0; i < 5; i++) { tempTop[i] = -1; }
+
+		for (int i = 0; i < lookupTable.size(); i++) {
+			for (int j = 0; j < 5; j++) {
+				if (tempTop[j] == -1 || lookupFrequencies.get(i) > lookupFrequencies.get(tempTop[j])) {
+					int hold = tempTop[j];
+					tempTop[j] = i;
+					for (int k = j + 1; k < 5; k++) {
+						int temp = tempTop[k];
+						tempTop[k] = hold;
+						hold = temp;
+					}
+					break;
+				}
+			}
+			
+		}
+		for (int i = 0; i < 5; i++) {
+			topFiveWords[i] = get((short)tempTop[i]);
+		}
+	}
+
+	public static String[] getLikelyFive(String soFar) {
+
+		String[] guesses = new String[5];
+
+		int low = 0;
+		int high = highFrequencyWords.size() - 1;
+		while (low <= high) {
+			int mid = (low + high) / 2;
+		    if (soFar.compareTo(get(highFrequencyWords.get(mid))) > 0) low = mid + 1;
+			else high = mid - 1;
+		}
+
+		for (int i = 0; i < 5; i++) {
+			if (low + i < highFrequencyWords.size())
+			guesses[i] = get(highFrequencyWords.get(low + i));
+		}
+
+		return guesses;
 	}
 
 	public static int size() { return lookupTable.size(); }
@@ -83,7 +152,7 @@ public class Dictionary {
 		// Create a StringBuilder to store the String as it is created
 		StringBuilder sb = new StringBuilder();
 		// For each word in the dictionary...
-		for (int i = 0; i < lookupTable.size(); i++) {
+		for (short i = 0; i < lookupTable.size(); i++) {
 			// Add a String in the following format to
 			// the StringBuilder: "[index] | [word]""
 			sb.append(String.format("%-6d | %s\n", i, get(i)));

@@ -1,11 +1,11 @@
 public class PhraseNode {
 
-    private int[] data;
-    private int frequency;
+    private short[] data;
+    private short frequency;
     private boolean used;
 
     // General Constructor
-    PhraseNode(int[] data) {
+    PhraseNode(short[] data) {
         this.data = data;
         frequency = 1;
         used = false;
@@ -15,8 +15,8 @@ public class PhraseNode {
     public void incrementFrequency() { frequency++; }
 
     // Getter methods
-    public int[] getDataArray() { return data; }
-    public int getFrequency() { return frequency; }
+    public short[] getDataArray() { return data; }
+    public short getFrequency() { return frequency; }
     public void setUsed() { used = true; }
     public boolean isUsed() { return used; }
 
