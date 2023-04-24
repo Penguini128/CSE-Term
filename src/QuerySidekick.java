@@ -118,9 +118,6 @@ public class QuerySidekick
             if (guesses[i] != null) break;
             if (currChar == ' ') {
                 guesses[i] = currentKnownWords.toString() + Dictionary.getTopFive()[4 - i];
-            } else {
-                String[] likelyFive = Dictionary.getLikelyFive(currentIncomingWord.toString());
-                guesses[i] = currentKnownWords.toString() + likelyFive[4 - i];
             }
 
         }

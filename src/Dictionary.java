@@ -11,12 +11,10 @@ public class Dictionary {
 	// This ArrayList contains the indexes of the start of each word in the "dictionary" String
 	private static ArrayList<Integer> lookupTable = new ArrayList<Integer>();
 	private static ArrayList<Integer> lookupFrequencies = new ArrayList<Integer>();
-	private static ArrayList<Short> highFrequencyWords = new ArrayList<Short>();
 	private static String[] topFiveWords = new String[5];
 
 	// This is used to format the dictionary output text file (can be mostly ignored)
 	private static final short DICTIONARY_BLOCK_SIZE = 125;
-	private static final int HIGH_FREQUENCY_THRESHOLD = 20;
 
 	/**
 	 * Adds a new word to the Dictionary, if the word is unique
@@ -85,18 +83,6 @@ public class Dictionary {
 	}
 
 	public static void findHighFrequencies() {
-		for (short i = 0; i < lookupFrequencies.size(); i++) {
-			if (lookupFrequencies.get(i) < HIGH_FREQUENCY_THRESHOLD) continue;
-			boolean inserted = false;
-			for (short j = 0; j < highFrequencyWords.size(); j++) {
-				if (get(i).compareTo(get((short)highFrequencyWords.get(j))) < 0) {
-					highFrequencyWords.add(j, i);
-					inserted = true;
-					break;
-				}
-			}
-			if (!inserted) highFrequencyWords.add(i);
-		}
 
 		int[] tempTop = new int[5];
 		for (int i = 0; i < 5; i++) { tempTop[i] = -1; }
@@ -119,26 +105,6 @@ public class Dictionary {
 		for (int i = 0; i < 5; i++) {
 			topFiveWords[i] = get((short)tempTop[i]);
 		}
-	}
-
-	public static String[] getLikelyFive(String soFar) {
-
-		String[] guesses = new String[5];
-
-		int low = 0;
-		int high = highFrequencyWords.size() - 1;
-		while (low <= high) {
-			int mid = (low + high) / 2;
-		    if (soFar.compareTo(get(highFrequencyWords.get(mid))) > 0) low = mid + 1;
-			else high = mid - 1;
-		}
-
-		for (int i = 0; i < 5; i++) {
-			if (low + i < highFrequencyWords.size())
-			guesses[i] = get(highFrequencyWords.get(low + i));
-		}
-
-		return guesses;
 	}
 
 	public static int size() { return lookupTable.size(); }
