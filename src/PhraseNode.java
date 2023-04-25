@@ -1,4 +1,27 @@
+/*
+ * Authors (group members): Tommy Galletta
+ *                          Dongwook Kim
+ *                          Xander Lockard
+ *                          Ioana Silaghi
+ *
+ * Email addresses of group members: tgalletta2022@my.fit.edu
+ *                                   kimd2019@my.fit.edu
+ *                                   alockard2022@my.fit.edu
+ *                                   isilaghi2023@my.fit.edu
+ * Group name: TuringIncomplete
+
+ * Course: CSE 2010
+ * Section: 1/4
+ *
+ * PhraseNode: Holds information about a unique phrase that exists
+ *             within the old query file. This includes the words in
+ *             The words in the phrase, the frequency of the phrase,
+ *             and a boolean variable that tracks if the phrase has
+ *             been used in the constuction of the GuessTree.
+ */
+
 public class PhraseNode {
+
 
     private short[] data;
     private short frequency;

@@ -1,6 +1,30 @@
+/*
+ * Authors (group members): Tommy Galletta
+ *                          Dongwook Kim
+ *                          Xander Lockard
+ *                          Ioana Silaghi
+ *
+ * Email addresses of group members: tgalletta2022@my.fit.edu
+ *                                   kimd2019@my.fit.edu
+ *                                   alockard2022@my.fit.edu
+ *                                   isilaghi2023@my.fit.edu
+ * Group name: TuringIncomplete
+
+ * Course: CSE 2010
+ * Section: 1/4
+ *
+ * GuessTree: This class is responsible for maintaining a tree of guesses given a
+ *            sequence of letters that has been inputted. The tree is sorted such that
+ *            guesses of higher likelyhood appear in higher levels of the tree, while
+ *            less likely guesses appear in lower levels. Because of the tree's
+ *            structure, guesses can be obtained very quickly simply based on the
+ *            last character that has been received in the input.
+ */
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
 public class GuessTree {
     
     // Root of the tree

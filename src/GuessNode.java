@@ -1,4 +1,28 @@
+/*
+ * Authors (group members): Tommy Galletta
+ *                          Dongwook Kim
+ *                          Xander Lockard
+ *                          Ioana Silaghi
+ *
+ * Email addresses of group members: tgalletta2022@my.fit.edu
+ *                                   kimd2019@my.fit.edu
+ *                                   alockard2022@my.fit.edu
+ *                                   isilaghi2023@my.fit.edu
+ * Group name: TuringIncomplete
+
+ * Course: CSE 2010
+ * Section: 1/4
+ *
+ * GuessNode: Holds information about a guess in the GuessTree. Each GuessNode stores
+ *            a character which corresponds to the letter that must be received in the
+ *            in the input in order the the node to be reached from its parent. It also
+ *            stores the guesses that should be made should the node be reached. As 
+ *            expected of a tree node, this class also maintains a parent node and a
+ *            list of child nodes 
+ */
+
 import java.util.ArrayList;
+
 public class GuessNode {
 
     // GuessNode stores a parent and children like a regular tree node, but also

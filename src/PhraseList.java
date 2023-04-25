@@ -1,3 +1,25 @@
+/*
+ * Authors (group members): Tommy Galletta
+ *                          Dongwook Kim
+ *                          Xander Lockard
+ *                          Ioana Silaghi
+ *
+ * Email addresses of group members: tgalletta2022@my.fit.edu
+ *                                   kimd2019@my.fit.edu
+ *                                   alockard2022@my.fit.edu
+ *                                   isilaghi2023@my.fit.edu
+ * Group name: TuringIncomplete
+
+ * Course: CSE 2010
+ * Section: 1/4
+ *
+ * PhraseList: This class is only referenced statically, and is responsible for storing
+ * 			   all unique phrases that appear in the old query file, alongside their
+ * 			   frequencies. This is achieved by maintaining an ArrayList of PhraseNodes.
+ * 			   This class also contains several methods that are use to gain information
+ * 			   about how the PhraseList should be navigated during GuessTree construction
+ */
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -76,11 +98,16 @@ public class PhraseList {
 	 * @return The first index containing a phrase that starts with the specified substring
 	 */
 	public static short findStartIndex(String substring) {
+		// If there is no substring, return the 0 as the start index
 		if (substring == null) return 0;
+		// For each word in the phrase list...
 		for (short i = 0; i < phraseArray.size(); i++) {
+			// If the word starts with the specified
+			// substring, return the current index
 			if (phraseArray.get(i).toString().indexOf(substring) == 0)
 			return i;
 		}
+		// If the end of the list is reached, return -1 as a flag value
 		return -1;
 	}
 
@@ -90,11 +117,16 @@ public class PhraseList {
 	 * @return The index after the last index containing a phrase that starts with the specified substring
 	 */
 	public static short findEndIndex(String substring, short startIndex) {
+		// If there is no substring, return the size of the array (as the last index)
 		if (substring == null) return size();
+		// Starting from "startIndex", going through the list...
 		for (short i = startIndex; i < phraseArray.size(); i++) {
+			// If the phrase at the current index no longer starts with
+			// the specified substring, return the current index
 			if (phraseArray.get(i).toString().indexOf(substring) != 0)
 			return i;
 		}
+		// If the end of the list is reached, return the size of the array (as the last index)
 		return size();
 	}
 
@@ -110,9 +142,18 @@ public class PhraseList {
 	 * @return True if one of the phrases in the list is equal to the specified String, otherwise false
 	 */
 	public static boolean contains(String s) {
-		for (int i = 0; i < phraseArray.size(); i++) {
-			if (getPhrase(i).equals(s)) return true;
+		// Use binary search to determine if the phrase array contains the specified phrase
+		int low = 0;
+		int high = phraseArray.size() - 1;
+		while (low <= high) {
+			short mid = (short)((low + high) / 2);
+			if (getPhrase(mid).equals(s)) {
+				// If the word is found, return true
+				return true;
+			} else if (getPhrase(mid).compareTo(s) < 0) low = (short)(mid + 1);
+			else high = mid - 1;
 		}
+		// If the method reaches this point, the word was not found. Return fasle
 		return false;
 	}
 
